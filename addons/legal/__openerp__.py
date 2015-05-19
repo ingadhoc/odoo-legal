@@ -21,13 +21,14 @@
     'installable': True,
     'auto_install': False,
     'application': True,
-    'demo': [
-        'data/demo/res.partner.csv',
-        'data/demo/res_users.xml',
-        'data/demo/legal.office.csv',
-        'data/demo/legal.formed.csv',
-        'data/demo/legal.status.csv',
-        'data/demo/legal.procese_type.csv',
-        'data/demo/legal.procese.csv',
-        'data/demo/legal.models.csv'],
-}
+    'demo': [],
+# [
+#         # 'data/demo/res.partner.csv',
+#         # 'data/demo/res_users.xml',
+#         # 'data/demo/legal.office.csv',
+#         # 'data/demo/legal.formed.csv',
+#         # 'data/demo/legal.status.csv',
+#         # 'data/demo/legal.procese_type.csv',
+#         # 'data/demo/legal.procese.csv',
+#         # 'data/demo/legal.models.csv'],
+ }
