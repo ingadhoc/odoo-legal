@@ -9,6 +9,7 @@ class procese(models.Model):
 
     _name = 'legal.procese'
     _description = 'procese'
+    _inherit = ['mail.thread']
 
     caratula = fields.Text(string='Caratula', required=True)
     color = fields.Integer('Color Index')
@@ -36,6 +37,13 @@ class procese(models.Model):
     other_types_of_processes_ids = fields.One2many(
         'legal.other_types_of_processes',
         'procese_id', string='Other types of processes')
+    attachment_ids = fields.Many2many(
+        'ir.attachment',
+        'legal_attachment_ids_procese_ids_rel',
+        'procese_id',
+        'attachment_id', string='Attachments')
+    date_regulation = fields.Datetime(string="Date of the regulation")
+    amount_regulation = fields.Float(string="Amount of regulation")
 
 
 class legal_type_procese(models.Model):

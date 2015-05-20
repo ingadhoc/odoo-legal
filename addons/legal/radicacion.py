@@ -13,8 +13,8 @@ class legal_radication(models.Model):
     instance = fields.Selection(
         [('first', 'First'), ('second', 'Second'),
          ('third', 'Third'), ('filed', 'Filed')], string='Instance')
-    num_1_ins = fields.Integer(string='Num. 1°Ins')
-    num_2_ins = fields.Integer(string='Num. 2°Ins')
-    num_3_ins = fields.Integer(string='Num. 3°Ins')
-    num_filed = fields.Integer(string='Num. Filed')
+    num_1_ins = fields.Char(string='Num. 1°Ins')
+    num_2_ins = fields.Char(string='Num. 2°Ins')
+    num_3_ins = fields.Char(string='Num. 3°Ins')
+    num_filed = fields.Char(string='Num. Filed')
     procese_id = fields.Many2one('legal.procese', string='Procese')

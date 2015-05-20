@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-19 15:39+0000\n"
-"PO-Revision-Date: 2015-05-19 12:51-0300\n"
+"POT-Creation-Date: 2015-05-20 13:41+0000\n"
+"PO-Revision-Date: 2015-05-20 10:47-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,17 @@ msgid "Access Level"
 msgstr "Nivel de acceso"
 
 #. module: legal
-#: field:legal.models,attachment_ids:0
+#: field:legal.procese,amount_regulation:0
+msgid "Amount of regulation"
+msgstr "Monto de la regulación"
+
+#. module: legal
+#: view:legal.procese:legal.view_legal_procese_form
+msgid "Attachment"
+msgstr "Adjuntos"
+
+#. module: legal
+#: field:legal.models,attachment_ids:0 field:legal.procese,attachment_ids:0
 msgid "Attachments"
 msgstr "Adjuntos"
 
@@ -101,6 +111,16 @@ msgid "Date of the claim"
 msgstr "Fecha del reclamo"
 
 #. module: legal
+#: help:legal.procese,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el expediente."
+
+#. module: legal
+#: field:legal.procese,date_regulation:0
+msgid "Date of the regulation"
+msgstr "Fecha de la regulacion"
+
+#. module: legal
 #: view:legal.procese:legal.view_legal_procese_kanban
 msgid "Delete"
 msgstr "Borrar"
@@ -149,6 +169,11 @@ msgid "Folder Name"
 msgstr "Nombre de carpeta"
 
 #. module: legal
+#: field:legal.procese,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: legal
 #: selection:legal.models,types:0
 msgid "Glossaries"
 msgstr "Glosarios"
@@ -157,6 +182,15 @@ msgstr "Glosarios"
 #: view:legal.procese:legal.view_legal_procese_filter
 msgid "Group By..."
 msgstr "Agrupar Por ..."
+
+#. module: legal
+#: help:legal.procese,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
 
 #. module: legal
 #: field:legal.auxiliary,id:0 field:legal.auxiliary_fields,id:0
@@ -168,14 +202,29 @@ msgid "ID"
 msgstr "ID"
 
 #. module: legal
+#: help:legal.procese,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se marcan nuevos mensajes que requieren su atención."
+
+#. module: legal
 #: field:legal.radication,instance:0
 msgid "Instance"
 msgstr "Instancia"
 
 #. module: legal
+#: field:legal.procese,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Es un Seguidor"
+
+#. module: legal
 #: field:res.users,is_lawyer:0
 msgid "Is lawyer?"
 msgstr "¿Es abogado?"
+
+#. module: legal
+#: field:legal.procese,message_last_post:0
+msgid "Last Message Date"
+msgstr "Último Mensaje Fecha"
 
 #. module: legal
 #: field:legal.auxiliary,write_uid:0 field:legal.auxiliary_fields,write_uid:0
@@ -246,6 +295,21 @@ msgid "Listings"
 msgstr "Listados"
 
 #. module: legal
+#: field:legal.office,mail:0
+msgid "Mail"
+msgstr "Dirección de correo electrónico"
+
+#. module: legal
+#: field:legal.procese,message_ids:0
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: legal
+#: help:legal.procese,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensajes y el historial de comunicación"
+
+#. module: legal
 #: model:ir.ui.menu,name:legal.menu_doc_model
 msgid "Model"
 msgstr "Modelos"
@@ -311,6 +375,11 @@ msgid "Radicacion"
 msgstr "Radicación"
 
 #. module: legal
+#: view:legal.procese:legal.view_legal_procese_form
+msgid "Regulations"
+msgstr "Regulations"
+
+#. module: legal
 #: selection:legal.procese,access_level:0
 msgid "Reserved"
 msgstr "Reservado"
@@ -337,6 +406,11 @@ msgstr "Fecha De Inicio"
 #: field:legal.procese,status_id:0
 msgid "Status"
 msgstr "Estado"
+
+#. module: legal
+#: field:legal.procese,message_summary:0
+msgid "Summary"
+msgstr "Resumen"
 
 #. module: legal
 #: selection:legal.procese,access_level:0
@@ -367,6 +441,11 @@ msgstr "Tipo de proceso"
 #: view:legal.procese:legal.view_legal_procese_filter
 msgid "Type procese"
 msgstr "Tipo proceso"
+
+#. module: legal
+#: field:legal.procese,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
 
 #. module: legal
 #: model:ir.model,name:legal.model_res_users

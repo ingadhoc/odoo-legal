@@ -27,6 +27,7 @@
                 <tree>
                     <field name="date_of_the_claim"/>
                     <field name="budget_for_coasts"/>
+                    <field name="total_claim"/>
                 </tree>
             </field>
         </record>

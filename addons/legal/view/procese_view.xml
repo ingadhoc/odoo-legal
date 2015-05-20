@@ -36,38 +36,55 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                    <group>
-                        <field name="caratula"/>
-                        <field name="type_procese_id"/>
-                        <field name="observation"/>
-                    </group>
-                    <group >
                         <group>
-                            <field name="folder_name"/>
-                            <field name="responsible_id"/>
-                            <field name="access_level"/>
+                            <field name="caratula"/>
+                            <field name="type_procese_id"/>
+                            <field name="observation"/>
                         </group>
-                        <group>
-                            <field name="status_id"/>
-                            <field name="start_date"/>
-                            <field name="end_date"/>
+                        <group >
+                            <group>
+                                <field name="folder_name"/>
+                                <field name="responsible_id"/>
+                                <field name="access_level"/>
+                            </group>
+                            <group>
+                                <field name="status_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
                         </group>
-                    </group>
-                    <notebook colspan="4">
-                        <page string="Other types of processes">
-                            <field name="other_types_of_processes_ids"/>
-                        </page>
-                        <page string="Radicacion">
-                            <field name="radicacion_ids"/>
-                        </page>
-                        <page string="Claims">
-                            <field name="claims_ids"/>
-                        </page>
-                        <page string="Auxiliary Fields">
-                            <field name="auxiliary_fields_ids"/>
-                        </page>
-                    </notebook>
-                </sheet>
+                        <notebook colspan="4">
+                            <page string="Other types of processes">
+                                <field name="other_types_of_processes_ids"/>
+                            </page>
+                            <page string="Radicacion">
+                                <field name="radicacion_ids"/>
+                            </page>
+                            <page string="Claims">
+                                <field name="claims_ids"/>
+                            </page>
+                            <page string="Auxiliary Fields">
+                                <field name="auxiliary_fields_ids"/>
+                            </page>
+                            <page string="Attachment">
+                                <group>
+                                    <field name="attachment_ids"
+                                    widget="many2many_binary"
+                                    />
+                                </group>
+                            </page>
+                            <page string="Regulations">
+                                <group>
+                                    <field name="date_regulation"/>
+                                    <field name="amount_regulation"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
                 </form>
             </field>
         </record>
@@ -89,13 +106,13 @@
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
                                  <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
-                                <span class="oe_e">í</span>
-                                <ul class="oe_dropdown_menu">
-                                    <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
-                                    <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
-                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
-                                    </ul>
-                                </div>
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
+                                        <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                        </ul>
+                                    </div>
                                 <div class="oe_kanban_content" style="width: 120px; height: 80px; margin: 0 auto;">
                                     <h4 class="text-center"><a type="open"><field name="caratula"/></a></h4>
                                     <a type="open" style="margin-right: 10px">
@@ -103,8 +120,8 @@
                                     <a type="open" style="margin-right: 10px">
                                         <field name="status_id"/></a>
                                 </div>
-                                 <div class="oe_kanban_bottom_right">
-                                        <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33" class="oe_kanban_avatar pull-right"/>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33" class="oe_kanban_avatar pull-right"/>
                                 </div>
                                 <div class="oe_clear"/> 
                             </div>
