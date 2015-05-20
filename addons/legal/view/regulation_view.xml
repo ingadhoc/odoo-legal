@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        
+        <!-- FORM -->
+        <record id="view_legal_regulation_form" model="ir.ui.view">
+            <field name="name">legal.regulation.form</field>
+            <field name="model">legal.regulation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="date_regulation"/>
+                        <field name="amount_regulation"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_regulation_tree" model="ir.ui.view">
+            <field name="name">legal.regulation.tree</field>
+            <field name="model">legal.regulation</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="date_regulation"/>
+                        <field name="amount_regulation"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
