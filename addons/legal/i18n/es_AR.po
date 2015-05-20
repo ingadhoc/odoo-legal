@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-20 13:41+0000\n"
-"PO-Revision-Date: 2015-05-20 10:47-0300\n"
+"PO-Revision-Date: 2015-05-20 11:30-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -377,7 +377,7 @@ msgstr "Radicación"
 #. module: legal
 #: view:legal.procese:legal.view_legal_procese_form
 msgid "Regulations"
-msgstr "Regulations"
+msgstr "Regulaciones"
 
 #. module: legal
 #: selection:legal.procese,access_level:0
