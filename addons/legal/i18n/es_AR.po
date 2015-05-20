@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 13:41+0000\n"
-"PO-Revision-Date: 2015-05-20 11:30-0300\n"
+"POT-Creation-Date: 2015-05-20 16:47+0000\n"
+"PO-Revision-Date: 2015-05-20 13:50-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "Access Level"
 msgstr "Nivel de acceso"
 
 #. module: legal
-#: field:legal.procese,amount_regulation:0
+#: field:legal.regulation,amount_regulation:0
 msgid "Amount of regulation"
 msgstr "Monto de la regulación"
 
@@ -79,13 +79,19 @@ msgid "Color Index"
 msgstr "Color"
 
 #. module: legal
+#: model:ir.ui.menu,name:legal.menu_contact
+msgid "Contact"
+msgstr "Contactos"
+
+#. module: legal
 #: field:legal.auxiliary,create_uid:0
 #: field:legal.auxiliary_fields,create_uid:0 field:legal.claims,create_uid:0
 #: field:legal.formed,create_uid:0 field:legal.models,create_uid:0
 #: field:legal.office,create_uid:0
 #: field:legal.other_types_of_processes,create_uid:0
 #: field:legal.procese,create_uid:0 field:legal.procese_type,create_uid:0
-#: field:legal.radication,create_uid:0 field:legal.status,create_uid:0
+#: field:legal.radication,create_uid:0 field:legal.regulation,create_uid:0
+#: field:legal.status,create_uid:0
 msgid "Created by"
 msgstr "Created by"
 
@@ -96,7 +102,8 @@ msgstr "Created by"
 #: field:legal.office,create_date:0
 #: field:legal.other_types_of_processes,create_date:0
 #: field:legal.procese,create_date:0 field:legal.procese_type,create_date:0
-#: field:legal.radication,create_date:0 field:legal.status,create_date:0
+#: field:legal.radication,create_date:0 field:legal.regulation,create_date:0
+#: field:legal.status,create_date:0
 msgid "Created on"
 msgstr "Created on"
 
@@ -116,9 +123,9 @@ msgid "Date of the last message posted on the record."
 msgstr "Fecha del último mensaje publicado en el expediente."
 
 #. module: legal
-#: field:legal.procese,date_regulation:0
+#: field:legal.regulation,date_regulation:0
 msgid "Date of the regulation"
-msgstr "Fecha de la regulacion"
+msgstr "Fecha de la regulación"
 
 #. module: legal
 #: view:legal.procese:legal.view_legal_procese_kanban
@@ -132,7 +139,7 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: legal
-#: model:ir.ui.menu,name:legal.menu_diary
+#: model:ir.ui.menu,name:legal.menu_Diary
 msgid "Diary"
 msgstr "Agenda"
 
@@ -197,7 +204,8 @@ msgstr ""
 #: field:legal.claims,id:0 field:legal.formed,id:0 field:legal.models,id:0
 #: field:legal.office,id:0 field:legal.other_types_of_processes,id:0
 #: field:legal.procese,id:0 field:legal.procese_type,id:0
-#: field:legal.radication,id:0 field:legal.status,id:0
+#: field:legal.radication,id:0 field:legal.regulation,id:0
+#: field:legal.status,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -232,7 +240,8 @@ msgstr "Último Mensaje Fecha"
 #: field:legal.models,write_uid:0 field:legal.office,write_uid:0
 #: field:legal.other_types_of_processes,write_uid:0
 #: field:legal.procese,write_uid:0 field:legal.procese_type,write_uid:0
-#: field:legal.radication,write_uid:0 field:legal.status,write_uid:0
+#: field:legal.radication,write_uid:0 field:legal.regulation,write_uid:0
+#: field:legal.status,write_uid:0
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
@@ -243,7 +252,8 @@ msgstr "Last Updated by"
 #: field:legal.office,write_date:0
 #: field:legal.other_types_of_processes,write_date:0
 #: field:legal.procese,write_date:0 field:legal.procese_type,write_date:0
-#: field:legal.radication,write_date:0 field:legal.status,write_date:0
+#: field:legal.radication,write_date:0 field:legal.regulation,write_date:0
+#: field:legal.status,write_date:0
 msgid "Last Updated on"
 msgstr "Last Updated on"
 
@@ -364,7 +374,7 @@ msgstr "Otros tipos de procesos"
 #: field:legal.claims,procese_id:0
 #: field:legal.other_types_of_processes,procese_id:0
 #: view:legal.procese:legal.view_legal_procese_filter
-#: field:legal.radication,procese_id:0
+#: field:legal.radication,procese_id:0 field:legal.regulation,procese_id:0
 msgid "Procese"
 msgstr "Procesos"
 
@@ -375,9 +385,14 @@ msgid "Radicacion"
 msgstr "Radicación"
 
 #. module: legal
+#: field:legal.procese,regulation_ids:0
+msgid "Regulation"
+msgstr "Regulación"
+
+#. module: legal
 #: view:legal.procese:legal.view_legal_procese_form
 msgid "Regulations"
-msgstr "Regulaciones"
+msgstr "Regulaciónes"
 
 #. module: legal
 #: selection:legal.procese,access_level:0

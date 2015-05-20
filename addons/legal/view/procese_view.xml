@@ -74,10 +74,7 @@
                                 </group>
                             </page>
                             <page string="Regulations">
-                                <group>
-                                    <field name="date_regulation"/>
-                                    <field name="amount_regulation"/>
-                                </group>
+                                <field name="regulation_ids"/>
                             </page>
                         </notebook>
                     </sheet>

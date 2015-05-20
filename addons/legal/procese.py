@@ -42,8 +42,9 @@ class procese(models.Model):
         'legal_attachment_ids_procese_ids_rel',
         'procese_id',
         'attachment_id', string='Attachments')
-    date_regulation = fields.Datetime(string="Date of the regulation")
-    amount_regulation = fields.Float(string="Amount of regulation")
+    regulation_ids = fields.One2many(
+        'legal.regulation', 'procese_id', string='Regulation')
+    
 
 
 class legal_type_procese(models.Model):

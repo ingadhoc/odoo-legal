@@ -17,7 +17,8 @@
         'view/auxiliary_field_view.xml',
         'view/other_types_of_proceses_view.xml',
         'view/models_view.xml',
-        'view/office_view.xml'
+        'view/office_view.xml',
+        'view/regulation_view.xml'
     ],
     'installable': True,
     'auto_install': False,
@@ -25,6 +26,7 @@
     'demo': [
         'data/demo/res.partner.csv',
         'data/demo/res_users.xml',
+        'data/demo/res_company.xml',
         'data/demo/legal.office.csv',
         'data/demo/legal.formed.csv',
         'data/demo/legal.status.csv',

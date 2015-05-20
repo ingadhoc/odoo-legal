@@ -70,17 +70,24 @@
 
 
         <menuitem
-            name="Calendar"
-            id="menu_calendar"
+            name="Diary"
+            id="menu_Diary"
             sequence="30"
             parent="menu_legal"
             />
         <menuitem
-            name="Diary"
-            id="menu_diary"
+            name="Calendar"
+            id="menu_calendar"
             sequence="30"
             action="calendar.action_calendar_event"
-            parent="menu_calendar"
+            parent="menu_Diary"
+            />
+        <menuitem
+            name="Contact"
+            id="menu_contact"
+            sequence="40"
+            action="base.action_partner_form"
+            parent="menu_Diary"
             />
         <menuitem
             name="Models"

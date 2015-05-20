@@ -5,7 +5,7 @@
 
         
         <!-- FORM -->
-        <record id="view_logistic_partner_form" model="ir.ui.view">
+        <record id="view_legal_claims_form" model="ir.ui.view">
             <field name="name">legal.claims.form</field>
             <field name="model">legal.claims</field>
             <field name="arch" type="xml">
@@ -20,7 +20,7 @@
         </record>
 
         <!-- TREE -->
-        <record id="view_logistic_partner_tree" model="ir.ui.view">
+        <record id="view_legal_claims_tree" model="ir.ui.view">
             <field name="name">legal.claims.tree</field>
             <field name="model">legal.claims</field>
             <field name="arch" type="xml">
