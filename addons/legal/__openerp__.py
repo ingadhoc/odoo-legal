@@ -9,6 +9,8 @@
     'license': 'AGPL-3',
     'depends': ['calendar'],
     'data': [
+        'security/legal_group.xml',
+        'security/ir.model.access.csv',
         'view/legal_menuitem.xml',
         'view/user_view.xml',
         'view/procese_view.xml',
@@ -18,7 +20,8 @@
         'view/other_types_of_proceses_view.xml',
         'view/models_view.xml',
         'view/office_view.xml',
-        'view/regulation_view.xml'
+        'view/regulation_view.xml',
+        'view/audiences_view.xml'
     ],
     'installable': True,
     'auto_install': False,

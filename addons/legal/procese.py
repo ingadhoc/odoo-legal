@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class procese(models.Model):
@@ -10,6 +10,15 @@ class procese(models.Model):
     _name = 'legal.procese'
     _description = 'procese'
     _inherit = ['mail.thread']
+
+    @api.one
+    def _get_office(self):
+        if self.radicacion_ids:
+            radication_ids = self.env['legal.radication'].search(
+                [('id', 'in', [x.id for x in self.radicacion_ids])], order="date desc")
+            self.legal_office_id = radication_ids[0].legal_office_id.id
+        else:
+            self.legal_office_id = []
 
     caratula = fields.Text(string='Caratula', required=True)
     color = fields.Integer('Color Index')
@@ -26,9 +35,13 @@ class procese(models.Model):
          ('level_4', 'Level 4'), ('level_5', 'Level 5'),
          ('supervisor', 'Supervisor'), ('reserved', 'Reserved')],
         'Access Level')
+    general_state = fields.Selection(
+        [('open', 'Open'),
+         ('closed', 'Closed')],
+        'General State', default='open')
     status_id = fields.Many2one('legal.status', string='Status')
-    start_date = fields.Datetime(string="Start Date")
-    end_date = fields.Datetime(string="End Date")
+    start_date = fields.Date(string="Start Date")
+    end_date = fields.Date(string="End Date")
     radicacion_ids = fields.One2many(
         'legal.radication', 'procese_id', string='Radicacion')
     claims_ids = fields.One2many('legal.claims', 'procese_id', string='Claims')
@@ -44,7 +57,19 @@ class procese(models.Model):
         'attachment_id', string='Attachments')
     regulation_ids = fields.One2many(
         'legal.regulation', 'procese_id', string='Regulation')
-    
+    substate_id = fields.Many2one('legal.substate', string="Substate")
+    legal_office_id = fields.Many2one(
+        'legal.office', compute='_get_office', string="Legal Office")
+    audiences_ids = fields.One2many(
+        'legal.audiences', 'procese_id', string="Audiences")
+
+    @api.one
+    def set_open(self):
+        self.general_state = 'open'
+
+    @api.one
+    def set_close(self):
+        self.general_state = 'closed'
 
 
 class legal_type_procese(models.Model):

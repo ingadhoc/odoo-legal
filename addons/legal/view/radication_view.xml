@@ -11,8 +11,9 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
+                        <field name="date" required="True"/>
                         <field name="d_formed"/>
-                        <field name="legal_office"/>
+                        <field name="legal_office_id"/>
                     </group>
                     <group colspan="2">
                         <group>
@@ -35,8 +36,8 @@
             <field name="model">legal.radication</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="d_formed"/>
-                    <field name="legal_office"/>
+                    <field name="date"/>
+                    <field name="legal_office_id"/>
                 </tree>
             </field>
         </record>

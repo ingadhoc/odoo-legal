@@ -25,7 +25,7 @@
             <field name="arch" type="xml">
                 <tree editable="top">
                     <field name="date_regulation"/>
-                        <field name="amount_regulation"/>
+                    <field name="amount_regulation"/>
                 </tree>
             </field>
         </record>

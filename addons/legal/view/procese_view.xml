@@ -16,6 +16,7 @@
                         <field name="start_date" string="Start Date"/>
                         <field name="end_date" string="End Date"/>
                         <field name="responsible_id" string="Responsible"/>
+                        <field name="general_state" string="General State"/>
                     </group>
                     <group expand="1" string="Group By...">
                         <filter string="Type procese" icon="terp-personal" domain="[]" context="{'group_by':'type_procese_id'}" />
@@ -24,6 +25,7 @@
                         <filter string="End Date" icon="terp-partner" context="{'group_by':'end_date'}"/>
                         <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
                         <filter string="Status" icon="terp-partner" context="{'group_by':'status_id'}"/>
+                        <filter string="General State" icon="terp-partner" context="{'group_by':'general_state'}"/>
                     </group>
                 </search>
             </field>
@@ -35,6 +37,11 @@
             <field name="model">legal.procese</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}"/>
+                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}"/>
+                    <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="caratula"/>
@@ -46,17 +53,16 @@
                                 <field name="folder_name"/>
                                 <field name="responsible_id"/>
                                 <field name="access_level"/>
+                                <field name="legal_office_id"/>
                             </group>
                             <group>
                                 <field name="status_id"/>
+                                <field name="substate_id"/>
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                             </group>
                         </group>
                         <notebook colspan="4">
-                            <page string="Other types of processes">
-                                <field name="other_types_of_processes_ids"/>
-                            </page>
                             <page string="Radicacion">
                                 <field name="radicacion_ids"/>
                             </page>
@@ -75,6 +81,12 @@
                             </page>
                             <page string="Regulations">
                                 <field name="regulation_ids"/>
+                            </page>
+                            <page string="Audiences">
+                                <field name="audiences_ids"/>
+                            </page>
+                            <page string="Other types of processes">
+                                <field name="other_types_of_processes_ids"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -140,6 +152,7 @@
                     <field name="status_id"/>
                     <field name="start_date"/>
                     <field name="end_date"/>
+                    <field name="general_state"/>
                 </tree>
             </field>
         </record>
