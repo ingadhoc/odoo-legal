@@ -31,7 +31,6 @@
         'data/demo/res_users.xml',
         'data/demo/res_company.xml',
         'data/demo/legal.office.csv',
-        'data/demo/legal.formed.csv',
         'data/demo/legal.status.csv',
         'data/demo/legal.procese_type.csv',
         'data/demo/legal.procese.csv',
