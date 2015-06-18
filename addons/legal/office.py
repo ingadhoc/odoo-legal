@@ -10,3 +10,5 @@ class legal_office(models.Model):
 
     name = fields.Char(string='Name')
     mail = fields.Char(string='Mail')
+    location = fields.Char(string='Location', required=True)
+    address = fields.Char(string='Address')

@@ -11,9 +11,9 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="date_of_the_claim"/>
+                        <field name="description"/>
                         <field name="total_claim"/>
-                        <field name="budget_for_coasts"/>
+                        <field name="category_claim"/>
                     </group>
                 </form>
             </field>
@@ -25,9 +25,9 @@
             <field name="model">legal.claims</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="date_of_the_claim"/>
-                    <field name="budget_for_coasts"/>
+                    <field name="description"/>
                     <field name="total_claim"/>
+                    <field name="category_claim"/>
                 </tree>
             </field>
         </record>

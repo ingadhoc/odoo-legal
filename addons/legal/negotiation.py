@@ -2,22 +2,19 @@
 from openerp import models, fields, api
 
 
-class legal_regulation(models.Model):
+class legal_negotiation(models.Model):
 
     """"""
 
-    _name = 'legal.regulation'
+    _name = 'legal.negotiation'
 
     part_contact_ids = fields.Many2many(
         'res.partner', compute='get_contact', string='Contacts')
-    date_regulation = fields.Date(string="Date of the regulation")
+    who_id = fields.Many2one('res.partner', string='Who')
+    payer_id = fields.Many2one('res.partner', string='Payer')
     beneficiary_id = fields.Many2one('res.partner', string='Beneficiary')
-    forced_id = fields.Many2one('res.partner', string='Forced')
-    concept = fields.Char(string='Concept')
-    date_order = fields.Date(string="Date of the order")
-    date_maturity = fields.Date(string="Date of the maturity")
-    date_fulfillment = fields.Date(string="Date of the fulfillment")
-    amount_regulation = fields.Float(string="Amount of regulation")
+    date_proposal = fields.Datetime(string='Date Proposal')
+    amount = fields.Float(string='Amount')
     observations = fields.Char(string='Observations')
     procese_id = fields.Many2one('legal.procese', string='Procese')
 

@@ -13,6 +13,8 @@
                     <group>
                         <field name="name"/>
                         <field name="mail"/>
+                        <field name="location"/>
+                        <field name="address"/>
                     </group>
                 </form>
             </field>

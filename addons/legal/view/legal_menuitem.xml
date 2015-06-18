@@ -106,6 +106,39 @@
             <field name="domain">[]</field>
         </record>
 
+        <record id="action_role" model="ir.actions.act_window">
+            <field name="name">Role</field>
+            <field name="res_model">legal.role</field>
+            <field name="src_model">legal.role</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_obligations" model="ir.actions.act_window">
+            <field name="name">Obligations</field>
+            <field name="res_model">legal.regulation</field>
+            <field name="src_model">legal.regulation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_events" model="ir.actions.act_window">
+            <field name="name">Events</field>
+            <field name="res_model">legal.events</field>
+            <field name="src_model">legal.events</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
         <menuitem
             name="Procese"
             id="menu_procese"
@@ -199,6 +232,29 @@
             id="menu_auxiliary_fields"
             sequence="25"
             action="action_auxiliary_fields"
+            parent="menu_conf"
+            />
+        <menuitem
+            name="Role"
+            id="menu_role"
+            sequence="30"
+            action="action_role"
+            parent="menu_conf"
+            />
+
+        <menuitem
+            name="Obligations"
+            id="menu_obligations"
+            sequence="35"
+            action="action_obligations"
+            parent="menu_conf"
+            />
+
+        <menuitem
+            name="Events"
+            id="menu_events"
+            sequence="40"
+            action="action_events"
             parent="menu_conf"
             />
 

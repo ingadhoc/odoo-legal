@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+
+        <!-- SEARCH VIEW -->
+        <record id="view_legal_negotiation_filter" model="ir.ui.view">
+            <field name="name">legal.negotiation.select</field>
+            <field name="model">legal.negotiation</field>
+            <field name="arch" type="xml">
+                <search string="Negotiation" version="7.0">
+                    <group string="By Attribute">
+                        <field name="who_id" string="Who"/>
+                        <field name="payer_id" string="Payer"/>
+                        <field name="beneficiary_id" string="Beneficiary"/>
+                        <field name="date_proposal" string="Date Proposal"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Who" icon="terp-personal" domain="[]" context="{'group_by':'who_id'}" />
+                        <filter string="Payer" icon="terp-partner" context="{'group_by':'payer_id'}"/>
+                        <filter string="Beneficiary" icon="terp-partner" context="{'group_by':'beneficiary_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="view_legal_negotiation_form" model="ir.ui.view">
+            <field name="name">legal.negotiation.form</field>
+            <field name="model">legal.negotiation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="part_contact_ids" invisible="1"/>
+                        <field name="procese_id" invisible="1"/>
+                        <field name="who_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="payer_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="date_proposal"/>
+                        <field name="amount"/>
+                        <field name="observations"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_negotiation_tree" model="ir.ui.view">
+            <field name="name">legal.negotiation.tree</field>
+            <field name="model">legal.negotiation</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="part_contact_ids" invisible="1"/>
+                    <field name="procese_id" invisible="1"/>
+                    <field name="who_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="payer_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="amount" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="observations"/>
+                    <field name="beneficiary_id"/>
+                    <field name="date_proposal"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

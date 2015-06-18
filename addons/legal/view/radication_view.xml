@@ -12,12 +12,11 @@
                 <form>
                     <group>
                         <field name="date" required="True"/>
-                        <field name="d_formed"/>
-                        <field name="legal_office_id"/>
+                        <field name="current_judged_id"/>
+                        <field name="address"/>
                     </group>
                     <group colspan="2">
                         <group>
-                            <field name="instance"/>
                             <field name="num_1_ins"/>
                             <field name="num_2_ins"/>
                         </group>
@@ -37,7 +36,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="date"/>
-                    <field name="legal_office_id"/>
+                    <field name="current_judged_id"/>
                 </tree>
             </field>
         </record>

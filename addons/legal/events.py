@@ -2,12 +2,13 @@
 from openerp import models, fields
 
 
-class legal_audiences(models.Model):
+class legal_events(models.Model):
 
     """"""
 
-    _name = 'legal.audiences'
+    _name = 'legal.events'
 
     description = fields.Char(string='Description')
-    date = fields.Date(string='Date')
+    date = fields.Datetime(string='Date')
+    event_type = fields.Char(string='Event type')
     procese_id = fields.Many2one('legal.procese', string='Procese')

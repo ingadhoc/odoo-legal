@@ -8,7 +8,18 @@ class legal_claim(models.Model):
 
     _name = 'legal.claims'
 
-    date_of_the_claim = fields.Date(string='Date of the claim')
     total_claim = fields.Float(string='Total Claim')
-    budget_for_coasts = fields.Float(string='Budget For Coasts')
+    description = fields.Char(string='Description')
+    type_claim = fields.Char(string='Type of Claim')
+    category_claim = fields.Char(string='Category of claim')
+    procese_id = fields.Many2one('legal.procese', string='Procese')
+
+
+class legal_claim_type(models.Model):
+
+    """"""
+
+    _name = 'legal.claims_type'
+
+    name = fields.Char('Name')
     procese_id = fields.Many2one('legal.procese', string='Procese')

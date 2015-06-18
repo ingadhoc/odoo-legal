@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        
+        <!-- SEARCH VIEW -->
+        <record id="view_legal_events_filter" model="ir.ui.view">
+            <field name="name">legal.events.select</field>
+            <field name="model">legal.events</field>
+            <field name="arch" type="xml">
+                <search string="Negotiation" version="7.0">
+                    <group string="By Attribute">
+                        <field name="description" string="Description"/>
+                        <field name="event_type" string="Event Type"/>
+                        <field name="date" string="Date"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Event Type" icon="terp-personal" domain="[]" context="{'group_by':'event_type'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record id="view_legal_events_form" model="ir.ui.view">
+            <field name="name">legal.events.form</field>
+            <field name="model">legal.events</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="description"/>
+                        <field name="event_type"/>
+                        <field name="date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_events_tree" model="ir.ui.view">
+            <field name="name">legal.events.tree</field>
+            <field name="model">legal.events</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="description"/>
+                    <field name="event_type"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
