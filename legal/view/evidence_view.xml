@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="view_legal_evidence_tree" model="ir.ui.view">
+            <field name="name">legal.evidence.tree</field>
+            <field name="model">legal.evidence</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="description"/>
+                    <field name="event_id"/>
+                    <field name="type_id"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        
+        <!-- FORM -->
+        <record id="view_legal_evidence_form" model="ir.ui.view">
+            <field name="name">legal.evidence.form</field>
+            <field name="model">legal.evidence</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="description"/>
+                        <field name="event_id"/>
+                        <field name="type_id"/>
+                        <field name="date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

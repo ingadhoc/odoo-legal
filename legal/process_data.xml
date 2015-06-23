@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for sale.order -->
+        <record id="sequence_type" model="ir.sequence.type">
+            <field name="name">Partner Sequence</field>
+            <field name="code">legal.process</field>
+        </record>
+
+        <record id="sequence" model="ir.sequence">
+            <field name="name">Process</field>
+            <field name="code">legal.process</field>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</openerp>

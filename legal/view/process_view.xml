@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+       <!-- SEARCH VIEW -->
+        <record id="view_legal_process_filter" model="ir.ui.view">
+            <field name="name">legal.process.select</field>
+            <field name="model">legal.process</field>
+            <field name="arch" type="xml">
+                <search string="Process" version="7.0">
+                    <group string="By Attribute">
+                        <field name="process_type_id" string="Type process"/>
+                        <field name="folder_name" string="Folder Name"/>
+                        <field name="status_id" string="Status"/>
+                        <field name="start_date" string="Start Date"/>
+                        <field name="end_date" string="End Date"/>
+                        <field name="responsible_id" string="Responsible"/>
+                        <field name="general_state" string="General State"/>
+                        <field name="current_judged_id" string="Current Judged"/>
+                        <field name="partner_id" string="Client"/>
+                        <field name="substate_id" string="Substate"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Type process" icon="terp-personal" domain="[]" context="{'group_by':'process_type_id'}" />
+                        <filter string="Folder" icon="terp-partner" context="{'group_by':'folder_name'}"/>
+                        <filter string="Substate" icon="terp-partner" context="{'group_by':'substate_id'}"/>
+                        <filter string="Client" icon="terp-partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Current Judged" icon="terp-partner" context="{'group_by':'current_judged_id'}"/>
+                        <filter string="Start Date" icon="terp-partner" context="{'group_by':'start_date'}"/>
+                        <filter string="End Date" icon="terp-partner" context="{'group_by':'end_date'}"/>
+                        <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
+                        <filter string="Status" icon="terp-partner" context="{'group_by':'status_id'}"/>
+                        <filter string="General State" icon="terp-partner" context="{'group_by':'general_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+ 
+        <!-- FORM -->
+        <record id="view_legal_process_form" model="ir.ui.view">
+            <field name="name">legal.process.form</field>
+            <field name="model">legal.process</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}"/>
+                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}"/>
+                    <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                    </header>
+                    <sheet>
+                    <div class="oe_title">
+                        <label for="folder_name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="folder_name"/>
+                            <button name="action_compute" string="⇒ Compute" type="object" class="oe_link"/>
+                        </h1>
+                    </div>
+                        <group>
+                            <field name="num_sinister"/>
+                            <field name="caratula"/>
+                            <field name="process_type_id" required="True"/>
+                            <field name="claim_type_ids" widget="many2many_tags"/>
+                            <field name="partner_id" required="True"/>
+                        </group>
+                        <group >
+                            <group>
+                                <field name="responsible_id"/>
+                                <field name="responsibility_id"/>
+                                <field name="status_id"/>
+                                <field name="substate_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                            <group>
+                                <field name="number_current_file"/>
+                                <field name="current_judged_id"/>
+                                <field name="last_complete_instance"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Parts">
+                                <field name="part_ids"/>
+                            </page>
+                            <page string="Radication">
+                                <field name="radication_ids"/>
+                            </page>
+                            <page string="Claims">
+                                <field name="claim_ids">
+                                    <tree editable="top">
+                                        <field name="description"/>
+                                        <field name="category_id"/>
+                                        <field name="total" sum="Total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Auxiliary Fields">
+                                <field name="auxiliary_ids"/>
+                            </page>
+                            <page string="Attachment">
+                                <group>
+                                    <field name="attachment_ids"
+                                    widget="many2many_binary"
+                                    />
+                                </group>
+                            </page>
+                            <page string="Events">
+                                <field name="event_ids"/>
+                            </page>
+                            <page string="Evidence">
+                                <field name="evidence_ids"/>
+                            </page>
+                            <page string="Negotiation">
+                                <field name="negotiation_ids" context="{'default_process_id': active_id}">
+                                     <tree editable="top">
+                                        <field name="part_contact_ids" invisible="1"/>
+                                        <field name="process_id" invisible="1"/>
+                                        <field name="customer_id" invisible="1"/>
+                                        <field name="who_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
+                                        <field name="payer_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
+                                        <field name="beneficiary_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
+                                        <field name="amount"/>
+                                        <field name="observations"/>
+                                        <field name="date_proposal"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Obligations">
+                                <field name="regulation_ids" context="{'default_process_id': active_id}">
+                                    <tree editable="top">
+                                        <field name="part_contact_ids" invisible="1"/>
+                                        <field name="process_id" invisible="1"/>
+                                        <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                                        <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                                        <field name="amount_regulation" sum="Total"/>
+                                        <field name="date_regulation"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notes">
+                                <field name="note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- KANBAN -->
+        <record model="ir.ui.view" id="view_legal_process_kanban">
+            <field name="name">legal.process.kanban</field>
+            <field name="model">legal.process</field>
+            <field name="secuence">10</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="color"/>
+                    <field name="caratula"/>
+                    <field name="process_type_id"/>
+                    <field name="folder_name"/>
+                    <field name="responsible_id"/>
+                    <field name="status_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                                 <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
+                                        <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                        </ul>
+                                    </div>
+                                <div class="oe_kanban_content" style="width: 120px; height: 80px; margin: 0 auto;">
+                                    <h4 class="text-center"><a type="open"><field name="caratula"/></a></h4>
+                                    <a type="open" style="margin-right: 10px">
+                                    <field name="folder_name"/></a> 
+                                    <a type="open" style="margin-right: 10px">
+                                        <field name="status_id"/></a>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33" class="oe_kanban_avatar pull-right"/>
+                                </div>
+                                <div class="oe_clear"/> 
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_process_tree" model="ir.ui.view">
+            <field name="name">legal.process.tree</field>
+            <field name="model">legal.process</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="caratula"/>
+                    <field name="process_type_id"/>
+                    <field name="status_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="general_state"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+         <!-- SEARCH VIEW -->
+        <record id="view_legal_regulation_filter" model="ir.ui.view">
+            <field name="name">legal.regulation.select</field>
+            <field name="model">legal.regulation</field>
+            <field name="arch" type="xml">
+                <search string="Regulation" version="7.0">
+                    <group string="By Attribute">
+                        <field name="date_regulation" string="Date Regulation"/>
+                        <field name="beneficiary_id" string="Beneficiary"/>
+                        <field name="forced_id" string="Beneficiary"/>
+                        <field name="date_order" string="Date Order"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Date Fulfillment" icon="terp-personal" domain="[]" context="{'group_by':'date_fulfillment'}" />
+                        <filter string="Date Order" icon="terp-partner" context="{'group_by':'date_order'}"/>
+                        <filter string="Beneficiary" icon="terp-partner" context="{'group_by':'beneficiary_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- FORM -->
+        <record id="view_legal_regulation_form" model="ir.ui.view">
+            <field name="name">legal.regulation.form</field>
+            <field name="model">legal.regulation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="part_contact_ids" invisible="1"/>
+                        <field name="process_id" invisible="1"/>
+                        <field name="date_regulation"/>
+                        <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="concept"/>
+                        <field name="date_order"/>
+                        <field name="date_maturity"/>
+                        <field name="date_fulfillment"/>
+                        <field name="amount_regulation"/>
+                        <field name="observations"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_regulation_tree" model="ir.ui.view">
+            <field name="name">legal.regulation.tree</field>
+            <field name="model">legal.regulation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="part_contact_ids" invisible="1"/>
+                    <field name="process_id" invisible="1"/>
+                    <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="amount_regulation"/>
+                    <field name="date_regulation"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

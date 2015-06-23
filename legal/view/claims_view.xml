@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        
+        <!-- FORM -->
+        <record id="view_legal_claim_form" model="ir.ui.view">
+            <field name="name">legal.claim.form</field>
+            <field name="model">legal.claim</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="description"/>
+                        <field name="category_id"/>
+                        <field name="total"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_claim_tree" model="ir.ui.view">
+            <field name="name">legal.claim.tree</field>
+            <field name="model">legal.claim</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="description"/>
+                    <field name="category_id"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

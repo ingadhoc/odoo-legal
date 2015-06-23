@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem
+            name="Legal"
+            id="menu_legal"
+            sequence="20"
+            />
+
+        <menuitem
+            name="Legal"
+            id="menu_legals"
+            parent="menu_legal"
+            sequence="20"
+            />
+
+        <record id="action_legal_process" model="ir.actions.act_window">
+            <field name="name">Process</field>
+            <field name="res_model">legal.process</field>
+            <field name="src_model">legal.process</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+
+        <record id="action_legal_lawyer" model="ir.actions.act_window">
+            <field name="name">Lawyer</field>
+            <field name="res_model">res.partner</field>
+            <field name="src_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="context">{'default_is_lawyer': True}</field>
+            <field name="domain">[('is_lawyer','=',True)]</field>
+        </record>
+
+        
+        <record id="action_model" model="ir.actions.act_window">
+            <field name="name">Models</field>
+            <field name="res_model">legal.model</field>
+            <field name="src_model">legal.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_substate" model="ir.actions.act_window">
+            <field name="name">Substate</field>
+            <field name="res_model">legal.substate</field>
+            <field name="src_model">legal.substate</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_type_process" model="ir.actions.act_window">
+            <field name="name">Type of Process</field>
+            <field name="res_model">legal.process_type</field>
+            <field name="src_model">legal.process_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_status" model="ir.actions.act_window">
+            <field name="name">Models</field>
+            <field name="res_model">legal.status</field>
+            <field name="src_model">legal.status</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_legal_office" model="ir.actions.act_window">
+            <field name="name">Judged</field>
+            <field name="res_model">legal.office</field>
+            <field name="src_model">legal.office</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_auxiliary_fields" model="ir.actions.act_window">
+            <field name="name">Auxiliary Fields</field>
+            <field name="res_model">legal.auxiliary.field</field>
+            <field name="src_model">legal.auxiliary.field</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_role" model="ir.actions.act_window">
+            <field name="name">Role</field>
+            <field name="res_model">legal.role</field>
+            <field name="src_model">legal.role</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_obligations" model="ir.actions.act_window">
+            <field name="name">Obligations</field>
+            <field name="res_model">legal.regulation</field>
+            <field name="src_model">legal.regulation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_events" model="ir.actions.act_window">
+            <field name="name">Events</field>
+            <field name="res_model">legal.event</field>
+            <field name="src_model">legal.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_claim_type" model="ir.actions.act_window">
+            <field name="name">Claim Types</field>
+            <field name="res_model">legal.claim.type</field>
+            <field name="src_model">legal.claim.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_event_type" model="ir.actions.act_window">
+            <field name="name">Event Types</field>
+            <field name="res_model">legal.event.type</field>
+            <field name="src_model">legal.event.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_negotiation" model="ir.actions.act_window">
+            <field name="name">Negotiation</field>
+            <field name="res_model">legal.negotiation</field>
+            <field name="src_model">legal.negotiation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_evidence" model="ir.actions.act_window">
+            <field name="name">Evidence</field>
+            <field name="res_model">legal.evidence</field>
+            <field name="src_model">legal.evidence</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+            name="Process"
+            id="menu_process"
+            sequence="10"
+            action="action_legal_process"
+            parent="menu_legals"
+            />
+
+
+        <menuitem
+            name="Lawyer"
+            id="menu_lawyer"
+            sequence="20"
+            action="action_legal_lawyer"
+            parent="menu_legals"
+            />
+
+
+        <menuitem
+            name="Diary"
+            id="menu_Diary"
+            sequence="30"
+            parent="menu_legal"
+            />
+        <menuitem
+            name="Calendar"
+            id="menu_calendar"
+            sequence="30"
+            action="calendar.action_calendar_event"
+            parent="menu_Diary"
+            />
+        <menuitem
+            name="Contact"
+            id="menu_contact"
+            sequence="40"
+            action="base.action_partner_form"
+            parent="menu_Diary"
+            />
+        <menuitem
+            name="Models"
+            id="menu_doc_models"
+            sequence="35"
+            parent="menu_legal"
+            />
+        <menuitem
+            name="Model"
+            id="menu_doc_model"
+            sequence="35"
+            action="action_model"
+            parent="menu_doc_models"
+            />
+        <menuitem
+            name="Data Cases"
+            id="menu_data_cases"
+            sequence="20"
+            parent="menu_legal"
+            groups="group_manager"
+            />
+        <menuitem
+            name="Configuration"
+            id="menu_conf"
+            sequence="40"
+            parent="menu_legal"
+            groups="group_manager"
+            />
+        <menuitem
+            name="Status"
+            id="menu_status"
+            sequence="5"
+            action="action_status"
+            parent="menu_conf"
+            />
+        <menuitem
+            name="Substate"
+            id="menu_substate"
+            sequence="10"
+            action="action_substate"
+            parent="menu_conf"
+            />
+        <menuitem
+            name="Type of process"
+            id="menu_type_process"
+            sequence="15"
+            action="action_type_process"
+            parent="menu_conf"
+            />
+        <menuitem
+            name="Judged"
+            id="menu_legal_office"
+            sequence="20"
+            action="action_legal_office"
+            parent="menu_conf"
+            />
+
+        <menuitem
+            name="Auxiliary Fields"
+            id="menu_auxiliary_fields"
+            sequence="25"
+            action="action_auxiliary_fields"
+            parent="menu_conf"
+            />
+        <menuitem
+            name="Role"
+            id="menu_role"
+            sequence="30"
+            action="action_role"
+            parent="menu_conf"
+            />
+
+        <menuitem
+            name="Obligations"
+            id="menu_obligations"
+            sequence="45"
+            action="action_obligations"
+            parent="menu_data_cases"
+            />
+
+        <menuitem
+            name="Events"
+            id="menu_events"
+            sequence="30"
+            action="action_events"
+            parent="menu_data_cases"
+            />
+        <menuitem
+            name="Negotiation"
+            id="menu_negotiation"
+            sequence="40"
+            action="action_negotiation"
+            parent="menu_data_cases"
+            />
+        <menuitem
+            name="Evidence"
+            id="menu_evidence"
+            sequence="35"
+            action="action_evidence"
+            parent="menu_data_cases"
+            />
+            
+        <menuitem
+            name="Claim Type"
+            id="menu_claim_type"
+            sequence="45"
+            action="action_claim_type"
+            parent="menu_conf"
+            />
+
+
+        <menuitem
+            name="Event Type"
+            id="menu_event_type"
+            sequence="50"
+            action="action_event_type"
+            parent="menu_conf"
+            />
+
+    </data>
+</openerp>
