@@ -31,10 +31,11 @@
                 <form>
                     <group>
                         <field name="part_contact_ids" invisible="1"/>
-                        <field name="process_id" invisible="1"/>
+                        <field name="prosecution_id" invisible="1"/>
+                        <field name="customer_id" invisible="1"/>
                         <field name="date_regulation"/>
-                        <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
-                        <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                        <field name="forced_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
+                        <field name="beneficiary_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
                         <field name="concept"/>
                         <field name="date_order"/>
                         <field name="date_maturity"/>
@@ -52,10 +53,8 @@
             <field name="model">legal.regulation</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="part_contact_ids" invisible="1"/>
-                    <field name="process_id" invisible="1"/>
-                    <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
-                    <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
+                    <field name="forced_id"/>
+                    <field name="beneficiary_id"/>
                     <field name="amount_regulation"/>
                     <field name="date_regulation"/>
                 </tree>

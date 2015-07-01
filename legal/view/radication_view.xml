@@ -11,7 +11,7 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="date" required="True"/>
+                        <field name="date_court" required="True"/>
                         <field name="judged_id"/>
                         <field name="address"/>
                     </group>
@@ -35,7 +35,7 @@
             <field name="model">legal.radication</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="date"/>
+                    <field name="date_court"/>
                     <field name="judged_id"/>
                 </tree>
             </field>

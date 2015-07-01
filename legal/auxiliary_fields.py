@@ -11,7 +11,7 @@ class legal_auxiliary(models.Model):
     field_id = fields.Many2one(
         'legal.auxiliary.field', string="Auxiliary")
     value = fields.Char(string="Value")
-    process_id = fields.Many2one('legal.process', string="Process")
+    prosecution_id = fields.Many2one('legal.prosecution', string="prosecution")
 
 
 class legal_auxiliary_field(models.Model):

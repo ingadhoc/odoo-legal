@@ -10,7 +10,9 @@
             <field name="model">legal.responsibility</field>
             <field name="arch" type="xml">
                 <form>
-                    <field name="name"/>
+                    <group>
+                        <field name="name"/>
+                    </group>
                 </form>
             </field>
         </record>

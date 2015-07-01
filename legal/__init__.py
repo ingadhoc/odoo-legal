@@ -5,7 +5,7 @@ import claims
 import substate
 import legal_models
 import office
-import process
+import prosecution
 import radication
 import status
 import regulation
@@ -16,3 +16,5 @@ import negotiation
 import evidence
 import res_partner
 import responsibility
+import wizard
+import report

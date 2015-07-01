@@ -2,15 +2,14 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- Sequences for sale.order -->
         <record id="sequence_type" model="ir.sequence.type">
-            <field name="name">Partner Sequence</field>
-            <field name="code">legal.process</field>
+            <field name="name">Sequence</field>
+            <field name="code">legal.prosecution</field>
         </record>
 
         <record id="sequence" model="ir.sequence">
-            <field name="name">Process</field>
-            <field name="code">legal.process</field>
+            <field name="name">prosecution</field>
+            <field name="code">legal.prosecution</field>
             <field name="padding">4</field>
         </record>
 

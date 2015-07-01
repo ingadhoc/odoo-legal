@@ -16,11 +16,12 @@ class legal_negotiation(models.Model):
     date_proposal = fields.Datetime(string='Date Proposal')
     amount = fields.Float(string='Amount')
     observations = fields.Char(string='Observations')
-    process_id = fields.Many2one('legal.process', string='process')
+    prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
     customer_id = fields.Many2one('res.partner', compute='get_contact')
 
     @api.one
-    @api.depends('process_id', 'process_id.part_ids')
+    @api.depends('prosecution_id', 'prosecution_id.part_ids')
     def get_contact(self):
-        self.part_contact_ids = self.process_id.part_ids.mapped('contact_id')
-        self.customer_id = self.process_id.partner_id.id
+        self.part_contact_ids = self.prosecution_id.part_ids.mapped(
+            'contact_id')
+        self.customer_id = self.prosecution_id.partner_id.id

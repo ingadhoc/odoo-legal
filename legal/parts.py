@@ -13,5 +13,8 @@ class legal_part(models.Model):
         'res.partner', string='Contact')
     role_id = fields.Many2one('legal.role', string='Role')
     lawyer_id = fields.Many2one(
-        'res.partner', string='Lawyer', domain="[('is_lawyer','=',True)]")
-    process_id = fields.Many2one('legal.process', string='process')
+        'res.partner',
+        string='Lawyer',
+        domain="[('is_lawyer','=',True)]",
+        context={'default_is_lawyer': True})
+    prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')

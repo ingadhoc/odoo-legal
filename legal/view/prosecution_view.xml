@@ -4,17 +4,17 @@
     <data>
 
        <!-- SEARCH VIEW -->
-        <record id="view_legal_process_filter" model="ir.ui.view">
-            <field name="name">legal.process.select</field>
-            <field name="model">legal.process</field>
+        <record id="view_legal_prosecution_filter" model="ir.ui.view">
+            <field name="name">legal.prosecution.select</field>
+            <field name="model">legal.prosecution</field>
             <field name="arch" type="xml">
-                <search string="Process" version="7.0">
+                <search string="prosecution" version="7.0">
                     <group string="By Attribute">
-                        <field name="process_type_id" string="Type process"/>
+                        <field name="prosecution_type_id" string="Type prosecution"/>
                         <field name="folder_name" string="Folder Name"/>
                         <field name="status_id" string="Status"/>
-                        <field name="start_date" string="Start Date"/>
-                        <field name="end_date" string="End Date"/>
+                        <field name="opening_date_folder" string="Start Date"/>
+                        <field name="close_date_folder" string="End Date"/>
                         <field name="responsible_id" string="Responsible"/>
                         <field name="general_state" string="General State"/>
                         <field name="current_judged_id" string="Current Judged"/>
@@ -22,13 +22,13 @@
                         <field name="substate_id" string="Substate"/>
                     </group>
                     <group expand="1" string="Group By...">
-                        <filter string="Type process" icon="terp-personal" domain="[]" context="{'group_by':'process_type_id'}" />
+                        <filter string="Type prosecution" icon="terp-personal" domain="[]" context="{'group_by':'prosecution_type_id'}" />
                         <filter string="Folder" icon="terp-partner" context="{'group_by':'folder_name'}"/>
                         <filter string="Substate" icon="terp-partner" context="{'group_by':'substate_id'}"/>
                         <filter string="Client" icon="terp-partner" context="{'group_by':'partner_id'}"/>
                         <filter string="Current Judged" icon="terp-partner" context="{'group_by':'current_judged_id'}"/>
-                        <filter string="Start Date" icon="terp-partner" context="{'group_by':'start_date'}"/>
-                        <filter string="End Date" icon="terp-partner" context="{'group_by':'end_date'}"/>
+                        <filter string="Openinig Date Folder" icon="terp-partner" context="{'group_by':'opening_date_folder'}"/>
+                        <filter string="Close Date Folder" icon="terp-partner" context="{'group_by':'close_date_folder'}"/>
                         <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
                         <filter string="Status" icon="terp-partner" context="{'group_by':'status_id'}"/>
                         <filter string="General State" icon="terp-partner" context="{'group_by':'general_state'}"/>
@@ -38,14 +38,14 @@
         </record>
  
         <!-- FORM -->
-        <record id="view_legal_process_form" model="ir.ui.view">
-            <field name="name">legal.process.form</field>
-            <field name="model">legal.process</field>
+        <record id="view_legal_prosecution_form" model="ir.ui.view">
+            <field name="name">legal.prosecution.form</field>
+            <field name="model">legal.prosecution</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
-                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}"/>
-                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}"/>
+                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
+                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to close the case?"/>
                     <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
                     </header>
                     <sheet>
@@ -57,9 +57,8 @@
                         </h1>
                     </div>
                         <group>
-                            <field name="num_sinister"/>
                             <field name="caratula"/>
-                            <field name="process_type_id" required="True"/>
+                            <field name="prosecution_type_id" required="True"/>
                             <field name="claim_type_ids" widget="many2many_tags"/>
                             <field name="partner_id" required="True"/>
                         </group>
@@ -67,10 +66,13 @@
                             <group>
                                 <field name="responsible_id"/>
                                 <field name="responsibility_id"/>
+                                <field name="num_sinister"/>
                                 <field name="status_id"/>
                                 <field name="substate_id"/>
-                                <field name="start_date"/>
-                                <field name="end_date"/>
+                                <field name="demand_start_date"/>
+                                <field name="opening_date_folder"/>
+                                <field name="close_date_folder"/>
+                                <field name="re_opening_date_folder"/>
                             </group>
                             <group>
                                 <field name="number_current_file"/>
@@ -88,7 +90,6 @@
                             <page string="Claims">
                                 <field name="claim_ids">
                                     <tree editable="top">
-                                        <field name="description"/>
                                         <field name="category_id"/>
                                         <field name="total" sum="Total"/>
                                     </tree>
@@ -108,13 +109,20 @@
                                 <field name="event_ids"/>
                             </page>
                             <page string="Evidence">
-                                <field name="evidence_ids"/>
+                                <field name="evidence_ids">
+                                    <tree editable="top">
+                                        <field name="description"/>
+                                        <field name="event_id"/>
+                                        <field name="type_id"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Negotiation">
-                                <field name="negotiation_ids" context="{'default_process_id': active_id}">
+                                <field name="negotiation_ids" context="{'default_prosecution_id': active_id}">
                                      <tree editable="top">
                                         <field name="part_contact_ids" invisible="1"/>
-                                        <field name="process_id" invisible="1"/>
+                                        <field name="prosecution_id" invisible="1"/>
                                         <field name="customer_id" invisible="1"/>
                                         <field name="who_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
                                         <field name="payer_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
@@ -126,16 +134,7 @@
                                 </field>
                             </page>
                             <page string="Obligations">
-                                <field name="regulation_ids" context="{'default_process_id': active_id}">
-                                    <tree editable="top">
-                                        <field name="part_contact_ids" invisible="1"/>
-                                        <field name="process_id" invisible="1"/>
-                                        <field name="forced_id" domain="[('id','in', part_contact_ids[0][2])]"/>
-                                        <field name="beneficiary_id" domain="[('id','in', part_contact_ids[0][2])]"/>
-                                        <field name="amount_regulation" sum="Total"/>
-                                        <field name="date_regulation"/>
-                                    </tree>
-                                </field>
+                                <field name="regulation_ids" context="{'default_prosecution_id': active_id}"/>
                             </page>
                             <page string="Notes">
                                 <field name="note"/>
@@ -151,15 +150,15 @@
         </record>
 
         <!-- KANBAN -->
-        <record model="ir.ui.view" id="view_legal_process_kanban">
-            <field name="name">legal.process.kanban</field>
-            <field name="model">legal.process</field>
+        <record model="ir.ui.view" id="view_legal_prosecution_kanban">
+            <field name="name">legal.prosecution.kanban</field>
+            <field name="model">legal.prosecution</field>
             <field name="secuence">10</field>
             <field name="arch" type="xml">
                 <kanban class="oe_background_grey">
                     <field name="color"/>
                     <field name="caratula"/>
-                    <field name="process_type_id"/>
+                    <field name="prosecution_type_id"/>
                     <field name="folder_name"/>
                     <field name="responsible_id"/>
                     <field name="status_id"/>
@@ -193,16 +192,16 @@
         </record>
 
         <!-- TREE -->
-        <record id="view_legal_process_tree" model="ir.ui.view">
-            <field name="name">legal.process.tree</field>
-            <field name="model">legal.process</field>
+        <record id="view_legal_prosecution_tree" model="ir.ui.view">
+            <field name="name">legal.prosecution.tree</field>
+            <field name="model">legal.prosecution</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="caratula"/>
-                    <field name="process_type_id"/>
+                    <field name="prosecution_type_id"/>
                     <field name="status_id"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
+                    <field name="opening_date_folder"/>
+                    <field name="close_date_folder"/>
                     <field name="general_state"/>
                 </tree>
             </field>

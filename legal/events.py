@@ -12,7 +12,7 @@ class legal_event(models.Model):
     description = fields.Char(string='Description')
     date = fields.Datetime(string='Date')
     type_id = fields.Many2one('legal.event.type', string='Type')
-    process_id = fields.Many2one('legal.process', string='process')
+    prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
 
 
 class legal_event_type(models.Model):

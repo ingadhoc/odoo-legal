@@ -7,7 +7,7 @@ class legal_radication(models.Model):
     """"""
 
     _name = 'legal.radication'
-    _order = 'date desc'
+    _order = 'date_court desc'
 
     address = fields.Char(string='Address', compute='_get_address')
     judged_id = fields.Many2one('legal.office', string='Judged')
@@ -15,8 +15,8 @@ class legal_radication(models.Model):
     num_2_ins = fields.Char(string='Num. 2°Ins')
     num_3_ins = fields.Char(string='Num. 3°Ins')
     num_filed = fields.Char(string='Num. Filed')
-    date = fields.Date(string='Date')
-    process_id = fields.Many2one('legal.process', string='process')
+    date_court = fields.Date(string='Date of admission to court')
+    prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
 
     @api.one
     @api.depends(

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_stock_cases" model="ir.ui.view">
+            <field name="name">Stock Cases</field>
+            <field name="model">legal.stock_cases</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Stock Cases Report" version="7.0">
+                    <group>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
+                    </group>
+                    <group>
+                        <field name="detail"/>
+                        <field name="responsible_id"/>
+                        <field name="prosecution_type_id"/>
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Print" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" special="cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_stock_cases" model="ir.actions.act_window">
+            <field name="name">Stock Cases</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">legal.stock_cases</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+                name="Stock Cases Report"
+                id="menu_stock_cases_report"
+                action="action_stock_cases"
+                parent="menu_legals"
+                sequence="35"/>
+    </data>
+</openerp>

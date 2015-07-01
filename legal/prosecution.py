@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields, api
+from openerp import models, fields, api, _
+from datetime import date
 
 
-class process(models.Model):
+class prosecution(models.Model):
 
     """"""
 
-    _name = 'legal.process'
-    _description = 'process'
+    _name = 'legal.prosecution'
+    _description = 'prosecution'
     _inherit = ['mail.thread']
     _rec_name = 'folder_name'
 
@@ -17,24 +18,26 @@ class process(models.Model):
         name = ''
         if self.partner_id:
             name = self.partner_id.name[0]
-        if self.process_type_id:
-            name += '-' + str(self.process_type_id.code)
-        name += '-' + self.env['ir.sequence'].get('legal.process')
+        if self.prosecution_type_id:
+            name += '-' + str(self.prosecution_type_id.code)
+        name += '-' + self.env['ir.sequence'].get('legal.prosecution')
         self.folder_name = name
 
     def create(self, cr, uid, vals, context=None):
         name = ''
         partner_obj = self.pool['res.partner']
-        process_type_obj = self.pool['legal.process_type']
+        prosecution_type_obj = self.pool['legal.prosecution_type']
         if vals.get('partner_id', False):
             name = partner_obj.browse(
                 cr, uid, vals.get('partner_id', False), context=context).name[0]
-        if vals.get('process_type_id', False):
-            name += '-' + str(process_type_obj.browse(cr, uid,
-                                                      vals.get('process_type_id', False), context=context).code)
-        name += '-' + self.pool['ir.sequence'].get(cr, uid, 'legal.process')
+        if vals.get('prosecution_type_id', False):
+            name += '-' + str(prosecution_type_obj.browse(cr, uid,
+                                                          vals.get('prosecution_type_id', False), context=context).code)
+        name += '-' + \
+            self.pool['ir.sequence'].get(cr, uid, 'legal.prosecution')
         vals['folder_name'] = name
-        return super(process, self).create(cr, uid, vals, context=None)
+        vals['opening_date_folder'] = date.today()
+        return super(prosecution, self).create(cr, uid, vals, context=None)
 
     @api.one
     @api.depends('radication_ids')
@@ -61,49 +64,63 @@ class process(models.Model):
             self.current_judged_id = []
             self.number_current_file = ''
 
+    @api.multi
+    def get_obligation(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'legal.regulation',
+            'view_mode': 'form',
+            'res_id': self.regulation_ids.id,
+            'target': 'new'
+        }
+
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
-    process_type_id = fields.Many2one(
-        'legal.process_type',
-        string='Type of process')
+    prosecution_type_id = fields.Many2one(
+        'legal.prosecution_type',
+        string='Type of prosecution')
     folder_name = fields.Char(
         string='Folder Name', readonly=True)
     responsible_id = fields.Many2one(
         'res.partner',
-        string='Responsible Lawyer', domain="[('is_lawyer','=',True)]")
+        string='Responsible Lawyer', domain="[('is_lawyer','=',True)]",
+        context={'default_is_lawyer': True})
     responsibility_id = fields.Many2one(
         'legal.responsibility', string='Responsibility')
     general_state = fields.Selection(
         [('open', 'Open'),
          ('closed', 'Closed')],
-        'General State', default='open')
+        'General State', default='open', track_visibility='onchange')
     status_id = fields.Many2one('legal.status', string='Status')
-    start_date = fields.Date(string="Start Date")
-    end_date = fields.Date(string="End Date")
+    opening_date_folder = fields.Date(string="Opening date Folder")
+    re_opening_date_folder = fields.Date(string="Re-Opening date Folder")
+    close_date_folder = fields.Date(string="Close date folder")
+    demand_start_date = fields.Date(string="Demand start date")
     radication_ids = fields.One2many(
-        'legal.radication', 'process_id', string='Radication')
-    claim_ids = fields.One2many('legal.claim', 'process_id', string='Claims')
+        'legal.radication', 'prosecution_id', string='Radication')
+    claim_ids = fields.One2many(
+        'legal.claim', 'prosecution_id', string='Claims')
     claim_type_ids = fields.Many2many(
         'legal.claim.type',
-        'legal_type_claim_ids_process_id_rel',
-        'process_id',
+        'legal_type_claim_ids_prosecution_id_rel',
+        'prosecution_id',
         'name', string='Type of Claims')
     auxiliary_ids = fields.One2many(
-        'legal.auxiliary', 'process_id', string='Auxiliary Fields')
+        'legal.auxiliary', 'prosecution_id', string='Auxiliary Fields')
     attachment_ids = fields.Many2many(
         'ir.attachment',
-        'legal_attachment_ids_process_ids_rel',
-        'process_id',
+        'legal_attachment_ids_prosecution_ids_rel',
+        'prosecution_id',
         'attachment_id', string='Attachments')
     regulation_ids = fields.One2many(
-        'legal.regulation', 'process_id', string='Regulation')
+        'legal.regulation', 'prosecution_id', string='Regulation')
     substate_id = fields.Many2one('legal.substate', string="Substate")
     current_judged_id = fields.Many2one(
         'legal.office',
         string='Current Judged', compute='_get_data', store=True)
     event_ids = fields.One2many(
-        'legal.event', 'process_id', string="Events")
+        'legal.event', 'prosecution_id', string="Events")
     partner_id = fields.Many2one(
         'res.partner', 'Customer', domain="[('customer','=',True)]")
     num_sinister = fields.Char(string="Number of sinister")
@@ -113,28 +130,31 @@ class process(models.Model):
     last_complete_instance = fields.Char(
         'Last complete Instance',
         compute='_get_data', store=True)
-    part_ids = fields.One2many('legal.part', 'process_id', string='Parts')
+    part_ids = fields.One2many('legal.part', 'prosecution_id', string='Parts')
     note = fields.Text('Notes')
     negotiation_ids = fields.One2many(
-        'legal.negotiation', 'process_id', string="Negotiation")
+        'legal.negotiation', 'prosecution_id', string="Negotiation")
     evidence_ids = fields.One2many(
-        'legal.evidence', 'process_id', string="Evidence")
+        'legal.evidence', 'prosecution_id', string="Evidence")
 
     @api.one
     def set_open(self):
         self.general_state = 'open'
+        self.re_opening_date_folder = date.today()
 
     @api.one
     def set_close(self):
         self.general_state = 'closed'
+        self.close_date_folder = date.today()
+        self.re_opening_date_folder = False
 
 
-class legal_type_process(models.Model):
+class legal_type_prosecution(models.Model):
 
     """"""
 
-    _name = 'legal.process_type'
-    _description = 'type process'
+    _name = 'legal.prosecution_type'
+    _description = 'type prosecution'
 
     name = fields.Char('Name')
     code = fields.Integer('Code')

@@ -15,10 +15,10 @@
             sequence="20"
             />
 
-        <record id="action_legal_process" model="ir.actions.act_window">
-            <field name="name">Process</field>
-            <field name="res_model">legal.process</field>
-            <field name="src_model">legal.process</field>
+        <record id="action_legal_prosecution" model="ir.actions.act_window">
+            <field name="name">prosecution</field>
+            <field name="res_model">legal.prosecution</field>
+            <field name="src_model">legal.prosecution</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="view_id" ref=""/>
@@ -28,7 +28,7 @@
 
 
         <record id="action_legal_lawyer" model="ir.actions.act_window">
-            <field name="name">Lawyer</field>
+            <field name="name">Lawyers</field>
             <field name="res_model">res.partner</field>
             <field name="src_model">res.partner</field>
             <field name="view_type">form</field>
@@ -52,7 +52,7 @@
         </record>
 
         <record id="action_substate" model="ir.actions.act_window">
-            <field name="name">Substate</field>
+            <field name="name">Substates</field>
             <field name="res_model">legal.substate</field>
             <field name="src_model">legal.substate</field>
             <field name="view_type">form</field>
@@ -62,10 +62,10 @@
             <field name="domain">[]</field>
         </record>
 
-        <record id="action_type_process" model="ir.actions.act_window">
-            <field name="name">Type of Process</field>
-            <field name="res_model">legal.process_type</field>
-            <field name="src_model">legal.process_type</field>
+        <record id="action_type_prosecution" model="ir.actions.act_window">
+            <field name="name">Types of prosecution</field>
+            <field name="res_model">legal.prosecution_type</field>
+            <field name="src_model">legal.prosecution_type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref=""/>
@@ -85,7 +85,7 @@
         </record>
 
         <record id="action_legal_office" model="ir.actions.act_window">
-            <field name="name">Judged</field>
+            <field name="name">Judgeds</field>
             <field name="res_model">legal.office</field>
             <field name="src_model">legal.office</field>
             <field name="view_type">form</field>
@@ -107,7 +107,7 @@
         </record>
 
         <record id="action_role" model="ir.actions.act_window">
-            <field name="name">Role</field>
+            <field name="name">Roles</field>
             <field name="res_model">legal.role</field>
             <field name="src_model">legal.role</field>
             <field name="view_type">form</field>
@@ -183,11 +183,33 @@
             <field name="domain">[]</field>
         </record>
 
+        <record id="action_responsibility" model="ir.actions.act_window">
+            <field name="name">Responsibilities</field>
+            <field name="res_model">legal.responsibility</field>
+            <field name="src_model">legal.responsibility</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="action_claim_category" model="ir.actions.act_window">
+            <field name="name">Claim Category</field>
+            <field name="res_model">legal.claim.category</field>
+            <field name="src_model">legal.claim.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
         <menuitem
-            name="Process"
-            id="menu_process"
+            name="prosecution"
+            id="menu_prosecution"
             sequence="10"
-            action="action_legal_process"
+            action="action_legal_prosecution"
             parent="menu_legals"
             />
 
@@ -235,7 +257,7 @@
             parent="menu_doc_models"
             />
         <menuitem
-            name="Data Cases"
+            name="Data cases"
             id="menu_data_cases"
             sequence="20"
             parent="menu_legal"
@@ -263,17 +285,25 @@
             parent="menu_conf"
             />
         <menuitem
-            name="Type of process"
-            id="menu_type_process"
+            name="Type of prosecution"
+            id="menu_type_prosecution"
             sequence="15"
-            action="action_type_process"
+            action="action_type_prosecution"
             parent="menu_conf"
             />
         <menuitem
-            name="Judged"
+            name="Judgeds"
             id="menu_legal_office"
             sequence="20"
             action="action_legal_office"
+            parent="menu_conf"
+            />
+
+        <menuitem
+            name="Responsibilities"
+            id="menu_responsibility"
+            sequence="20"
+            action="action_responsibility"
             parent="menu_conf"
             />
 
@@ -285,7 +315,7 @@
             parent="menu_conf"
             />
         <menuitem
-            name="Role"
+            name="Roles"
             id="menu_role"
             sequence="30"
             action="action_role"
@@ -315,7 +345,7 @@
             parent="menu_data_cases"
             />
         <menuitem
-            name="Evidence"
+            name="Evidences"
             id="menu_evidence"
             sequence="35"
             action="action_evidence"
@@ -323,16 +353,23 @@
             />
             
         <menuitem
-            name="Claim Type"
+            name="Claim Types"
             id="menu_claim_type"
             sequence="45"
             action="action_claim_type"
             parent="menu_conf"
             />
+        <menuitem
+            name="Claim Categorys"
+            id="menu_claim_category"
+            sequence="50"
+            action="action_claim_category"
+            parent="menu_conf"
+            />
 
 
         <menuitem
-            name="Event Type"
+            name="Event Types"
             id="menu_event_type"
             sequence="50"
             action="action_event_type"
