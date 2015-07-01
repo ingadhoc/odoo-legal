@@ -64,16 +64,6 @@ class prosecution(models.Model):
             self.current_judged_id = []
             self.number_current_file = ''
 
-    @api.multi
-    def get_obligation(self):
-        return {
-            'type': 'ir.actions.act_window',
-            'res_model': 'legal.regulation',
-            'view_mode': 'form',
-            'res_id': self.regulation_ids.id,
-            'target': 'new'
-        }
-
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
