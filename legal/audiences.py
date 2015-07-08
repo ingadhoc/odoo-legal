@@ -2,19 +2,19 @@
 from openerp import models, fields, api
 
 
-class legal_evidence(models.Model):
+class legal_audiences(models.Model):
 
     """"""
 
-    _name = 'legal.evidence'
+    _name = 'legal.audiences'
 
+    type_id = fields.Many2one('legal.audiences.type', string='Type')
     observations = fields.Char(string='Observations')
-    offerer_id = fields.Many2one('legal.offerer', string='Offerer')
+    date = fields.Datetime(string='Date')
     state = fields.Selection(
         [('pending', 'Pending'),
          ('produced', 'Produced')], string='State', default='pending')
-    type_id = fields.Many2one('legal.evidence.type', string='Type')
-    prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
+    prosecution_id = fields.Many2one('legal.prosecution', string='Prosecution')
 
     @api.one
     def action_done(self):
@@ -24,10 +24,10 @@ class legal_evidence(models.Model):
             self.state = 'pending'
 
 
-class legal_evidence_type(models.Model):
+class legal_audiences_type(models.Model):
 
     """"""
 
-    _name = 'legal.evidence.type'
+    _name = 'legal.audiences.type'
 
-    name = fields.Char(String="Name")
+    name = fields.Char(string='Name')

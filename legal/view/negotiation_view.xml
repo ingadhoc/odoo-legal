@@ -11,15 +11,10 @@
             <field name="arch" type="xml">
                 <search string="Negotiation" version="7.0">
                     <group string="By Attribute">
-                        <field name="who_id" string="Who"/>
-                        <field name="payer_id" string="Payer"/>
-                        <field name="beneficiary_id" string="Beneficiary"/>
                         <field name="date_proposal" string="Date Proposal"/>
                     </group>
                     <group expand="1" string="Group By...">
-                        <filter string="Who" icon="terp-personal" domain="[]" context="{'group_by':'who_id'}" />
-                        <filter string="Payer" icon="terp-partner" context="{'group_by':'payer_id'}"/>
-                        <filter string="Beneficiary" icon="terp-partner" context="{'group_by':'beneficiary_id'}"/>
+                        <filter string="Concept" icon="terp-personal" domain="[]" context="{'group_by':'concept_id'}" />
                     </group>
                 </search>
             </field>
@@ -32,9 +27,7 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="who_id"/>
-                        <field name="payer_id" />
-                        <field name="beneficiary_id"/>
+                        <field name="concept_id"/>
                         <field name="date_proposal"/>
                         <field name="amount"/>
                         <field name="observations"/>
@@ -49,9 +42,8 @@
             <field name="model">legal.negotiation</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="who_id"/>
-                    <field name="payer_id" />
-                    <field name="beneficiary_id"/>
+
+                    <field name="concept_id"/>
                     <field name="amount"/>
                     <field name="observations"/>
                     <field name="date_proposal"/>

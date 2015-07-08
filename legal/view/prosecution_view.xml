@@ -56,6 +56,13 @@
                             <button name="action_compute" string="⇒ Compute" type="object" class="oe_link"/>
                         </h1>
                     </div>
+                    <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                                    name="%(legal.action_calendar_audiences)d"
+                                    context="{'search_default_prosecution_id': active_id}">
+                                    <field name="audiences_count" string="Audiences" widget="statinfo"/>
+                                </button>
+                    </div>
                         <group>
                             <field name="caratula"/>
                             <field name="prosecution_type_id" required="True"/>
@@ -81,6 +88,9 @@
                             </group>
                         </group>
                         <notebook colspan="4">
+                            <page string="Description of claim">
+                                <field name="description_of_claim"/>
+                            </page>
                             <page string="Parts">
                                 <field name="part_ids"/>
                             </page>
@@ -105,28 +115,31 @@
                                     />
                                 </group>
                             </page>
-                            <page string="Events">
-                                <field name="event_ids"/>
+                            <page string="News">
+                                <field name="news_ids"/>
                             </page>
                             <page string="Evidence">
                                 <field name="evidence_ids">
                                     <tree editable="top">
-                                        <field name="description"/>
-                                        <field name="event_id"/>
                                         <field name="type_id"/>
-                                        <field name="date"/>
+                                        <field name="offerer_id"/>
+                                        <field name="observations"/>
+                                        <field name="state" readonly="True"/>
+                                        <button name="action_done" states="produced" string="Process" type="object" icon="gtk-go-back" help="Done" attrs="{'invisible':[('state','!=','produced')]}"/>
+                                        <button name="action_done" states="pending" string="Process" type="object" icon="gtk-go-forward" help="Done" attrs="{'invisible':[('state','!=','pending')]}"/>
                                     </tree>
                                 </field>
                             </page>
+                            <page string="Expertise">
+                                <field name="expertise_ids"/>
+                            </page>
+                            <page string="Audiences">
+                                <field name="audiences_ids"/>
+                            </page>
                             <page string="Negotiation">
-                                <field name="negotiation_ids" context="{'default_prosecution_id': active_id}">
+                                <field name="negotiation_ids">
                                      <tree editable="top">
-                                        <field name="part_contact_ids" invisible="1"/>
-                                        <field name="prosecution_id" invisible="1"/>
-                                        <field name="customer_id" invisible="1"/>
-                                        <field name="who_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
-                                        <field name="payer_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
-                                        <field name="beneficiary_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
+                                        <field name="concept_id"/>
                                         <field name="amount"/>
                                         <field name="observations"/>
                                         <field name="date_proposal"/>
@@ -134,7 +147,7 @@
                                 </field>
                             </page>
                             <page string="Obligations">
-                                <field name="regulation_ids" context="{'default_prosecution_id': active_id}"/>
+                                <field name="regulation_ids"/>
                             </page>
                             <page string="Notes">
                                 <field name="note"/>

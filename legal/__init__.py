@@ -9,7 +9,7 @@ import prosecution
 import radication
 import status
 import regulation
-import events
+import news
 import parts
 import role
 import negotiation
@@ -18,3 +18,6 @@ import res_partner
 import responsibility
 import wizard
 import report
+import offerer
+import expertise
+import audiences

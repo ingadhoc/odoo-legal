@@ -10,9 +10,7 @@
             <field name="arch" type="xml">
                 <search string="Regulation" version="7.0">
                     <group string="By Attribute">
-                        <field name="date_regulation" string="Date Regulation"/>
-                        <field name="beneficiary_id" string="Beneficiary"/>
-                        <field name="forced_id" string="Beneficiary"/>
+                        <field name="beneficiary" string="Beneficiary"/>
                         <field name="date_order" string="Date Order"/>
                     </group>
                     <group expand="1" string="Group By...">
@@ -30,17 +28,12 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="part_contact_ids" invisible="1"/>
-                        <field name="prosecution_id" invisible="1"/>
-                        <field name="customer_id" invisible="1"/>
-                        <field name="date_regulation"/>
-                        <field name="forced_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
-                        <field name="beneficiary_id" domain="['|',('id','in', part_contact_ids[0][2]), ('id','=', customer_id)]"/>
-                        <field name="concept"/>
+                        <field name="concept_id"/>
                         <field name="date_order"/>
                         <field name="date_maturity"/>
                         <field name="date_fulfillment"/>
-                        <field name="amount_regulation"/>
+                        <field name="beneficiary"/>
+                        <field name="amount"/>
                         <field name="observations"/>
                     </group>
                 </form>
@@ -53,10 +46,11 @@
             <field name="model">legal.regulation</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="forced_id"/>
-                    <field name="beneficiary_id"/>
-                    <field name="amount_regulation"/>
-                    <field name="date_regulation"/>
+                    <field name="concept_id"/>
+                    <field name="date_order"/>
+                    <field name="date_maturity"/>
+                    <field name="beneficiary"/>
+                    <field name="amount"/>
                 </tree>
             </field>
         </record>

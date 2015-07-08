@@ -64,6 +64,14 @@ class prosecution(models.Model):
             self.current_judged_id = []
             self.number_current_file = ''
 
+    @api.one
+    def _audiences_count(self):
+        """
+        Counts the number of audiences the prosecution has, used for smart button
+        """
+        self.audiences_count = len(self.sudo().audiences_ids)
+
+    audiences_count = fields.Integer(compute='_audiences_count')
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
@@ -109,8 +117,8 @@ class prosecution(models.Model):
     current_judged_id = fields.Many2one(
         'legal.office',
         string='Current Judged', compute='_get_data', store=True)
-    event_ids = fields.One2many(
-        'legal.event', 'prosecution_id', string="Events")
+    news_ids = fields.One2many(
+        'legal.news', 'prosecution_id', string="News")
     partner_id = fields.Many2one(
         'res.partner', 'Customer', domain="[('customer','=',True)]")
     num_sinister = fields.Char(string="Number of sinister")
@@ -126,6 +134,11 @@ class prosecution(models.Model):
         'legal.negotiation', 'prosecution_id', string="Negotiation")
     evidence_ids = fields.One2many(
         'legal.evidence', 'prosecution_id', string="Evidence")
+    audiences_ids = fields.One2many(
+        'legal.audiences', 'prosecution_id', string="Audiences")
+    expertise_ids = fields.One2many(
+        'legal.expertise', 'prosecution_id', string="Expertise")
+    description_of_claim = fields.Text(string='Description of claim')
 
     @api.one
     def set_open(self):

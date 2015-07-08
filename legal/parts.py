@@ -9,8 +9,7 @@ class legal_part(models.Model):
     _name = 'legal.part'
 
     age = fields.Integer(string='Age')
-    contact_id = fields.Many2one(
-        'res.partner', string='Contact')
+    contact = fields.Char(string='Contact')
     role_id = fields.Many2one('legal.role', string='Role')
     lawyer_id = fields.Many2one(
         'res.partner',

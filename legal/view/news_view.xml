@@ -5,11 +5,11 @@
 
         
         <!-- SEARCH VIEW -->
-        <record id="view_legal_event_filter" model="ir.ui.view">
-            <field name="name">legal.event.select</field>
-            <field name="model">legal.event</field>
+        <record id="view_legal_news_filter" model="ir.ui.view">
+            <field name="name">legal.news.select</field>
+            <field name="model">legal.news</field>
             <field name="arch" type="xml">
-                <search string="Event" version="7.0">
+                <search string="News" version="7.0">
                     <group string="By Attribute">
                         <field name="description" string="Description"/>
                         <field name="type_id" string="Type"/>
@@ -23,14 +23,14 @@
         </record>
 
         <!-- FORM -->
-        <record id="view_legal_event_form" model="ir.ui.view">
-            <field name="name">legal.event.form</field>
-            <field name="model">legal.event</field>
+        <record id="view_legal_news_form" model="ir.ui.view">
+            <field name="name">legal.news.form</field>
+            <field name="model">legal.news</field>
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="description"/>
                         <field name="type_id"/>
+                        <field name="description"/>
                         <field name="date"/>
                     </group>
                 </form>
@@ -38,13 +38,13 @@
         </record>
 
         <!-- TREE -->
-        <record id="view_legal_event_tree" model="ir.ui.view">
-            <field name="name">legal.event.tree</field>
-            <field name="model">legal.event</field>
+        <record id="view_legal_news_tree" model="ir.ui.view">
+            <field name="name">legal.news.tree</field>
+            <field name="model">legal.news</field>
             <field name="arch" type="xml">
                 <tree editable="top">
-                    <field name="description"/>
                     <field name="type_id"/>
+                    <field name="description"/>
                     <field name="date"/>
                 </tree>
             </field>

@@ -11,7 +11,7 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="contact_id"/>
+                        <field name="contact"/>
                         <field name="role_id"/>
                         <field name="age"/>
                         <field name="lawyer_id"/>
@@ -26,7 +26,7 @@
             <field name="model">legal.part</field>
             <field name="arch" type="xml">
                 <tree editable="top">
-                    <field name="contact_id"/>
+                    <field name="contact"/>
                     <field name="role_id"/>
                     <field name="age"/>
                     <field name="lawyer_id"/>

@@ -8,10 +8,10 @@
             <field name="model">legal.evidence</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="description"/>
-                    <field name="event_id"/>
                     <field name="type_id"/>
-                    <field name="date"/>
+                    <field name="offerer_id"/>
+                    <field name="observations"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -24,10 +24,10 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="description"/>
-                        <field name="event_id"/>
                         <field name="type_id"/>
-                        <field name="date"/>
+                        <field name="offerer_id"/>
+                        <field name="observations"/>
+                        <field name="state"/>
                     </group>
                 </form>
             </field>

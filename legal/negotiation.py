@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api
+from openerp import models, fields
+from datetime import date
 
 
 class legal_negotiation(models.Model):
@@ -8,20 +9,18 @@ class legal_negotiation(models.Model):
 
     _name = 'legal.negotiation'
 
-    part_contact_ids = fields.Many2many(
-        'res.partner', compute='get_contact', string='Contacts')
-    who_id = fields.Many2one('res.partner', string='Who')
-    payer_id = fields.Many2one('res.partner', string='Payer')
-    beneficiary_id = fields.Many2one('res.partner', string='Beneficiary')
-    date_proposal = fields.Datetime(string='Date Proposal')
+    concept_id = fields.Many2one('legal.negotiation.concept', string='Concept')
+    date_proposal = fields.Date(
+        string='Date Proposal', default=date.today())
     amount = fields.Float(string='Amount')
     observations = fields.Char(string='Observations')
     prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
-    customer_id = fields.Many2one('res.partner', compute='get_contact')
 
-    @api.one
-    @api.depends('prosecution_id', 'prosecution_id.part_ids')
-    def get_contact(self):
-        self.part_contact_ids = self.prosecution_id.part_ids.mapped(
-            'contact_id')
-        self.customer_id = self.prosecution_id.partner_id.id
+
+class legal_negotiation_concept(models.Model):
+
+    """"""
+
+    _name = 'legal.negotiation.concept'
+
+    name = fields.Char(string='Name')
