@@ -35,6 +35,7 @@
                         <field name="beneficiary"/>
                         <field name="amount"/>
                         <field name="observations"/>
+                        <field name="check_num"/>
                     </group>
                 </form>
             </field>
@@ -51,6 +52,7 @@
                     <field name="date_maturity"/>
                     <field name="beneficiary"/>
                     <field name="amount"/>
+                    <field name="check_num"/>
                 </tree>
             </field>
         </record>

@@ -271,33 +271,11 @@
             <field name="domain">[]</field>
         </record>
 
-        <record id="action_audiences" model="ir.actions.act_window">
-            <field name="name">Audiences</field>
-            <field name="res_model">legal.audiences</field>
-            <field name="src_model">legal.audiences</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form,calendar</field>
-            <field name="view_id" ref=""/>
-            <field name="search_view_id" ref=""/>
-            <field name="domain">[]</field>
-        </record>
 
-
-        <record id="action_calendar_audiences" model="ir.actions.act_window">
-            <field name="name">Audiences</field>
-            <field name="res_model">legal.audiences</field>
-            <field name="src_model">legal.audiences</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">calendar</field>
-            <field name="view_id" ref=""/>
-            <field name="search_view_id" ref=""/>
-            <field name="domain">[]</field>
-        </record>
-
-        <record id="action_audiences_type" model="ir.actions.act_window">
-            <field name="name">Audiences Type</field>
-            <field name="res_model">legal.audiences.type</field>
-            <field name="src_model">legal.audiences.type</field>
+        <record id="action_meeting_type" model="ir.actions.act_window">
+            <field name="name">Meeting Type</field>
+            <field name="res_model">legal.meeting.type</field>
+            <field name="src_model">legal.meeting.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref=""/>
@@ -344,14 +322,6 @@
             id="menu_contact"
             sequence="40"
             action="base.action_partner_form"
-            parent="menu_Diary"
-            />
-
-        <menuitem
-            name="Audiences"
-            id="menu_audiences"
-            sequence="40"
-            action="action_audiences"
             parent="menu_Diary"
             />
 
@@ -507,10 +477,10 @@
             />
 
         <menuitem
-            name="Audiences Type"
-            id="menu_audiences_type"
+            name="Meeting Type"
+            id="menu_meeting_type"
             sequence="75"
-            action="action_audiences_type"
+            action="action_meeting_type"
             parent="menu_conf"
             />
 

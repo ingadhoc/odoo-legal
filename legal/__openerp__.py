@@ -7,7 +7,9 @@
     'author': 'ADHOC',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
-    'depends': ['calendar', 'portal', 'report_aeroo', 'partner_person'],
+    'depends': ['calendar',
+                'portal', 'report_aeroo',
+                'partner_person', 'calendar_state'],
     'data': [
         'security/legal_group.xml',
         'security/ir.model.access.csv',
@@ -27,7 +29,7 @@
         'view/claims_type_view.xml',
         'view/responsibility_view.xml',
         'view/news_view.xml',
-        'view/audiences_view.xml',
+        'view/calendar_view.xml',
         'view/expertise_view.xml',
         'view/expertise_detail_view.xml',
         'view/expertise_detail_type_view.xml',
@@ -47,5 +49,5 @@
         # 'data/demo/legal.prosecution_type.csv',
         # 'data/demo/legal.prosecution.csv',
         # 'data/demo/legal.models.csv'
-        ],
+    ],
 }

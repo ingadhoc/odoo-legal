@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-08 16:06+0000\n"
-"PO-Revision-Date: 2015-07-08 14:09-0300\n"
+"POT-Creation-Date: 2015-07-16 17:21+0000\n"
+"PO-Revision-Date: 2015-07-16 14:27-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,20 +42,16 @@ msgid "Attachments"
 msgstr "Adjunto"
 
 #. module: legal
-#: model:ir.actions.act_window,name:legal.action_audiences
-#: model:ir.actions.act_window,name:legal.action_calendar_audiences
-#: model:ir.ui.menu,name:legal.menu_audiences
-#: view:legal.audiences:legal.view_legal_audiences_calendar
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,audiences_ids:0
-msgid "Audiences"
-msgstr "Audiencias"
+#: selection:calendar.event,event_type:0
+#: selection:legal.meeting.type,event_type:0
+msgid "Audience"
+msgstr "Audiencia"
 
 #. module: legal
-#: model:ir.actions.act_window,name:legal.action_audiences_type
-#: model:ir.ui.menu,name:legal.menu_audiences_type
-msgid "Audiences Type"
-msgstr "Tipos de Audiencias"
+#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: field:legal.prosecution,event_audiences_ids:0
+msgid "Audiences"
+msgstr "Audiencias"
 
 #. module: legal
 #: field:legal.auxiliary,field_id:0
@@ -77,7 +73,6 @@ msgid "Beneficiary"
 msgstr "Beneficiario"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
 #: view:legal.expertise:legal.view_legal_expertise_filter
 #: view:legal.negotiation:legal.view_legal_negotiation_filter
 #: view:legal.news:legal.view_legal_news_filter
@@ -105,6 +100,11 @@ msgstr "Caratula"
 #: field:legal.claim,category_id:0
 msgid "Category"
 msgstr "Rubro"
+
+#. module: legal
+#: field:legal.regulation,check_num:0
+msgid "Check Number"
+msgstr "Numero de Cheque"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_claim_category
@@ -175,19 +175,24 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Confirm"
+msgstr "Confirmada"
+
+#. module: legal
 #: model:ir.ui.menu,name:legal.menu_contact field:legal.part,contact:0
 msgid "Contact"
 msgstr "Contactos"
 
 #. module: legal
-#: field:legal.audiences,create_uid:0 field:legal.audiences.type,create_uid:0
 #: field:legal.auxiliary,create_uid:0 field:legal.auxiliary.field,create_uid:0
 #: field:legal.claim,create_uid:0 field:legal.claim.category,create_uid:0
 #: field:legal.claim.type,create_uid:0 field:legal.evidence,create_uid:0
 #: field:legal.evidence.type,create_uid:0 field:legal.expertise,create_uid:0
 #: field:legal.expertise.detail,create_uid:0
 #: field:legal.expertise.detail_type,create_uid:0
-#: field:legal.expertise.type,create_uid:0 field:legal.model,create_uid:0
+#: field:legal.expertise.type,create_uid:0
+#: field:legal.meeting.type,create_uid:0 field:legal.model,create_uid:0
 #: field:legal.negotiation,create_uid:0
 #: field:legal.negotiation.concept,create_uid:0 field:legal.news,create_uid:0
 #: field:legal.news.type,create_uid:0 field:legal.offerer,create_uid:0
@@ -203,8 +208,6 @@ msgid "Created by"
 msgstr "Created by"
 
 #. module: legal
-#: field:legal.audiences,create_date:0
-#: field:legal.audiences.type,create_date:0
 #: field:legal.auxiliary,create_date:0
 #: field:legal.auxiliary.field,create_date:0 field:legal.claim,create_date:0
 #: field:legal.claim.category,create_date:0
@@ -212,7 +215,8 @@ msgstr "Created by"
 #: field:legal.evidence.type,create_date:0 field:legal.expertise,create_date:0
 #: field:legal.expertise.detail,create_date:0
 #: field:legal.expertise.detail_type,create_date:0
-#: field:legal.expertise.type,create_date:0 field:legal.model,create_date:0
+#: field:legal.expertise.type,create_date:0
+#: field:legal.meeting.type,create_date:0 field:legal.model,create_date:0
 #: field:legal.negotiation,create_date:0
 #: field:legal.negotiation.concept,create_date:0
 #: field:legal.news,create_date:0 field:legal.news.type,create_date:0
@@ -234,6 +238,7 @@ msgid "Current Judged"
 msgstr "Juzgado actual"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
 #: field:legal.prosecution,partner_id:0
 msgid "Customer"
 msgstr "Cliente"
@@ -244,9 +249,7 @@ msgid "Data cases"
 msgstr "Datos de casos"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
-#: field:legal.audiences,date:0 view:legal.news:legal.view_legal_news_filter
-#: field:legal.news,date:0
+#: view:legal.news:legal.view_legal_news_filter field:legal.news,date:0
 msgid "Date"
 msgstr "Fecha"
 
@@ -329,7 +332,6 @@ msgid "Diary"
 msgstr "Agenda"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_tree
 #: view:legal.expertise:legal.view_legal_expertise_tree
 #: view:legal.prosecution:legal.view_legal_prosecution_form
 msgid "Done"
@@ -346,9 +348,16 @@ msgid "End Date"
 msgstr "Fecha final"
 
 #. module: legal
+#: model:ir.model,name:legal.model_calendar_event
 #: view:legal.expertise:legal.view_legal_expertise_filter
 msgid "Event"
-msgstr "Novedades"
+msgstr "Evento"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+#: field:calendar.event,event_type:0 field:legal.meeting.type,event_type:0
+msgid "Event Type"
+msgstr "Tipo de Reunion"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_evidence
@@ -402,6 +411,14 @@ msgid "Expertise Type"
 msgstr "Tipo de Pericia"
 
 #. module: legal
+#: selection:calendar.event,event_type:0
+#: selection:legal.meeting.type,event_type:0
+#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: field:legal.prosecution,event_expiry_ids:0
+msgid "Expiry"
+msgstr "Vencimiento"
+
+#. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 msgid "Folder"
 msgstr "Carpeta"
@@ -434,7 +451,6 @@ msgid "Glossaries"
 msgstr "Glosario"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
 #: view:legal.expertise:legal.view_legal_expertise_filter
 #: view:legal.negotiation:legal.view_legal_negotiation_filter
 #: view:legal.news:legal.view_legal_news_filter
@@ -453,16 +469,16 @@ msgstr ""
 "directamente en formato html para ser insertada en vistas kanban."
 
 #. module: legal
-#: field:legal.audiences,id:0 field:legal.audiences.type,id:0
 #: field:legal.auxiliary,id:0 field:legal.auxiliary.field,id:0
 #: field:legal.claim,id:0 field:legal.claim.category,id:0
 #: field:legal.claim.type,id:0 field:legal.evidence,id:0
 #: field:legal.evidence.type,id:0 field:legal.expertise,id:0
 #: field:legal.expertise.detail,id:0 field:legal.expertise.detail_type,id:0
-#: field:legal.expertise.type,id:0 field:legal.model,id:0
-#: field:legal.negotiation,id:0 field:legal.negotiation.concept,id:0
-#: field:legal.news,id:0 field:legal.news.type,id:0 field:legal.offerer,id:0
-#: field:legal.office,id:0 field:legal.part,id:0 field:legal.prosecution,id:0
+#: field:legal.expertise.type,id:0 field:legal.meeting.type,id:0
+#: field:legal.model,id:0 field:legal.negotiation,id:0
+#: field:legal.negotiation.concept,id:0 field:legal.news,id:0
+#: field:legal.news.type,id:0 field:legal.offerer,id:0 field:legal.office,id:0
+#: field:legal.part,id:0 field:legal.prosecution,id:0
 #: field:legal.prosecution_type,id:0 field:legal.radication,id:0
 #: field:legal.regulation,id:0 field:legal.regulation.concept,id:0
 #: field:legal.responsibility,id:0 field:legal.role,id:0
@@ -475,6 +491,11 @@ msgstr "ID"
 #: help:legal.prosecution,message_unread:0
 msgid "If checked new messages require your attention."
 msgstr "Si se marca nuevos mensajes requieren su atención."
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_audiences_form
+msgid "Information Carpet"
+msgstr "Información de Carpeta"
 
 #. module: legal
 #: field:legal.prosecution,message_is_follower:0
@@ -503,15 +524,14 @@ msgid "Last Message Date"
 msgstr "Fecha del Ultimo Mensaje"
 
 #. module: legal
-#: field:legal.audiences,write_uid:0 field:legal.audiences.type,write_uid:0
 #: field:legal.auxiliary,write_uid:0 field:legal.auxiliary.field,write_uid:0
 #: field:legal.claim,write_uid:0 field:legal.claim.category,write_uid:0
 #: field:legal.claim.type,write_uid:0 field:legal.evidence,write_uid:0
 #: field:legal.evidence.type,write_uid:0 field:legal.expertise,write_uid:0
 #: field:legal.expertise.detail,write_uid:0
 #: field:legal.expertise.detail_type,write_uid:0
-#: field:legal.expertise.type,write_uid:0 field:legal.model,write_uid:0
-#: field:legal.negotiation,write_uid:0
+#: field:legal.expertise.type,write_uid:0 field:legal.meeting.type,write_uid:0
+#: field:legal.model,write_uid:0 field:legal.negotiation,write_uid:0
 #: field:legal.negotiation.concept,write_uid:0 field:legal.news,write_uid:0
 #: field:legal.news.type,write_uid:0 field:legal.offerer,write_uid:0
 #: field:legal.office,write_uid:0 field:legal.part,write_uid:0
@@ -526,14 +546,14 @@ msgid "Last Updated by"
 msgstr "Last Updated by"
 
 #. module: legal
-#: field:legal.audiences,write_date:0 field:legal.audiences.type,write_date:0
 #: field:legal.auxiliary,write_date:0 field:legal.auxiliary.field,write_date:0
 #: field:legal.claim,write_date:0 field:legal.claim.category,write_date:0
 #: field:legal.claim.type,write_date:0 field:legal.evidence,write_date:0
 #: field:legal.evidence.type,write_date:0 field:legal.expertise,write_date:0
 #: field:legal.expertise.detail,write_date:0
 #: field:legal.expertise.detail_type,write_date:0
-#: field:legal.expertise.type,write_date:0 field:legal.model,write_date:0
+#: field:legal.expertise.type,write_date:0
+#: field:legal.meeting.type,write_date:0 field:legal.model,write_date:0
 #: field:legal.negotiation,write_date:0
 #: field:legal.negotiation.concept,write_date:0 field:legal.news,write_date:0
 #: field:legal.news.type,write_date:0 field:legal.offerer,write_date:0
@@ -602,6 +622,17 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: legal
+#: model:ir.actions.act_window,name:legal.action_meeting_type
+#: model:ir.ui.menu,name:legal.menu_meeting_type
+msgid "Meeting Type"
+msgstr "Subtipo de Reunión"
+
+#. module: legal
+#: view:calendar.event:legal.view_calendar_event_form
+msgid "Meetings"
+msgstr "Reuniones"
+
+#. module: legal
 #: field:legal.prosecution,message_ids:0
 msgid "Messages"
 msgstr "Mensajes"
@@ -610,6 +641,16 @@ msgstr "Mensajes"
 #: help:legal.prosecution,message_ids:0
 msgid "Messages and communication history"
 msgstr "Los mensajes y el historial de comunicación"
+
+#. module: legal
+#: field:calendar.event,sub_type_id:0
+msgid "Metting Subtype"
+msgstr "Subtipos de Reunión"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_audiences_form
+msgid "Misc"
+msgstr "Misc."
 
 #. module: legal
 #: model:ir.ui.menu,name:legal.menu_doc_model
@@ -624,10 +665,10 @@ msgid "Models"
 msgstr "Modelos"
 
 #. module: legal
-#: field:legal.audiences.type,name:0 field:legal.auxiliary.field,name:0
-#: field:legal.claim.category,name:0 field:legal.claim.type,name:0
-#: field:legal.evidence.type,name:0 field:legal.expertise,name:0
-#: field:legal.expertise.detail_type,name:0 field:legal.expertise.type,name:0
+#: field:legal.auxiliary.field,name:0 field:legal.claim.category,name:0
+#: field:legal.claim.type,name:0 field:legal.evidence.type,name:0
+#: field:legal.expertise,name:0 field:legal.expertise.detail_type,name:0
+#: field:legal.expertise.type,name:0 field:legal.meeting.type,name:0
 #: field:legal.model,name:0 field:legal.negotiation.concept,name:0
 #: field:legal.news.type,name:0 field:legal.offerer,name:0
 #: field:legal.office,name:0 field:legal.prosecution_type,name:0
@@ -711,8 +752,8 @@ msgid "Obligations"
 msgstr "Obligaciones"
 
 #. module: legal
-#: field:legal.audiences,observations:0 field:legal.evidence,observations:0
-#: field:legal.expertise,observations:0 field:legal.negotiation,observations:0
+#: field:legal.evidence,observations:0 field:legal.expertise,observations:0
+#: field:legal.negotiation,observations:0
 #: field:legal.regulation,observations:0
 msgid "Observations"
 msgstr "Observación"
@@ -757,10 +798,15 @@ msgid "Parts"
 msgstr "Partes"
 
 #. module: legal
-#: selection:legal.audiences,state:0 selection:legal.evidence,state:0
-#: selection:legal.expertise,state:0
+#: selection:legal.evidence,state:0 selection:legal.expertise,state:0
 msgid "Pending"
 msgstr "Pendiente"
+
+#. module: legal
+#: selection:calendar.event,event_type:0
+#: selection:legal.meeting.type,event_type:0
+msgid "Personal"
+msgstr "Personal"
 
 #. module: legal
 #: view:legal.stock_cases:legal.view_stock_cases
@@ -768,24 +814,31 @@ msgid "Print"
 msgstr "Imprimir"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_tree
 #: view:legal.expertise:legal.view_legal_expertise_tree
 #: view:legal.prosecution:legal.view_legal_prosecution_form
 msgid "Process"
 msgstr "Procesar"
 
 #. module: legal
-#: selection:legal.audiences,state:0 selection:legal.evidence,state:0
-#: selection:legal.expertise,state:0
+#: selection:legal.evidence,state:0 selection:legal.expertise,state:0
 msgid "Produced"
 msgstr "Producida"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
-#: field:legal.audiences,prosecution_id:0
+#: field:calendar.event,prosecution_id:0
 #: field:legal.regulation,prosecution_id:0
 msgid "Prosecution"
 msgstr "Carpeta"
+
+#. module: legal
+#: field:legal.prosecution,member_ids:0
+msgid "Prosecution Members"
+msgstr "Miembros de Carpeta"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Prosecution Type"
+msgstr "Tipo de Carpeta"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
@@ -822,6 +875,7 @@ msgid "Responsibility"
 msgstr "Responsabilidad"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 msgid "Responsible"
 msgstr "Responsable"
@@ -854,8 +908,18 @@ msgid "Start Date"
 msgstr "Fecha de Inicio"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
-#: field:legal.audiences,state:0 field:legal.evidence,state:0
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Start Date From"
+msgstr "Fecha de Inicio Desde"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Start Date To"
+msgstr "Fecha de Inicio Hasta"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+#: field:legal.evidence,state:0
 #: view:legal.expertise:legal.view_legal_expertise_filter
 #: field:legal.expertise,state:0
 msgid "State"
@@ -892,9 +956,19 @@ msgid "Substates"
 msgstr "Subestados"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Subtype"
+msgstr "Subtipo"
+
+#. module: legal
 #: field:legal.prosecution,message_summary:0
 msgid "Summary"
 msgstr "Resumen"
+
+#. module: legal
+#: view:legal.prosecution:legal.view_legal_prosecution_form
+msgid "Team"
+msgstr "Team"
 
 #. module: legal
 #: field:legal.stock_cases,to_date:0
@@ -912,8 +986,7 @@ msgid "Total Claim"
 msgstr "Total reclamado"
 
 #. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
-#: field:legal.audiences,type_id:0 field:legal.evidence,type_id:0
+#: field:legal.evidence,type_id:0
 #: view:legal.expertise:legal.view_legal_expertise_filter
 #: field:legal.expertise,type_id:0 field:legal.model,type:0
 #: view:legal.news:legal.view_legal_news_filter field:legal.news,type_id:0
@@ -927,6 +1000,7 @@ msgstr "Tipo de reclamos"
 
 #. module: legal
 #: model:ir.ui.menu,name:legal.menu_type_prosecution
+#: field:legal.auxiliary.field,prosecution_type_id:0
 #: field:legal.prosecution,prosecution_type_id:0
 #: field:legal.stock_cases,prosecution_type_id:0
 msgid "Type of prosecution"
@@ -941,6 +1015,11 @@ msgstr "Tipo de carpeta"
 #: model:ir.actions.act_window,name:legal.action_type_prosecution
 msgid "Types of prosecution"
 msgstr "Tipos de carpeta"
+
+#. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
+msgid "Unconfirm"
+msgstr "Sin Confirmar"
 
 #. module: legal
 #: field:legal.prosecution,message_unread:0
@@ -971,11 +1050,6 @@ msgstr "¿Desea cerrar el caso?"
 #: selection:legal.model,type:0
 msgid "Writing"
 msgstr "Escritura"
-
-#. module: legal
-#: view:legal.audiences:legal.view_legal_audiences_filter
-msgid "audiences"
-msgstr "audiencias"
 
 #. module: legal
 #: view:legal.stock_cases:legal.view_stock_cases

@@ -65,16 +65,49 @@ class prosecution(models.Model):
             self.number_current_file = ''
 
     @api.one
-    def _audiences_count(self):
-        """
-        Counts the number of audiences the prosecution has, used for smart button
-        """
-        self.audiences_count = len(self.sudo().audiences_ids)
+    def _audiences_event_count(self):
+        self.audiences_event_count = len(self.sudo().event_audiences_ids)
 
-    audiences_count = fields.Integer(compute='_audiences_count')
+    @api.one
+    def _expiry_event_count(self):
+        self.expiry_event_count = len(self.sudo().event_expiry_ids)
+
+    @api.one
+    def _calculate_amount(self):
+        self.claim_amount = sum([x.total for x in self.claim_ids])
+
+    @api.one
+    @api.constrains('member_ids')
+    def action_follow(self):
+        return self.message_subscribe_users(self.member_ids.ids)
+
+    @api.one
+    @api.onchange('prosecution_type_id')
+    def auto_complete_auxiliar_field(self):
+        self.auxiliary_ids = self.env[
+            'legal.auxiliary']
+        auxiliary_field_obj = self.env['legal.auxiliary.field']
+        if self.prosecution_type_id:
+            auxiliary_field_ids = auxiliary_field_obj.search(
+                [('prosecution_type_id', '=', self.prosecution_type_id.id)])
+            lines = []
+            for line in auxiliary_field_ids:
+                values = {
+                    'field_id': line.id,
+                }
+                lines.append((0, _, values))
+            self.auxiliary_ids = lines
+
+    audiences_event_count = fields.Integer(compute='_audiences_event_count')
+    expiry_event_count = fields.Integer(compute='_expiry_event_count')
+    claim_amount = fields.Float(compute='_calculate_amount')
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
+    member_ids = fields.Many2many(
+        'res.users',
+        'prosecution_user_rel',
+        'prosecution_id', 'uid', 'Prosecution Members')
     prosecution_type_id = fields.Many2one(
         'legal.prosecution_type',
         string='Type of prosecution')
@@ -118,11 +151,12 @@ class prosecution(models.Model):
         'legal.office',
         string='Current Judged', compute='_get_data', store=True)
     news_ids = fields.One2many(
-        'legal.news', 'prosecution_id', string="News")
+        'legal.news',
+        'prosecution_id', string="News")
     partner_id = fields.Many2one(
         'res.partner', 'Customer', domain="[('customer','=',True)]")
     num_sinister = fields.Char(string="Number of sinister")
-    number_current_file = fields.Integer(
+    number_current_file = fields.Char(
         'Number of current file',
         compute='_get_data', store=True)
     last_complete_instance = fields.Char(
@@ -134,11 +168,21 @@ class prosecution(models.Model):
         'legal.negotiation', 'prosecution_id', string="Negotiation")
     evidence_ids = fields.One2many(
         'legal.evidence', 'prosecution_id', string="Evidence")
-    audiences_ids = fields.One2many(
-        'legal.audiences', 'prosecution_id', string="Audiences")
+    event_audiences_ids = fields.One2many(
+        'calendar.event',
+        'prosecution_id',
+        string="Audiences",
+        domain=[('event_type', '=', 'audience')],
+        context={'default_event_type': 'audience'})
+    event_expiry_ids = fields.One2many(
+        'calendar.event',
+        'prosecution_id',
+        string="Expiry",
+        domain=[('event_type', '=', 'expiry')],
+        context={'default_event_type': 'expiry'})
     expertise_ids = fields.One2many(
         'legal.expertise', 'prosecution_id', string="Expertise")
-    description_of_claim = fields.Text(string='Description of claim')
+    description_of_claim = fields.Html(string='Description of claim')
 
     @api.one
     def set_open(self):

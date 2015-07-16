@@ -25,10 +25,6 @@ access_legal_manager_substate,legal.manager.substate,model_legal_substate,group_
 access_legal_user_substate,legal.user.substate,model_legal_substate,group_user,1,1,1,1
 access_legal_manager_part,legal.manager.part,model_legal_part,group_manager,1,1,1,1
 access_legal_user_part,legal.user.part,model_legal_part,group_user,1,1,1,1
-access_legal_manager_audiences,legal.manager.audiences,model_legal_audiences,group_manager,1,1,1,1
-access_legal_user_audiences,legal.user.audiences,model_legal_audiences,group_user,1,1,1,1
-access_legal_manager_audiences_type,legal.manager.audiences_type,model_legal_audiences_type,group_manager,1,1,1,1
-access_legal_user_audiences_type,legal.user.audiences_type,model_legal_audiences_type,group_user,1,1,1,1
 access_legal_manager_claim_category,legal.manager.claim_category,model_legal_claim_category,group_manager,1,1,1,1
 access_legal_user_claim_category,legal.user.claim_category,model_legal_claim_category,group_user,1,1,1,1
 access_legal_manager_auxiliary_fields,legal.manager.auxiliary_field,model_legal_auxiliary_field,group_manager,1,1,1,1

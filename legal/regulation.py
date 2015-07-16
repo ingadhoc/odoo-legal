@@ -16,6 +16,7 @@ class legal_regulation(models.Model):
     date_fulfillment = fields.Date(string="Date of the fulfillment")
     amount = fields.Float(string="Amount", store=True)
     observations = fields.Char(string='Observations')
+    check_num = fields.Integer(string='Check Number')
     prosecution_id = fields.Many2one('legal.prosecution', string='Prosecution')
 
 
