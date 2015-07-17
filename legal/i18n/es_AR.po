@@ -1,20 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* legal
+#	* legal
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-16 17:21+0000\n"
-"PO-Revision-Date: 2015-07-16 14:27-0300\n"
+"POT-Creation-Date: 2015-07-17 17:14+0000\n"
+"PO-Revision-Date: 2015-07-17 17:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.5.4\n"
 
 #. module: legal
 #: field:legal.office,address:0
@@ -27,7 +26,8 @@ msgid "Age"
 msgstr "Edad"
 
 #. module: legal
-#: field:legal.negotiation,amount:0 field:legal.regulation,amount:0
+#: field:legal.negotiation,amount:0
+#: field:legal.regulation,amount:0
 msgid "Amount"
 msgstr "Importe"
 
@@ -37,7 +37,8 @@ msgid "Attachment"
 msgstr "Adjuntos"
 
 #. module: legal
-#: field:legal.model,attachment_ids:0 field:legal.prosecution,attachment_ids:0
+#: field:legal.model,attachment_ids:0
+#: field:legal.prosecution,attachment_ids:0
 msgid "Attachments"
 msgstr "Adjunto"
 
@@ -165,7 +166,8 @@ msgstr "Color Index"
 
 #. module: legal
 #: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: field:legal.negotiation,concept_id:0 field:legal.regulation,concept_id:0
+#: field:legal.negotiation,concept_id:0
+#: field:legal.regulation,concept_id:0
 msgid "Concept"
 msgstr "Concepto"
 
@@ -180,53 +182,75 @@ msgid "Confirm"
 msgstr "Confirmada"
 
 #. module: legal
-#: model:ir.ui.menu,name:legal.menu_contact field:legal.part,contact:0
+#: model:ir.ui.menu,name:legal.menu_contact
+#: field:legal.part,contact:0
 msgid "Contact"
 msgstr "Contactos"
 
 #. module: legal
-#: field:legal.auxiliary,create_uid:0 field:legal.auxiliary.field,create_uid:0
-#: field:legal.claim,create_uid:0 field:legal.claim.category,create_uid:0
-#: field:legal.claim.type,create_uid:0 field:legal.evidence,create_uid:0
-#: field:legal.evidence.type,create_uid:0 field:legal.expertise,create_uid:0
+#: field:legal.auxiliary,create_uid:0
+#: field:legal.auxiliary.field,create_uid:0
+#: field:legal.claim,create_uid:0
+#: field:legal.claim.category,create_uid:0
+#: field:legal.claim.type,create_uid:0
+#: field:legal.evidence,create_uid:0
+#: field:legal.evidence.type,create_uid:0
+#: field:legal.expertise,create_uid:0
 #: field:legal.expertise.detail,create_uid:0
 #: field:legal.expertise.detail_type,create_uid:0
 #: field:legal.expertise.type,create_uid:0
-#: field:legal.meeting.type,create_uid:0 field:legal.model,create_uid:0
+#: field:legal.meeting.type,create_uid:0
+#: field:legal.model,create_uid:0
 #: field:legal.negotiation,create_uid:0
-#: field:legal.negotiation.concept,create_uid:0 field:legal.news,create_uid:0
-#: field:legal.news.type,create_uid:0 field:legal.offerer,create_uid:0
-#: field:legal.office,create_uid:0 field:legal.part,create_uid:0
+#: field:legal.negotiation.concept,create_uid:0
+#: field:legal.news,create_uid:0
+#: field:legal.news.type,create_uid:0
+#: field:legal.offerer,create_uid:0
+#: field:legal.office,create_uid:0
+#: field:legal.part,create_uid:0
 #: field:legal.prosecution,create_uid:0
 #: field:legal.prosecution_type,create_uid:0
-#: field:legal.radication,create_uid:0 field:legal.regulation,create_uid:0
+#: field:legal.radication,create_uid:0
+#: field:legal.regulation,create_uid:0
 #: field:legal.regulation.concept,create_uid:0
-#: field:legal.responsibility,create_uid:0 field:legal.role,create_uid:0
-#: field:legal.status,create_uid:0 field:legal.stock_cases,create_uid:0
+#: field:legal.responsibility,create_uid:0
+#: field:legal.role,create_uid:0
+#: field:legal.status,create_uid:0
+#: field:legal.stock_cases,create_uid:0
 #: field:legal.substate,create_uid:0
 msgid "Created by"
 msgstr "Created by"
 
 #. module: legal
 #: field:legal.auxiliary,create_date:0
-#: field:legal.auxiliary.field,create_date:0 field:legal.claim,create_date:0
+#: field:legal.auxiliary.field,create_date:0
+#: field:legal.claim,create_date:0
 #: field:legal.claim.category,create_date:0
-#: field:legal.claim.type,create_date:0 field:legal.evidence,create_date:0
-#: field:legal.evidence.type,create_date:0 field:legal.expertise,create_date:0
+#: field:legal.claim.type,create_date:0
+#: field:legal.evidence,create_date:0
+#: field:legal.evidence.type,create_date:0
+#: field:legal.expertise,create_date:0
 #: field:legal.expertise.detail,create_date:0
 #: field:legal.expertise.detail_type,create_date:0
 #: field:legal.expertise.type,create_date:0
-#: field:legal.meeting.type,create_date:0 field:legal.model,create_date:0
+#: field:legal.meeting.type,create_date:0
+#: field:legal.model,create_date:0
 #: field:legal.negotiation,create_date:0
 #: field:legal.negotiation.concept,create_date:0
-#: field:legal.news,create_date:0 field:legal.news.type,create_date:0
-#: field:legal.offerer,create_date:0 field:legal.office,create_date:0
-#: field:legal.part,create_date:0 field:legal.prosecution,create_date:0
+#: field:legal.news,create_date:0
+#: field:legal.news.type,create_date:0
+#: field:legal.offerer,create_date:0
+#: field:legal.office,create_date:0
+#: field:legal.part,create_date:0
+#: field:legal.prosecution,create_date:0
 #: field:legal.prosecution_type,create_date:0
-#: field:legal.radication,create_date:0 field:legal.regulation,create_date:0
+#: field:legal.radication,create_date:0
+#: field:legal.regulation,create_date:0
 #: field:legal.regulation.concept,create_date:0
-#: field:legal.responsibility,create_date:0 field:legal.role,create_date:0
-#: field:legal.status,create_date:0 field:legal.stock_cases,create_date:0
+#: field:legal.responsibility,create_date:0
+#: field:legal.role,create_date:0
+#: field:legal.status,create_date:0
+#: field:legal.stock_cases,create_date:0
 #: field:legal.substate,create_date:0
 msgid "Created on"
 msgstr "Created on"
@@ -249,7 +273,8 @@ msgid "Data cases"
 msgstr "Datos de casos"
 
 #. module: legal
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,date:0
+#: view:legal.news:legal.view_legal_news_filter
+#: field:legal.news,date:0
 msgid "Date"
 msgstr "Fecha"
 
@@ -306,7 +331,8 @@ msgstr "Fecha de inicio de demanda"
 
 #. module: legal
 #: field:legal.model,description:0
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,description:0
+#: view:legal.news:legal.view_legal_news_filter
+#: field:legal.news,description:0
 msgid "Description"
 msgstr "Descripción"
 
@@ -355,7 +381,8 @@ msgstr "Evento"
 
 #. module: legal
 #: view:calendar.event:legal.view_legal_calendar_filter
-#: field:calendar.event,event_type:0 field:legal.meeting.type,event_type:0
+#: field:calendar.event,event_type:0
+#: field:legal.meeting.type,event_type:0
 msgid "Event Type"
 msgstr "Tipo de Reunion"
 
@@ -461,28 +488,39 @@ msgstr "Agrupar Por..."
 
 #. module: legal
 #: help:legal.prosecution,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Sostiene el resumen Chatter (número de mensajes, ...). Este resumen es "
-"directamente en formato html para ser insertada en vistas kanban."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Sostiene el resumen Chatter (número de mensajes, ...). Este resumen es directamente en formato html para ser insertada en vistas kanban."
 
 #. module: legal
-#: field:legal.auxiliary,id:0 field:legal.auxiliary.field,id:0
-#: field:legal.claim,id:0 field:legal.claim.category,id:0
-#: field:legal.claim.type,id:0 field:legal.evidence,id:0
-#: field:legal.evidence.type,id:0 field:legal.expertise,id:0
-#: field:legal.expertise.detail,id:0 field:legal.expertise.detail_type,id:0
-#: field:legal.expertise.type,id:0 field:legal.meeting.type,id:0
-#: field:legal.model,id:0 field:legal.negotiation,id:0
-#: field:legal.negotiation.concept,id:0 field:legal.news,id:0
-#: field:legal.news.type,id:0 field:legal.offerer,id:0 field:legal.office,id:0
-#: field:legal.part,id:0 field:legal.prosecution,id:0
-#: field:legal.prosecution_type,id:0 field:legal.radication,id:0
-#: field:legal.regulation,id:0 field:legal.regulation.concept,id:0
-#: field:legal.responsibility,id:0 field:legal.role,id:0
-#: field:legal.status,id:0 field:legal.stock_cases,id:0
+#: field:legal.auxiliary,id:0
+#: field:legal.auxiliary.field,id:0
+#: field:legal.claim,id:0
+#: field:legal.claim.category,id:0
+#: field:legal.claim.type,id:0
+#: field:legal.evidence,id:0
+#: field:legal.evidence.type,id:0
+#: field:legal.expertise,id:0
+#: field:legal.expertise.detail,id:0
+#: field:legal.expertise.detail_type,id:0
+#: field:legal.expertise.type,id:0
+#: field:legal.meeting.type,id:0
+#: field:legal.model,id:0
+#: field:legal.negotiation,id:0
+#: field:legal.negotiation.concept,id:0
+#: field:legal.news,id:0
+#: field:legal.news.type,id:0
+#: field:legal.offerer,id:0
+#: field:legal.office,id:0
+#: field:legal.part,id:0
+#: field:legal.prosecution,id:0
+#: field:legal.prosecution_type,id:0
+#: field:legal.radication,id:0
+#: field:legal.regulation,id:0
+#: field:legal.regulation.concept,id:0
+#: field:legal.responsibility,id:0
+#: field:legal.role,id:0
+#: field:legal.status,id:0
+#: field:legal.stock_cases,id:0
 #: field:legal.substate,id:0
 msgid "ID"
 msgstr "ID"
@@ -524,46 +562,69 @@ msgid "Last Message Date"
 msgstr "Fecha del Ultimo Mensaje"
 
 #. module: legal
-#: field:legal.auxiliary,write_uid:0 field:legal.auxiliary.field,write_uid:0
-#: field:legal.claim,write_uid:0 field:legal.claim.category,write_uid:0
-#: field:legal.claim.type,write_uid:0 field:legal.evidence,write_uid:0
-#: field:legal.evidence.type,write_uid:0 field:legal.expertise,write_uid:0
+#: field:legal.auxiliary,write_uid:0
+#: field:legal.auxiliary.field,write_uid:0
+#: field:legal.claim,write_uid:0
+#: field:legal.claim.category,write_uid:0
+#: field:legal.claim.type,write_uid:0
+#: field:legal.evidence,write_uid:0
+#: field:legal.evidence.type,write_uid:0
+#: field:legal.expertise,write_uid:0
 #: field:legal.expertise.detail,write_uid:0
 #: field:legal.expertise.detail_type,write_uid:0
-#: field:legal.expertise.type,write_uid:0 field:legal.meeting.type,write_uid:0
-#: field:legal.model,write_uid:0 field:legal.negotiation,write_uid:0
-#: field:legal.negotiation.concept,write_uid:0 field:legal.news,write_uid:0
-#: field:legal.news.type,write_uid:0 field:legal.offerer,write_uid:0
-#: field:legal.office,write_uid:0 field:legal.part,write_uid:0
+#: field:legal.expertise.type,write_uid:0
+#: field:legal.meeting.type,write_uid:0
+#: field:legal.model,write_uid:0
+#: field:legal.negotiation,write_uid:0
+#: field:legal.negotiation.concept,write_uid:0
+#: field:legal.news,write_uid:0
+#: field:legal.news.type,write_uid:0
+#: field:legal.offerer,write_uid:0
+#: field:legal.office,write_uid:0
+#: field:legal.part,write_uid:0
 #: field:legal.prosecution,write_uid:0
-#: field:legal.prosecution_type,write_uid:0 field:legal.radication,write_uid:0
+#: field:legal.prosecution_type,write_uid:0
+#: field:legal.radication,write_uid:0
 #: field:legal.regulation,write_uid:0
 #: field:legal.regulation.concept,write_uid:0
-#: field:legal.responsibility,write_uid:0 field:legal.role,write_uid:0
-#: field:legal.status,write_uid:0 field:legal.stock_cases,write_uid:0
+#: field:legal.responsibility,write_uid:0
+#: field:legal.role,write_uid:0
+#: field:legal.status,write_uid:0
+#: field:legal.stock_cases,write_uid:0
 #: field:legal.substate,write_uid:0
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
 #. module: legal
-#: field:legal.auxiliary,write_date:0 field:legal.auxiliary.field,write_date:0
-#: field:legal.claim,write_date:0 field:legal.claim.category,write_date:0
-#: field:legal.claim.type,write_date:0 field:legal.evidence,write_date:0
-#: field:legal.evidence.type,write_date:0 field:legal.expertise,write_date:0
+#: field:legal.auxiliary,write_date:0
+#: field:legal.auxiliary.field,write_date:0
+#: field:legal.claim,write_date:0
+#: field:legal.claim.category,write_date:0
+#: field:legal.claim.type,write_date:0
+#: field:legal.evidence,write_date:0
+#: field:legal.evidence.type,write_date:0
+#: field:legal.expertise,write_date:0
 #: field:legal.expertise.detail,write_date:0
 #: field:legal.expertise.detail_type,write_date:0
 #: field:legal.expertise.type,write_date:0
-#: field:legal.meeting.type,write_date:0 field:legal.model,write_date:0
+#: field:legal.meeting.type,write_date:0
+#: field:legal.model,write_date:0
 #: field:legal.negotiation,write_date:0
-#: field:legal.negotiation.concept,write_date:0 field:legal.news,write_date:0
-#: field:legal.news.type,write_date:0 field:legal.offerer,write_date:0
-#: field:legal.office,write_date:0 field:legal.part,write_date:0
+#: field:legal.negotiation.concept,write_date:0
+#: field:legal.news,write_date:0
+#: field:legal.news.type,write_date:0
+#: field:legal.offerer,write_date:0
+#: field:legal.office,write_date:0
+#: field:legal.part,write_date:0
 #: field:legal.prosecution,write_date:0
 #: field:legal.prosecution_type,write_date:0
-#: field:legal.radication,write_date:0 field:legal.regulation,write_date:0
+#: field:legal.radication,write_date:0
+#: field:legal.regulation,write_date:0
 #: field:legal.regulation.concept,write_date:0
-#: field:legal.responsibility,write_date:0 field:legal.role,write_date:0
-#: field:legal.status,write_date:0 field:legal.stock_cases,write_date:0
+#: field:legal.responsibility,write_date:0
+#: field:legal.role,write_date:0
+#: field:legal.status,write_date:0
+#: field:legal.stock_cases,write_date:0
 #: field:legal.substate,write_date:0
 msgid "Last Updated on"
 msgstr "Last Updated on"
@@ -574,7 +635,8 @@ msgid "Last complete Instance"
 msgstr "Nro. de última instancia completa"
 
 #. module: legal
-#: model:ir.ui.menu,name:legal.menu_lawyer field:legal.part,lawyer_id:0
+#: model:ir.ui.menu,name:legal.menu_lawyer
+#: field:legal.part,lawyer_id:0
 msgid "Lawyer"
 msgstr "Abogado"
 
@@ -665,15 +727,24 @@ msgid "Models"
 msgstr "Modelos"
 
 #. module: legal
-#: field:legal.auxiliary.field,name:0 field:legal.claim.category,name:0
-#: field:legal.claim.type,name:0 field:legal.evidence.type,name:0
-#: field:legal.expertise,name:0 field:legal.expertise.detail_type,name:0
-#: field:legal.expertise.type,name:0 field:legal.meeting.type,name:0
-#: field:legal.model,name:0 field:legal.negotiation.concept,name:0
-#: field:legal.news.type,name:0 field:legal.offerer,name:0
-#: field:legal.office,name:0 field:legal.prosecution_type,name:0
-#: field:legal.regulation.concept,name:0 field:legal.responsibility,name:0
-#: field:legal.role,name:0 field:legal.status,name:0
+#: field:legal.auxiliary.field,name:0
+#: field:legal.claim.category,name:0
+#: field:legal.claim.type,name:0
+#: field:legal.evidence.type,name:0
+#: field:legal.expertise,name:0
+#: field:legal.expertise.detail_type,name:0
+#: field:legal.expertise.type,name:0
+#: field:legal.meeting.type,name:0
+#: field:legal.model,name:0
+#: field:legal.negotiation.concept,name:0
+#: field:legal.news.type,name:0
+#: field:legal.offerer,name:0
+#: field:legal.office,name:0
+#: field:legal.prosecution_type,name:0
+#: field:legal.regulation.concept,name:0
+#: field:legal.responsibility,name:0
+#: field:legal.role,name:0
+#: field:legal.status,name:0
 #: field:legal.substate,name:0
 msgid "Name"
 msgstr "Nombre"
@@ -752,7 +823,8 @@ msgid "Obligations"
 msgstr "Obligaciones"
 
 #. module: legal
-#: field:legal.evidence,observations:0 field:legal.expertise,observations:0
+#: field:legal.evidence,observations:0
+#: field:legal.expertise,observations:0
 #: field:legal.negotiation,observations:0
 #: field:legal.regulation,observations:0
 msgid "Observations"
@@ -760,7 +832,8 @@ msgstr "Observación"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_offerer
-#: model:ir.ui.menu,name:legal.menu_offerer field:legal.evidence,offerer_id:0
+#: model:ir.ui.menu,name:legal.menu_offerer
+#: field:legal.evidence,offerer_id:0
 #: view:legal.expertise:legal.view_legal_expertise_filter
 #: field:legal.expertise,offerer_id:0
 msgid "Offerer"
@@ -798,7 +871,8 @@ msgid "Parts"
 msgstr "Partes"
 
 #. module: legal
-#: selection:legal.evidence,state:0 selection:legal.expertise,state:0
+#: selection:legal.evidence,state:0
+#: selection:legal.expertise,state:0
 msgid "Pending"
 msgstr "Pendiente"
 
@@ -820,7 +894,8 @@ msgid "Process"
 msgstr "Procesar"
 
 #. module: legal
-#: selection:legal.evidence,state:0 selection:legal.expertise,state:0
+#: selection:legal.evidence,state:0
+#: selection:legal.expertise,state:0
 msgid "Produced"
 msgstr "Producida"
 
@@ -881,6 +956,7 @@ msgid "Responsible"
 msgstr "Responsable"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
 #: field:legal.prosecution,responsible_id:0
 #: field:legal.stock_cases,responsible_id:0
 msgid "Responsible Lawyer"
@@ -988,8 +1064,10 @@ msgstr "Total reclamado"
 #. module: legal
 #: field:legal.evidence,type_id:0
 #: view:legal.expertise:legal.view_legal_expertise_filter
-#: field:legal.expertise,type_id:0 field:legal.model,type:0
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,type_id:0
+#: field:legal.expertise,type_id:0
+#: field:legal.model,type:0
+#: view:legal.news:legal.view_legal_news_filter
+#: field:legal.news,type_id:0
 msgid "Type"
 msgstr "Tipo"
 
@@ -999,6 +1077,7 @@ msgid "Type of Claims"
 msgstr "Tipo de reclamos"
 
 #. module: legal
+#: view:calendar.event:legal.view_legal_calendar_filter
 #: model:ir.ui.menu,name:legal.menu_type_prosecution
 #: field:legal.auxiliary.field,prosecution_type_id:0
 #: field:legal.prosecution,prosecution_type_id:0
@@ -1032,7 +1111,8 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: legal
-#: field:legal.auxiliary,value:0 field:legal.expertise.detail,value:0
+#: field:legal.auxiliary,value:0
+#: field:legal.expertise.detail,value:0
 msgid "Value"
 msgstr "Valor"
 
@@ -1060,11 +1140,13 @@ msgstr "or"
 #: model:ir.actions.act_window,name:legal.action_legal_prosecution
 #: model:ir.model,name:legal.model_legal_prosecution
 #: model:ir.ui.menu,name:legal.menu_prosecution
-#: field:legal.auxiliary,prosecution_id:0 field:legal.claim,prosecution_id:0
+#: field:legal.auxiliary,prosecution_id:0
+#: field:legal.claim,prosecution_id:0
 #: field:legal.claim.type,prosecution_id:0
 #: field:legal.evidence,prosecution_id:0
 #: field:legal.expertise,prosecution_id:0
-#: field:legal.negotiation,prosecution_id:0 field:legal.news,prosecution_id:0
+#: field:legal.negotiation,prosecution_id:0
+#: field:legal.news,prosecution_id:0
 #: field:legal.part,prosecution_id:0
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 #: field:legal.radication,prosecution_id:0
@@ -1080,3 +1162,4 @@ msgstr "type prosecution"
 #: view:legal.prosecution:legal.view_legal_prosecution_form
 msgid "⇒ Compute"
 msgstr "⇒ Computar"
+

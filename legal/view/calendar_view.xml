@@ -11,16 +11,16 @@
             <field name="arch" type="xml">
                 <field name="partner_ids" position="after">
                     <field name="event_type"/>
-                    <field name="prosecution_type_id"/>
+                    <field name="prosecution_type_id" string="Type of prosecution"/>
                     <field name="sub_type_id"/>
-                    <field name="responsible_id"/>
+                    <field name="responsible_id" string="Responsible Lawyer"/>
                     <field name="prosecution_id"/>
-                    <field name="partner_id"/>
-                    <filter icon="terp-go-today" string="Confirm" domain="[('state','=','draft')]"/>
-                    <filter icon="terp-go-today" string="Unconfirm" domain="[('state','=','open')]"/>
+                    <field name="partner_id" string="Customer"/>
+                    <filter icon="terp-go-today" string="Confirm" domain="[('state','=','open')]"/>
+                    <filter icon="terp-go-today" string="Unconfirm" domain="[('state','=','draft')]"/>
                     <group>
-                        <field name="start_date" string="Start Date From" filter_domain="[('start_date','&gt;=',self)]"/>
-                        <field name="start_date" string="Start Date To" filter_domain="[('start_date','&lt;=',self)]"/>
+                        <field name="start_date" string="Start Date From" filter_domain="['|',('start_date','&gt;=',self),('start_datetime','&gt;=',self)]"/>
+                        <field name="start_date" string="Start Date To" filter_domain="['|',('start_date','&lt;=',self), ('start_datetime','&lt;=',self)]"/>
                     </group>
                 </field>
                     <filter string="Responsible" position="after">
