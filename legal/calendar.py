@@ -16,7 +16,7 @@ class calendar_event(models.Model):
         'legal.meeting.type',
         string='Metting Subtype')
     partner_id = fields.Many2one(
-        'res.partner', 'Customer', related='prosecution_id.partner_id')
+        'res.partner', string='Customer', related='prosecution_id.partner_id')
     responsible_id = fields.Many2one(
         'res.partner',
         string='Responsible Lawyer', related='prosecution_id.responsible_id')
