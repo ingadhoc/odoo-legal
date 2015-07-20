@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+
+        <!-- FORM -->
+        <record id="view_legal_expertise_detail_form" model="ir.ui.view">
+            <field name="name">legal.expertise.detail.form</field>
+            <field name="model">legal.expertise.detail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="detail_type_id"/>
+                        <field name="value"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_expertise_detail_tree" model="ir.ui.view">
+            <field name="name">legal.expertise.detail.tree</field>
+            <field name="model">legal.expertise.detail</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="detail_type_id"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

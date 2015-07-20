@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <!-- SEARCH VIEW -->
+        <record id="view_legal_calendar_filter" model="ir.ui.view">
+            <field name="name">calendar.event.select</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+            <field name="arch" type="xml">
+                <field name="partner_ids" position="after">
+                    <field name="event_type"/>
+                    <field name="prosecution_type_id" string="Type of prosecution"/>
+                    <field name="sub_type_id"/>
+                    <field name="responsible_id" string="Responsible Lawyer"/>
+                    <field name="prosecution_id"/>
+                    <field name="partner_id" string="Customer"/>
+                    <filter icon="terp-go-today" string="Confirm" domain="[('state','=','open')]"/>
+                    <filter icon="terp-go-today" string="Unconfirm" domain="[('state','=','draft')]"/>
+                    <group>
+                        <field name="start_date" string="Start Date From" filter_domain="['|',('start_date','&gt;=',self),('start_datetime','&gt;=',self)]"/>
+                        <field name="start_date" string="Start Date To" filter_domain="['|',('start_date','&lt;=',self), ('start_datetime','&lt;=',self)]"/>
+                    </group>
+                </field>
+                    <filter string="Responsible" position="after">
+                        <filter string="Event Type" icon="terp-personal" domain="[]" context="{'group_by':'event_type'}" />
+                        <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
+                        <filter string="Prosecution Type" icon="terp-partner" context="{'group_by':'prosecution_type_id'}"/>
+                        <filter string="State" icon="terp-partner" context="{'group_by':'state'}"/>
+                        <filter string="Subtype" icon="terp-partner" context="{'group_by':'sub_type_id'}"/>
+                        <filter string="Customer" icon="terp-partner" context="{'group_by':'partner_id'}"/>
+                    </filter>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record id="view_legal_audiences_form" model="ir.ui.view">
+            <field name="name">calendar.event.form</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+                <h1 position="after">
+                    <group>
+                        <field name="event_type" required="1"/>
+                    </group>
+                </h1>
+                 <page string="Misc" position="after">
+                    <page string="Information Carpet" attrs="{'invisible':[('event_type','!=','audience'), ('event_type','!=','expiry')]}">
+                        <group>
+                            <field name="prosecution_id"/>
+                            <field name="prosecution_type_id" readonly="1" string="Type of prosecution"/>
+                            <field name="partner_id" readonly="1" string="Customer"/>
+                            <field name="responsible_id" readonly="1" string="Responsible Lawyer"/>
+                            <field name="sub_type_id" domain="[('event_type', '=', event_type)]"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_calendar_event_form" model="ir.ui.view">
+            <field name="name">calendar.event.form</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+            <field name="arch" type="xml">
+                <calendar string="Meetings" position="replace">
+                    <calendar string="Meetings" date_start="start" date_stop="stop" date_delay="duration" all_day="allday" color="event_type" attendee="partner_ids">
+                        <field name="name"/>
+                        <field name="user_id"/>
+                    </calendar>
+                </calendar>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+       <!-- SEARCH VIEW -->
+        <record id="view_legal_prosecution_filter" model="ir.ui.view">
+            <field name="name">legal.prosecution.select</field>
+            <field name="model">legal.prosecution</field>
+            <field name="arch" type="xml">
+                <search string="prosecution" version="7.0">
+                    <group string="By Attribute">
+                        <field name="prosecution_type_id" string="Type prosecution"/>
+                        <field name="folder_name" string="Folder Name"/>
+                        <field name="status_id" string="Status"/>
+                        <field name="opening_date_folder" string="Start Date"/>
+                        <field name="close_date_folder" string="End Date"/>
+                        <field name="responsible_id" string="Responsible"/>
+                        <field name="general_state" string="General State"/>
+                        <field name="current_judged_id" string="Current Judged"/>
+                        <field name="partner_id" string="Client"/>
+                        <field name="substate_id" string="Substate"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Type prosecution" icon="terp-personal" domain="[]" context="{'group_by':'prosecution_type_id'}" />
+                        <filter string="Folder" icon="terp-partner" context="{'group_by':'folder_name'}"/>
+                        <filter string="Substate" icon="terp-partner" context="{'group_by':'substate_id'}"/>
+                        <filter string="Client" icon="terp-partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Current Judged" icon="terp-partner" context="{'group_by':'current_judged_id'}"/>
+                        <filter string="Openinig Date Folder" icon="terp-partner" context="{'group_by':'opening_date_folder'}"/>
+                        <filter string="Close Date Folder" icon="terp-partner" context="{'group_by':'close_date_folder'}"/>
+                        <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
+                        <filter string="Status" icon="terp-partner" context="{'group_by':'status_id'}"/>
+                        <filter string="General State" icon="terp-partner" context="{'group_by':'general_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+ 
+        <!-- FORM -->
+        <record id="view_legal_prosecution_form" model="ir.ui.view">
+            <field name="name">legal.prosecution.form</field>
+            <field name="model">legal.prosecution</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
+                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to close the case?"/>
+                    <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                    </header>
+                    <sheet>
+                    <div class="oe_title">
+                        <label for="folder_name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="folder_name"/>
+                            <button name="action_compute" string="⇒ Compute" type="object" class="oe_link"/>
+                        </h1>
+                    </div>
+                    <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                                    name="%(calendar.action_calendar_event)d"
+                                    context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
+                                    <field name="audiences_event_count" string="Audiences" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                                    name="%(calendar.action_calendar_event)d"
+                                    context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'expiry', 'default_event_type' : 'expiry',
+                                    'default_allday' : 'True'}">
+                                    <field name="expiry_event_count" string="Expiry" widget="statinfo"/>
+                                </button>
+                    </div>
+                        <group>
+                            <field name="caratula"/>
+                            <field name="prosecution_type_id" required="True"/>
+                            <field name="claim_type_ids" widget="many2many_tags"/>
+                            <field name="partner_id" required="True"/>
+                        </group>
+                        <group >
+                            <group>
+                                <field name="responsible_id"/>
+                                <field name="responsibility_id"/>
+                                <field name="num_sinister"/>
+                                <field name="status_id"/>
+                                <field name="substate_id"/>
+                                <field name="demand_start_date"/>
+                                <field name="opening_date_folder"/>
+                                <field name="close_date_folder"/>
+                                <field name="re_opening_date_folder"/>
+                            </group>
+                            <group>
+                                <field name="number_current_file"/>
+                                <field name="current_judged_id"/>
+                                <field name="last_complete_instance"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Description of claim">
+                                <field name="description_of_claim"/>
+                            </page>
+                            <page string="Team" name="team">
+                                <field colspan="4" name="member_ids" widget="many2many_kanban" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager']}">
+                                    <kanban quick_create="false" create="true" delete="true">
+                                        <field name="name"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div style="position: relative">
+                                                    <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                                    <div class="oe_module_vignette">
+                                                        <img t-att-src="kanban_image('res.users', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                        <div class="oe_module_desc">
+                                                            <field name="name"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page string="Parts">
+                                <field name="part_ids"/>
+                            </page>
+                            <page string="Radication">
+                                <field name="radication_ids"/>
+                            </page>
+                            <page string="Claims">
+                                <field name="claim_ids">
+                                    <tree editable="top">
+                                        <field name="category_id"/>
+                                        <field name="total" sum="Total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Auxiliary Fields" attrs="{'invisible':[('prosecution_type_id','=','False')]}">
+                                <field name="auxiliary_ids">
+                                    <tree editable="top" create="false">
+                                        <field name="field_id" readonly="True"/>
+                                        <field name="value"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Attachment">
+                                <group>
+                                    <field name="attachment_ids"
+                                    widget="many2many_binary"
+                                    />
+                                </group>
+                            </page>
+                            <page string="News">
+                                <field name="news_ids"/>
+                            </page>
+                            <page string="Evidence">
+                                <field name="evidence_ids">
+                                    <tree editable="top">
+                                        <field name="type_id"/>
+                                        <field name="offerer_id"/>
+                                        <field name="observations"/>
+                                        <field name="state" readonly="True"/>
+                                        <button name="action_done" states="produced" string="Process" type="object" icon="gtk-go-back" help="Done" attrs="{'invisible':[('state','!=','produced')]}"/>
+                                        <button name="action_done" states="pending" string="Process" type="object" icon="gtk-go-forward" help="Done" attrs="{'invisible':[('state','!=','pending')]}"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Expertise">
+                                <field name="expertise_ids"/>
+                            </page>
+                            <page string="Negotiation">
+                                <field name="negotiation_ids">
+                                     <tree editable="top">
+                                        <field name="concept_id"/>
+                                        <field name="amount"/>
+                                        <field name="observations"/>
+                                        <field name="date_proposal"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Obligations">
+                                <field name="regulation_ids"/>
+                            </page>
+                            <page string="Notes">
+                                <field name="note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- KANBAN -->
+        <record model="ir.ui.view" id="view_legal_prosecution_kanban">
+            <field name="name">legal.prosecution.kanban</field>
+            <field name="model">legal.prosecution</field>
+            <field name="secuence">10</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="color"/>
+                    <field name="caratula"/>
+                    <field name="prosecution_type_id"/>
+                    <field name="folder_name"/>
+                    <field name="responsible_id"/>
+                    <field name="status_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                                 <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
+                                        <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                        </ul>
+                                    </div>
+                                <div class="oe_kanban_content" style="width: 120px; height: 80px; margin: 0 auto;">
+                                    <h4 class="text-center"><a type="open"><field name="caratula"/></a></h4>
+                                    <a type="open" style="margin-right: 10px">
+                                    <field name="folder_name"/></a> 
+                                    <a type="open" style="margin-right: 10px">
+                                        <field name="status_id"/></a>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33" class="oe_kanban_avatar pull-right"/>
+                                </div>
+                                <div class="oe_clear"/> 
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_prosecution_tree" model="ir.ui.view">
+            <field name="name">legal.prosecution.tree</field>
+            <field name="model">legal.prosecution</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="caratula"/>
+                    <field name="prosecution_type_id"/>
+                    <field name="status_id"/>
+                    <field name="opening_date_folder"/>
+                    <field name="close_date_folder"/>
+                    <field name="general_state"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

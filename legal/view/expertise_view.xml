@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        
+        <!-- SEARCH VIEW -->
+        <record id="view_legal_expertise_filter" model="ir.ui.view">
+            <field name="name">legal.expertise.select</field>
+            <field name="model">legal.expertise</field>
+            <field name="arch" type="xml">
+                <search string="Event" version="7.0">
+                    <group string="By Attribute">
+                        <field name="offerer_id" string="Offerer"/>
+                        <field name="type_id" string="Type"/>
+                        <field name="state" string="State"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Type" icon="terp-personal" domain="[]" context="{'group_by':'type_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record id="view_legal_expertise_form" model="ir.ui.view">
+            <field name="name">legal.expertise.form</field>
+            <field name="model">legal.expertise</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="type_id"/>
+                        <field name="offerer_id"/>
+                        <field name="name"/>
+                        <field name="state"/>
+                        <field name="observations"/>
+                        <field name="expertise_detail_ids">
+                            <tree editable="top" create="false">
+                                <field name="detail_type_id" readonly="True"/>
+                                <field name="value"/>
+                            </tree>  
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="view_legal_expertise_tree" model="ir.ui.view">
+            <field name="name">legal.expertise.tree</field>
+            <field name="model">legal.expertise</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="type_id"/>
+                    <field name="offerer_id"/>
+                    <field name="name"/>
+                    <field name="state" readonly="True"/>
+                    <button name="action_done" states="produced" string="Process" type="object" icon="gtk-go-back" help="Done" attrs="{'invisible':[('state','!=','produced')]}"/>
+                    <button name="action_done" states="pending" string="Process" type="object" icon="gtk-go-forward" help="Done" attrs="{'invisible':[('state','!=','pending')]}"/>
+                    <field name="observations"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record id="legal_cases_report" model="ir.actions.report.xml">
+        <field name="name">Legal Cases Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">legal.stock_cases</field>
+        <field name="report_name">legal_cases_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-ods</field>
+        <field name="parser_loc">legal/report/legal_cases_parser.py</field>
+        <field name="report_rml">legal/report/legal_cases_report.ods</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_odt"/>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+
+
+    <record id="legal_prosecution_report" model="ir.actions.report.xml">
+        <field name="name">Legal Prosecution Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">legal.prosecution</field>
+        <field name="report_name">legal_prosecution_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <!-- <field name="parser_loc">report_aeroo_sample/report/parser.py</field> -->
+        <field name="report_rml">legal/report/legal_report.odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_odt"/>
+        <!-- <field name="parser_state">loc</field> -->
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+
+    <ir_set>
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field eval="['legal.prosecution']" name="models"/>
+        <field name="name">Prosecution Report</field>
+        <field eval="'ir.actions.report.xml,'+str(legal_prosecution_report)" name="value"/>
+        <field eval="True" name="isobject"/>
+        <field eval="True" name="replace"/>
+    </ir_set>
+
+</data>
+</openerp>
