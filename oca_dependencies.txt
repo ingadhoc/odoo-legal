@@ -1,0 +1,2 @@
+aeroo_reports https://github.com/aeroo/aeroo_reports.git
+odoo-addons https://github.com/ingadhoc/odoo-addons.git
