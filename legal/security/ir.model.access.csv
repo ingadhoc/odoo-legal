@@ -55,5 +55,9 @@ access_legal_manager_expertise_type,legal.manager.expertise_type,model_legal_exp
 access_legal_user_expertise_type,legal.user.expertise_type,model_legal_expertise_type,group_user,1,1,1,1
 access_legal_manager_negotiation_concept,legal.manager.negotiation_concept,model_legal_negotiation_concept,group_manager,1,1,1,1
 access_legal_user_negotiation_concept,legal.user.negotiation_concept,model_legal_negotiation_concept,group_user,1,1,1,1
-access_legal_user_negotiation,legal.user.negotiation,model_legal_negotiation,group_manager,1,1,1,1
+access_legal_manager_negotiation,legal.manager.negotiation,model_legal_negotiation,group_manager,1,1,1,1
 access_legal_user_negotiation,legal.user.negotiation,model_legal_negotiation,group_user,1,1,1,1
+access_legal_manager_meeting_type,legal.manager.meeting_type,model_legal_meeting_type,group_manager,1,1,1,1
+access_legal_user_meeting_type,legal.user.meeting_type,model_legal_meeting_type,group_user,1,1,1,1
+access_legal_manager_role,legal.manager.role,model_legal_role,group_manager,1,1,1,1
+access_legal_user_role,legal.user.role,model_legal_role,group_user,1,1,1,1
