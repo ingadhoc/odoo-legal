@@ -11,6 +11,7 @@
                 <search string="prosecution" version="7.0">
                     <group string="By Attribute">
                         <field name="prosecution_type_id" string="Type prosecution"/>
+                        <field name="caratula" string="Caratula"/>
                         <field name="folder_name" string="Folder Name"/>
                         <field name="status_id" string="Status"/>
                         <field name="opening_date_folder" string="Start Date"/>
