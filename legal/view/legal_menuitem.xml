@@ -6,6 +6,7 @@
             name="Legal"
             id="menu_legal"
             sequence="20"
+            groups="group_manager"
             />
 
         <menuitem
