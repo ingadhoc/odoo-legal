@@ -66,11 +66,15 @@ class prosecution(models.Model):
 
     @api.one
     def _audiences_event_count(self):
-        self.audiences_event_count = len(self.sudo().event_audiences_ids)
+        self.audiences_event_count = len(
+            self.sudo().event_audiences_ids.filtered(
+                lambda x: x.state == 'draft'))
 
     @api.one
     def _expiry_event_count(self):
-        self.expiry_event_count = len(self.sudo().event_expiry_ids)
+        self.expiry_event_count = len(
+            self.sudo().event_expiry_ids.filtered(
+                lambda x: x.state == 'draft'))
 
     @api.one
     def _calculate_amount(self):
