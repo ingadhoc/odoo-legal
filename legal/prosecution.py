@@ -18,8 +18,8 @@ class prosecution(models.Model):
         name = ''
         if self.partner_id:
             name = self.partner_id.name[0]
-        if self.prosecution_type_id:
-            name += '-' + str(self.prosecution_type_id.code)
+        if self.department:
+            name += '-' + str(self.department)
         name += '-' + self.env['ir.sequence'].get('legal.prosecution')
         self.folder_name = name
 
@@ -66,11 +66,15 @@ class prosecution(models.Model):
 
     @api.one
     def _audiences_event_count(self):
-        self.audiences_event_count = len(self.sudo().event_audiences_ids)
+        self.audiences_event_count = len(
+            self.sudo().event_audiences_ids.filtered(
+                lambda x: x.state == 'draft'))
 
     @api.one
     def _expiry_event_count(self):
-        self.expiry_event_count = len(self.sudo().event_expiry_ids)
+        self.expiry_event_count = len(
+            self.sudo().event_expiry_ids.filtered(
+                lambda x: x.state == 'draft'))
 
     @api.one
     def _calculate_amount(self):
@@ -183,6 +187,7 @@ class prosecution(models.Model):
     expertise_ids = fields.One2many(
         'legal.expertise', 'prosecution_id', string="Expertise")
     description_of_claim = fields.Html(string='Description of claim')
+    department = fields.Char(string='Department')
 
     @api.one
     def set_open(self):
