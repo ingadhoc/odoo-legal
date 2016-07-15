@@ -24,6 +24,8 @@ class calendar_event(models.Model):
         'legal.prosecution_type',
         string='Type of prosecution',
         related='prosecution_id.prosecution_type_id')
+    department = fields.Char(
+        string='Department', related='prosecution_id.department')
 
     @api.one
     @api.constrains('prosecution_id')
