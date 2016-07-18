@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-15 12:25+0000\n"
-"PO-Revision-Date: 2016-07-15 09:25-0300\n"
+"POT-Creation-Date: 2016-07-18 13:45+0000\n"
+"PO-Revision-Date: 2016-07-18 10:48-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -339,6 +339,11 @@ msgid "Diary"
 msgstr "Agenda"
 
 #. module: legal
+#: field:legal.office,display_name:0
+msgid "Display name"
+msgstr "Display name"
+
+#. module: legal
 #: view:legal.expertise:legal.view_legal_expertise_tree
 #: view:legal.prosecution:legal.view_legal_prosecution_form
 msgid "Done"
@@ -576,11 +581,6 @@ msgid "Last Updated on"
 msgstr "Last Updated on"
 
 #. module: legal
-#: field:legal.prosecution,last_complete_instance:0
-msgid "Last complete Instance"
-msgstr "Nro. de última instancia completa"
-
-#. module: legal
 #: model:ir.ui.menu,name:legal.menu_lawyer field:legal.part,lawyer_id:0
 msgid "Lawyer"
 msgstr "Abogado"
@@ -722,29 +722,14 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: legal
-#: field:legal.radication,num_1_ins:0
-msgid "Num. 1°Ins"
-msgstr "Num. 1°Ins"
+#: field:legal.radication,num_case_file:0
+msgid "Num. case file"
+msgstr "Numero de Expediente"
 
 #. module: legal
-#: field:legal.radication,num_2_ins:0
-msgid "Num. 2°Ins"
-msgstr "Num. 2°Ins"
-
-#. module: legal
-#: field:legal.radication,num_3_ins:0
-msgid "Num. 3°Ins"
-msgstr "Num. 3°Ins"
-
-#. module: legal
-#: field:legal.radication,num_filed:0
-msgid "Num. Filed"
-msgstr "Num. archivo"
-
-#. module: legal
-#: field:legal.prosecution,number_current_file:0
-msgid "Number of current file"
-msgstr "Número de archivo actual"
+#: field:legal.prosecution,number_case_file:0
+msgid "Number of case file"
+msgstr "Numero de Expediente"
 
 #. module: legal
 #: field:legal.prosecution,num_sinister:0

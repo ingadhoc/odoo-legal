@@ -90,9 +90,8 @@
                                 <field name="re_opening_date_folder"/>
                             </group>
                             <group>
-                                <field name="number_current_file"/>
+                                <field name="number_case_file"/>
                                 <field name="current_judged_id"/>
-                                <field name="last_complete_instance"/>
                             </group>
                         </group>
                         <notebook colspan="4">

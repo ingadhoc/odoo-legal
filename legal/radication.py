@@ -11,10 +11,7 @@ class legal_radication(models.Model):
 
     address = fields.Char(string='Address', compute='_get_address')
     judged_id = fields.Many2one('legal.office', string='Judged')
-    num_1_ins = fields.Char(string='Num. 1°Ins')
-    num_2_ins = fields.Char(string='Num. 2°Ins')
-    num_3_ins = fields.Char(string='Num. 3°Ins')
-    num_filed = fields.Char(string='Num. Filed')
+    num_case_file = fields.Char(string='Num. case file')
     date_court = fields.Date(string='Date of admission to court')
     prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
 
