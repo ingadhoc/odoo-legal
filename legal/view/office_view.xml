@@ -19,5 +19,19 @@
                 </form>
             </field>
         </record>
+
+        <!-- TREE -->
+        <record id="view_legal_office_tree" model="ir.ui.view">
+            <field name="name">legal.office.tree</field>
+            <field name="model">legal.office</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="mail"/>
+                    <field name="location"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
     </data>
 </openerp>

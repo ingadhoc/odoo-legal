@@ -45,24 +45,11 @@ class prosecution(models.Model):
         if self.radication_ids:
             self.current_judged_id = self.radication_ids[
                 0].judged_id.id
-            self.number_current_file = self.radication_ids[0].num_filed
-            if not self.radication_ids[0].num_3_ins:
-                if not self.radication_ids[0].num_2_ins:
-                    if not self.radication_ids[0].num_1_ins:
-                        self.last_complete_instance = ''
-                    else:
-                        self.last_complete_instance = self.radication_ids[
-                            0].num_1_ins
-                else:
-                    self.last_complete_instance = self.radication_ids[
-                        0].num_2_ins
-            else:
-                self.last_complete_instance = self.radication_ids[0].num_3_ins
+            self.number_case_file = self.radication_ids[0].num_case_file
 
         else:
-            self.last_complete_instance = ''
             self.current_judged_id = []
-            self.number_current_file = ''
+            self.number_case_file = ''
 
     @api.one
     def _audiences_event_count(self):
@@ -160,11 +147,8 @@ class prosecution(models.Model):
     partner_id = fields.Many2one(
         'res.partner', 'Customer', domain="[('customer','=',True)]")
     num_sinister = fields.Char(string="Number of sinister")
-    number_current_file = fields.Char(
-        'Number of current file',
-        compute='_get_data', store=True)
-    last_complete_instance = fields.Char(
-        'Last complete Instance',
+    number_case_file = fields.Char(
+        'Number of case file',
         compute='_get_data', store=True)
     part_ids = fields.One2many('legal.part', 'prosecution_id', string='Parts')
     note = fields.Text('Notes')

@@ -17,12 +17,7 @@
                     </group>
                     <group colspan="2">
                         <group>
-                            <field name="num_1_ins"/>
-                            <field name="num_2_ins"/>
-                        </group>
-                        <group>
-                            <field name="num_3_ins"/>
-                            <field name="num_filed"/>
+                            <field name="num_case_file"/>
                         </group>
                     </group>
                 </form>
@@ -35,6 +30,7 @@
             <field name="model">legal.radication</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="num_case_file"/>
                     <field name="date_court"/>
                     <field name="judged_id"/>
                 </tree>
