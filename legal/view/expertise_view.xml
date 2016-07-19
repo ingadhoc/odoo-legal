@@ -57,6 +57,7 @@
                     <field name="state" readonly="True"/>
                     <button name="action_done" states="produced" string="Process" type="object" icon="gtk-go-back" help="Done" attrs="{'invisible':[('state','!=','produced')]}"/>
                     <button name="action_done" states="pending" string="Process" type="object" icon="gtk-go-forward" help="Done" attrs="{'invisible':[('state','!=','pending')]}"/>
+                    <field name="expertise_detail"/>
                     <field name="observations"/>
                 </tree>
             </field>

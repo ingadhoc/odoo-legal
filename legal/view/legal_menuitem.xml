@@ -382,7 +382,7 @@
             id="menu_conf"
             sequence="40"
             parent="menu_legal"
-            groups="group_manager"
+            groups="group_manager,base.group_no_one"
             />
         <menuitem
             name="Status"

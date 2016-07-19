@@ -46,7 +46,7 @@
                 <form>
                     <header>
                     <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
-                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to close the case?"/>
+                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to close the case?"/>
                     <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
                     </header>
                     <sheet>
@@ -88,6 +88,7 @@
                                 <field name="opening_date_folder"/>
                                 <field name="close_date_folder"/>
                                 <field name="re_opening_date_folder"/>
+                                <field name="claim_amount"/>
                             </group>
                             <group>
                                 <field name="number_case_file"/>
@@ -240,7 +241,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="caratula"/>
-                    <field name="prosecution_type_id"/>
+                    <field name="claim_type_ids" widget="many2many_tags"/>
                     <field name="status_id"/>
                     <field name="opening_date_folder"/>
                     <field name="close_date_folder"/>
