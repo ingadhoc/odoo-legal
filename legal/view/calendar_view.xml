@@ -67,9 +67,12 @@
             <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
             <field name="arch" type="xml">
                 <calendar string="Meetings" position="replace">
-                    <calendar string="Meetings" date_start="start" date_stop="stop" date_delay="duration" all_day="allday" color="event_type" attendee="partner_ids">
+                    <calendar string="Meetings" date_start="start" date_stop="stop" date_delay="duration" all_day="allday" color="event_type" display="[name] ; [user_id] ; [caratula] ; [number_case_file] ; [current_judged_id]" attendee="partner_ids">
                         <field name="name"/>
                         <field name="user_id"/>
+                        <field name="caratula"/>
+                        <field name="number_case_file"/>
+                        <field name="current_judged_id"/>
                     </calendar>
                 </calendar>
             </field>

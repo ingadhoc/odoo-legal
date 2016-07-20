@@ -18,6 +18,18 @@ class legal_expertise(models.Model):
     prosecution_id = fields.Many2one('legal.prosecution', string='prosecution')
     expertise_detail_ids = fields.One2many(
         'legal.expertise.detail', 'expertise_id', string='Expertise Detail')
+    expertise_detail = fields.Text(
+        string='Expertise Detail', compute='_get_expertise_detail')
+
+    @api.one
+    def _get_expertise_detail(self):
+        if self.expertise_detail_ids:
+            expertise_detail = ''
+            for expertise_detail_item in self.expertise_detail_ids:
+                expertise_detail = expertise_detail + \
+                    ' : '.join([expertise_detail_item.detail_type_id.name or ' ',
+                                expertise_detail_item.value or ' ']) + '\n'
+            self.expertise_detail = expertise_detail
 
     @api.one
     def action_done(self):

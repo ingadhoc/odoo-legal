@@ -26,6 +26,13 @@ class calendar_event(models.Model):
         related='prosecution_id.prosecution_type_id')
     department = fields.Char(
         string='Department', related='prosecution_id.department')
+    caratula = fields.Char(
+        string='Caratula', related='prosecution_id.caratula')
+    number_case_file = fields.Char(
+        string='Number of case file',
+        related='prosecution_id.number_case_file')
+    current_judged_id = fields.Many2one(
+        'legal.office', related='prosecution_id.current_judged_id')
 
     @api.one
     @api.constrains('prosecution_id')

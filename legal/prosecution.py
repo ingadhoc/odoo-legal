@@ -31,8 +31,9 @@ class prosecution(models.Model):
             name = partner_obj.browse(
                 cr, uid, vals.get('partner_id', False), context=context).name[0]
         if vals.get('prosecution_type_id', False):
-            name += '-' + str(prosecution_type_obj.browse(cr, uid,
-                                                          vals.get('prosecution_type_id', False), context=context).code)
+            name += '-' + str(prosecution_type_obj.browse(
+                cr, uid,
+                vals.get('prosecution_type_id', False), context=context).code)
         name += '-' + \
             self.pool['ir.sequence'].get(cr, uid, 'legal.prosecution')
         vals['folder_name'] = name
@@ -91,7 +92,8 @@ class prosecution(models.Model):
 
     audiences_event_count = fields.Integer(compute='_audiences_event_count')
     expiry_event_count = fields.Integer(compute='_expiry_event_count')
-    claim_amount = fields.Float(compute='_calculate_amount')
+    claim_amount = fields.Float(
+        string="Claim amount", compute='_calculate_amount')
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
