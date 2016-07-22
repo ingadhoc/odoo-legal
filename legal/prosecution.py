@@ -93,7 +93,7 @@ class prosecution(models.Model):
     audiences_event_count = fields.Integer(compute='_audiences_event_count')
     expiry_event_count = fields.Integer(compute='_expiry_event_count')
     claim_amount = fields.Float(
-        string="Claim amount", compute='_calculate_amount')
+        compute='_calculate_amount', string='Claim amount')
     caratula = fields.Char(string='Caratula', required=True)
     color = fields.Integer('Color Index')
     sequence = fields.Char('Sequence')
@@ -174,6 +174,9 @@ class prosecution(models.Model):
         'legal.expertise', 'prosecution_id', string="Expertise")
     description_of_claim = fields.Html(string='Description of claim')
     department = fields.Char(string='Department')
+    invoice_ids = fields.One2many(
+        'account.invoice', 'prosecution_id', string='invoices')
+    invoices = fields.Integer(compute='_get_number_of_invoices')
 
     @api.one
     def set_open(self):
@@ -185,6 +188,11 @@ class prosecution(models.Model):
         self.general_state = 'closed'
         self.close_date_folder = date.today()
         self.re_opening_date_folder = False
+
+    @api.one
+    def _get_number_of_invoices(self):
+        if self.invoice_ids:
+            self.invoices = len(self.invoice_ids)
 
 
 class legal_type_prosecution(models.Model):

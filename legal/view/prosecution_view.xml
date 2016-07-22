@@ -58,17 +58,20 @@
                         </h1>
                     </div>
                     <div class="oe_right oe_button_box" name="buttons">
-                            <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
-                                    name="%(calendar.action_calendar_event)d"
-                                    context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
-                                    <field name="audiences_event_count" string="Audiences" widget="statinfo"/>
-                            </button>
-                            <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
-                                    name="%(calendar.action_calendar_event)d"
-                                    context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'expiry', 'default_event_type' : 'expiry',
-                                    'default_allday' : 'True'}">
-                                    <field name="expiry_event_count" string="Expiry" widget="statinfo"/>
-                                </button>
+                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                                name="%(calendar.action_calendar_event)d"
+                                context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
+                                <field name="audiences_event_count" string="Audiences" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                                name="%(calendar.action_calendar_event)d"
+                                context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'expiry', 'default_event_type' : 'expiry',
+                                'default_allday' : 'True'}">
+                                 <field name="expiry_event_count" string="Expiry" widget="statinfo"/>
+                        </button>
+                        <button type="action" class="oe_stat_button" id="invoice_button" icon="fa-pencil-square-o" name="%(account.action_invoice_tree1)d" context="{'search_default_prosecution_id': active_id,'default_partner_id': partner_id}">
+                        <div><strong><field name="invoices"  string="Invoices" widget="statinfo"/></strong></div>
+                        </button>
                     </div>
                         <group>
                             <field name="department"/>

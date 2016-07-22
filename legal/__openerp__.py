@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Legal',
-    'version': '8.0.0.4.0',
+    'version': '8.0.0.5.0',
     'description': 'Legal',
     'category': 'base.module_category_knowledge_management',
     'author': 'ADHOC',
@@ -9,7 +9,7 @@
     'license': 'AGPL-3',
     'depends': ['calendar',
                 'portal', 'report_aeroo',
-                'partner_person', 'calendar_state'],
+                'partner_person', 'calendar_state', 'account'],
     'data': [
         'security/legal_group.xml',
         'security/ir.model.access.csv',
@@ -33,6 +33,7 @@
         'view/expertise_view.xml',
         'view/expertise_detail_view.xml',
         'view/expertise_detail_type_view.xml',
+        'view/account_invoice_view.xml',
         'prosecution_data.xml',
         'wizard/stock_case_wizard.xml',
         'report/legal_report.xml'
