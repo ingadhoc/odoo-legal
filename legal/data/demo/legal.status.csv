@@ -1,2 +1,7 @@
-id,name
-legal_status_1,Demanda y Contestación
+"id","name"
+"status_02","Comparencia"
+"status_03","Demanda contestada"
+"status_04","Abierto a prueba"
+"status_05","Alegato"
+"status_06","A fallo"
+"status_07","Sentencia de 1º Instancia Dictada"
