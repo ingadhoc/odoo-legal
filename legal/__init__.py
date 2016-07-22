@@ -21,3 +21,4 @@ import report
 import offerer
 import expertise
 import calendar
+import account_invoice

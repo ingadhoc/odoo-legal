@@ -1,0 +1,4 @@
+id,caratula,responsible_id/id,department,status_id/id,general_state,partner_id/id,prosecution_type_id/id
+legal_prosecution_1,Caso 1,res_users_1,4555288,status_03,open,res_partner_1,type_carpet_03
+legal_prosecution_2,Caso 2,res_users_1,45454,status_03,open,res_partner_1,type_carpet_03
+legal_prosecution_3,Caso 3,res_users_1,454545,status_03,closed,res_partner_2,type_carpet_03

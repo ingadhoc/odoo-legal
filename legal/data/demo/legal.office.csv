@@ -1,2 +1,4 @@
-id,name
-legal_office_1,Juzgado Civil y Comercial de la Segunda Nominación
+"id","name","location","address","mail"
+"__export__.legal_office_299","Camara de Apelación Civil y Comercial  - Sala I","Santa Fe","",""
+"__export__.legal_office_300","Camara de Apelación Civil y Comercial  - Sala II","Santa Fe","",""
+"__export__.legal_office_302","Juzgado de Distrito Civil y Comercial  - Primera Nominación","Melincue","",""
