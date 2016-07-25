@@ -18,4 +18,5 @@ class legal_office(models.Model):
     @api.one
     @api.depends('name', 'location')
     def _get_display_name(self):
-        self.display_name = self.name or '' + ' - ' + self.location or ''
+        self.display_name = ' - '.join([self.name or ' ',
+                                        self.location or ' '])
