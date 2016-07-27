@@ -55,6 +55,7 @@
         'data/demo/legal.claim.type.csv',
         'data/demo/legal.claim.category.csv',
         'data/demo/legal.prosecution_type.csv',
+        'data/demo/legal.department.csv',
         'data/demo/legal.prosecution.csv',
     ],
 }
