@@ -74,7 +74,7 @@
                         </button>
                     </div>
                         <group>
-                            <field name="department"/>
+                            <field name="department_id" required="True"/>
                             <field name="caratula"/>
                             <field name="prosecution_type_id" required="True"/>
                             <field name="claim_type_ids" widget="many2many_tags"/>

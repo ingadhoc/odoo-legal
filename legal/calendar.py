@@ -24,8 +24,8 @@ class calendar_event(models.Model):
         'legal.prosecution_type',
         string='Type of prosecution',
         related='prosecution_id.prosecution_type_id')
-    department = fields.Char(
-        string='Department', related='prosecution_id.department')
+    department_id = fields.Many2one(
+        string='Department', related='prosecution_id.department_id')
     caratula = fields.Char(
         string='Caratula', related='prosecution_id.caratula')
     number_case_file = fields.Char(

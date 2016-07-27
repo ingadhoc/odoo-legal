@@ -15,25 +15,20 @@ class prosecution(models.Model):
 
     @api.one
     def action_compute(self):
-        name = ''
-        if self.partner_id:
-            name = self.partner_id.name[0]
-        if self.department:
-            name += '-' + str(self.department)
-        name += '-' + self.env['ir.sequence'].get('legal.prosecution')
-        self.folder_name = name
+        self.folder_name = '-'.join([self.partner_id.name[0], str(self.department_id.code),
+                                     self.env['ir.sequence'].get('legal.prosecution')])
 
     def create(self, cr, uid, vals, context=None):
         name = ''
         partner_obj = self.pool['res.partner']
-        prosecution_type_obj = self.pool['legal.prosecution_type']
+        department_obj = self.pool['legal.department']
         if vals.get('partner_id', False):
             name = partner_obj.browse(
                 cr, uid, vals.get('partner_id', False), context=context).name[0]
-        if vals.get('prosecution_type_id', False):
-            name += '-' + str(prosecution_type_obj.browse(
+        if vals.get('department_id', False):
+            name += '-' + str(department_obj.browse(
                 cr, uid,
-                vals.get('prosecution_type_id', False), context=context).code)
+                vals.get('department_id', False), context=context).code)
         name += '-' + \
             self.pool['ir.sequence'].get(cr, uid, 'legal.prosecution')
         vals['folder_name'] = name
@@ -173,7 +168,7 @@ class prosecution(models.Model):
     expertise_ids = fields.One2many(
         'legal.expertise', 'prosecution_id', string="Expertise")
     description_of_claim = fields.Html(string='Description of claim')
-    department = fields.Char(string='Department')
+    department_id = fields.Many2one('legal.department', string='Department')
     invoice_ids = fields.One2many(
         'account.invoice', 'prosecution_id', string='invoices')
     invoices = fields.Integer(compute='_get_number_of_invoices')

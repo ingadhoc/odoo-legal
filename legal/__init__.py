@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import auxiliary_fields
+import department
 import claims
 import substate
 import legal_models
