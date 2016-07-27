@@ -15,7 +15,7 @@
                     <field name="sub_type_id"/>
                     <field name="responsible_id" string="Responsible Lawyer"/>
                     <field name="prosecution_id"/>
-                    <field name="department"/>
+                    <field name="department_id"/>
                     <field name="partner_id" string="Customer"/>
                     <filter icon="terp-go-today" string="Confirm" domain="[('state','=','open')]"/>
                     <filter icon="terp-go-today" string="Unconfirm" domain="[('state','=','draft')]"/>
@@ -50,7 +50,7 @@
                     <page string="Information Carpet" attrs="{'invisible':[('event_type','!=','audience'), ('event_type','!=','expiry')]}">
                         <group>
                             <field name="prosecution_id"/>
-                            <field name="department" readonly="1"/>
+                            <field name="department_id" readonly="1"/>
                             <field name="prosecution_type_id" readonly="1" string="Type of prosecution"/>
                             <field name="partner_id" readonly="1" string="Customer"/>
                             <field name="responsible_id" readonly="1" string="Responsible Lawyer"/>
