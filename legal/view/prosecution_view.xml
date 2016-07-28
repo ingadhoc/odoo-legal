@@ -69,9 +69,6 @@
                                 'default_allday' : 'True'}">
                                  <field name="expiry_event_count" string="Expiry" widget="statinfo"/>
                         </button>
-                        <button type="action" class="oe_stat_button" id="invoice_button" icon="fa-pencil-square-o" name="%(account.action_invoice_tree1)d" context="{'search_default_prosecution_id': active_id,'default_partner_id': partner_id}">
-                        <div><strong><field name="invoices"  string="Invoices" widget="statinfo"/></strong></div>
-                        </button>
                     </div>
                         <group>
                             <field name="department_id" required="True"/>
@@ -192,6 +189,21 @@
                             <field name="message_ids" widget="mail_thread"/>
                         </div>
                 </form>
+            </field>
+        </record>
+
+
+        <record id="view_legal_prosecution_form_inherit" model="ir.ui.view">
+            <field name="name">legal.prosecution.form.inherit</field>
+            <field name="model">legal.prosecution</field>
+            <field name="inherit_id" ref="view_legal_prosecution_form"/>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+            <field name="arch" type="xml">
+                    <div class="oe_right oe_button_box" name="buttons">
+                        <button type="action" class="oe_stat_button" id="invoice_button" icon="fa-pencil-square-o" name="%(account.action_invoice_tree1)d" context="{'search_default_prosecution_id': active_id,'default_partner_id': partner_id}">
+                        <div><field name="invoices" string="Invoices" widget="statinfo"/></div>
+                        </button>
+                    </div>
             </field>
         </record>
 
