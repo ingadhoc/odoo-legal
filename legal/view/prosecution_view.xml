@@ -46,8 +46,9 @@
                 <form>
                     <header>
                     <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_right oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
-                    <button name="set_close" string="Close" type="object" general_state="open" class="oe_right oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to close the case?"/>
+                    <button name="set_close" string="File Folder" type="object" general_state="open" class="oe_right oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to file folder the case?"/>
                     <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                    <field name="state_detail_id" widget="statusbar" clickable="True" domain="[('state','=', general_state)]"/>
                     </header>
                     <sheet>
                     <div class="oe_title">
@@ -204,6 +205,19 @@
                         <div><field name="invoices" string="Invoices" widget="statinfo"/></div>
                         </button>
                     </div>
+            </field>
+        </record>
+
+        <record id="view_legal_prosecution_state_detail" model="ir.ui.view">
+            <field name="name">legal.prosecution.state_detail.form</field>
+            <field name="model">prosecution.state_detail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                    </group>
+                </form>
             </field>
         </record>
 

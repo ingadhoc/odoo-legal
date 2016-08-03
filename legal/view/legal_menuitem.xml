@@ -295,6 +295,17 @@
             <field name="domain">[]</field>
         </record>
 
+        <record id="action_prosecution_state_detail" model="ir.actions.act_window">
+            <field name="name">State Detail</field>
+            <field name="res_model">prosecution.state_detail</field>
+            <field name="src_model">prosecution.state_detail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref=""/>
+            <field name="search_view_id" ref=""/>
+            <field name="domain">[]</field>
+        </record>
+
         <menuitem
             name="prosecution"
             id="menu_prosecution"
@@ -424,6 +435,15 @@
             action="action_department"
             parent="menu_conf"
             />
+
+        <menuitem
+            name="State Detail"
+            id="menu_detail"
+            sequence="2"
+            action="action_prosecution_state_detail"
+            parent="menu_conf"
+            />
+
         <menuitem
             name="Judgeds"
             id="menu_legal_office"

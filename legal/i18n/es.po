@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-27 13:14+0000\n"
-"PO-Revision-Date: 2016-07-27 10:16-0300\n"
+"POT-Creation-Date: 2016-08-02 14:26+0000\n"
+"PO-Revision-Date: 2016-08-02 11:37-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -135,11 +135,6 @@ msgid "Client"
 msgstr "Cliente"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-msgid "Close"
-msgstr "Cerrar"
-
-#. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 msgid "Close Date Folder"
 msgstr "Fecha de cierre de Carpeta"
@@ -151,6 +146,7 @@ msgstr "Fecha de cierre de Carpeta"
 
 #. module: legal
 #: selection:legal.prosecution,general_state:0
+#: selection:prosecution.state_detail,state:0
 msgid "Closed"
 msgstr "Cerrado"
 
@@ -206,6 +202,7 @@ msgstr "Contactos"
 #: field:legal.responsibility,create_uid:0 field:legal.role,create_uid:0
 #: field:legal.status,create_uid:0 field:legal.stock_cases,create_uid:0
 #: field:legal.substate,create_uid:0
+#: field:prosecution.state_detail,create_uid:0
 msgid "Created by"
 msgstr "Created by"
 
@@ -231,6 +228,7 @@ msgstr "Created by"
 #: field:legal.responsibility,create_date:0 field:legal.role,create_date:0
 #: field:legal.status,create_date:0 field:legal.stock_cases,create_date:0
 #: field:legal.substate,create_date:0
+#: field:prosecution.state_detail,create_date:0
 msgid "Created on"
 msgstr "Created on"
 
@@ -439,6 +437,11 @@ msgid "Expiry"
 msgstr "Vencimiento"
 
 #. module: legal
+#: view:legal.prosecution:legal.view_legal_prosecution_form
+msgid "File Folder"
+msgstr "Archivar Carpeta"
+
+#. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 msgid "Folder"
 msgstr "Carpeta"
@@ -503,7 +506,7 @@ msgstr ""
 #: field:legal.regulation,id:0 field:legal.regulation.concept,id:0
 #: field:legal.responsibility,id:0 field:legal.role,id:0
 #: field:legal.status,id:0 field:legal.stock_cases,id:0
-#: field:legal.substate,id:0
+#: field:legal.substate,id:0 field:prosecution.state_detail,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -523,7 +526,7 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: view:legal.prosecution:legal.view_legal_prosecution_form_inherit
 msgid "Invoices"
 msgstr "Invoices"
 
@@ -571,7 +574,7 @@ msgstr "Fecha del Ultimo Mensaje"
 #: field:legal.regulation.concept,write_uid:0
 #: field:legal.responsibility,write_uid:0 field:legal.role,write_uid:0
 #: field:legal.status,write_uid:0 field:legal.stock_cases,write_uid:0
-#: field:legal.substate,write_uid:0
+#: field:legal.substate,write_uid:0 field:prosecution.state_detail,write_uid:0
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
@@ -596,6 +599,7 @@ msgstr "Last Updated by"
 #: field:legal.responsibility,write_date:0 field:legal.role,write_date:0
 #: field:legal.status,write_date:0 field:legal.stock_cases,write_date:0
 #: field:legal.substate,write_date:0
+#: field:prosecution.state_detail,write_date:0
 msgid "Last Updated on"
 msgstr "Last Updated on"
 
@@ -701,6 +705,7 @@ msgstr "Modelos"
 #: field:legal.prosecution_type,name:0 field:legal.regulation.concept,name:0
 #: field:legal.responsibility,name:0 field:legal.role,name:0
 #: field:legal.status,name:0 field:legal.substate,name:0
+#: field:prosecution.state_detail,name:0
 msgid "Name"
 msgstr "Nombre"
 
@@ -779,6 +784,7 @@ msgstr "Oferente"
 
 #. module: legal
 #: selection:legal.prosecution,general_state:0
+#: selection:prosecution.state_detail,state:0
 msgid "Open"
 msgstr "Abierto"
 
@@ -854,6 +860,11 @@ msgid "Prosecution Type"
 msgstr "Tipo de Carpeta"
 
 #. module: legal
+#: field:prosecution.state_detail,prosecution_ids:0
+msgid "Prosecutions"
+msgstr "Prosecutions"
+
+#. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
 #: field:legal.prosecution,radication_ids:0
 msgid "Radication"
@@ -914,6 +925,7 @@ msgstr "Roles"
 
 #. module: legal
 #: field:legal.prosecution,sequence:0
+#: field:prosecution.state_detail,sequence:0
 msgid "Sequence"
 msgstr "Secuencia"
 
@@ -941,10 +953,17 @@ msgid "State"
 msgstr "Estado"
 
 #. module: legal
+#: model:ir.actions.act_window,name:legal.action_prosecution_state_detail
+#: model:ir.ui.menu,name:legal.menu_detail
+#: field:legal.prosecution,state_detail_id:0
+msgid "State Detail"
+msgstr "Detalles de Estados"
+
+#. module: legal
 #: view:account.invoice:legal.view_account_invoice_filter
 #: model:ir.ui.menu,name:legal.menu_status
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,status_id:0
+#: field:legal.prosecution,status_id:0 field:prosecution.state_detail,state:0
 msgid "Status"
 msgstr "Estado"
 
@@ -1061,8 +1080,8 @@ msgstr "¿Desea volver a abrir el caso?"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
-msgid "Want to close the case?"
-msgstr "¿Desea cerrar el caso?"
+msgid "Want to file folder the case?"
+msgstr "¿Desea archivar el caso?"
 
 #. module: legal
 #: selection:legal.model,type:0
