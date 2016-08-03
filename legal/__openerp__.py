@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Legal',
-    'version': '8.0.0.7.0',
+    'version': '8.0.0.8.0',
     'description': 'Legal',
     'category': 'base.module_category_knowledge_management',
     'author': 'ADHOC',

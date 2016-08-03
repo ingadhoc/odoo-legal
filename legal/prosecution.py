@@ -172,6 +172,12 @@ class prosecution(models.Model):
     invoice_ids = fields.One2many(
         'account.invoice', 'prosecution_id', string='invoices')
     invoices = fields.Integer(compute='_get_number_of_invoices')
+    state_detail_id = fields.Many2one(
+        'prosecution.state_detail',
+        string='State Detail',
+        track_visibility='onchange',
+        select=True
+    )
 
     @api.one
     def set_open(self):
@@ -189,6 +195,13 @@ class prosecution(models.Model):
         if self.invoice_ids:
             self.invoices = len(self.invoice_ids)
 
+    @api.constrains('general_state')
+    def onchange_general_state(self):
+        if self.general_state:
+            state_detail = self.env['prosecution.state_detail'].search(
+                [('state', '=', self.general_state)], limit=1)
+            self.state_detail_id = state_detail.id
+
 
 class legal_type_prosecution(models.Model):
 
@@ -199,3 +212,20 @@ class legal_type_prosecution(models.Model):
 
     name = fields.Char('Name')
     code = fields.Integer('Code')
+
+
+class prosecution_state_detail(models.Model):
+    _name = 'prosecution.state_detail'
+    _order = 'sequence'
+
+    name = fields.Char('Name')
+    sequence = fields.Integer('Sequence')
+    state = fields.Selection(
+        store=True,
+        selection=[('open', 'Open'),
+                   ('closed', 'Closed')], string='Status'
+    )
+    prosecution_ids = fields.One2many(
+        'legal.prosecution',
+        'state_detail_id',
+        'Prosecutions')

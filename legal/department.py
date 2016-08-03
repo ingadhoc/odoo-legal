@@ -7,4 +7,4 @@ class legal_department(models.Model):
     _name = 'legal.department'
 
     name = fields.Char('Name')
-    code = fields.Integer('Code', required=True)
+    code = fields.Char('Code', required=True)
