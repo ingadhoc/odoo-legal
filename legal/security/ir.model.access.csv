@@ -63,3 +63,5 @@ access_legal_manager_role,legal.manager.role,model_legal_role,group_manager,1,1,
 access_legal_user_role,legal.user.role,model_legal_role,group_user,1,1,1,1
 access_legal_manager_department,legal.manager.department,model_legal_department,group_manager,1,1,1,1
 access_legal_user_department,legal.user.department,model_legal_department,group_user,1,1,1,1
+access_legal_manager_state_detail,legal.manager.state_detail,model_prosecution_state_detail,group_manager,1,1,1,1
+access_legal_user_state_detail,legal.user.state_detail,model_prosecution_state_detail,group_user,1,1,1,1
