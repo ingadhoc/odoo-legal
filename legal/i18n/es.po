@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-02 14:26+0000\n"
-"PO-Revision-Date: 2016-08-02 11:37-0300\n"
+"POT-Creation-Date: 2016-08-12 16:12+0000\n"
+"PO-Revision-Date: 2016-08-12 13:13-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -297,6 +297,27 @@ msgid "Date of the order"
 msgstr "Fecha del pedido"
 
 #. module: legal
+#: model:res.company,overdue_msg:legal.legal_company
+msgid ""
+"Dear Sir/Madam,\n"
+"\n"
+"Our records indicate that some payments on your account are still due. "
+"Please find details below.\n"
+"If the amount has already been paid, please disregard this notice. "
+"Otherwise, please forward us the total amount stated below.\n"
+"If you have any queries regarding your account, Please contact us.\n"
+"\n"
+"Thank you in advance for your cooperation.\n"
+"Best Regards,"
+msgstr ""
+"Estimado Señor / Señora, Nuestros registros indican que tiene pagos "
+"pendientes de su cuenta. Encontrará los detalles a continuación. Si ya ha "
+"pagado la cantidad, por favor ignore este aviso. De lo contrario, por favor "
+"envíe la cantidad total que se indica a continuación. Si tiene cualquier "
+"pregunta relacionada con su cuenta, por favor póngase en contacto con "
+"nosotros. Gracias de antemano por su colaboración. Atentamente,"
+
+#. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_kanban
 msgid "Delete"
 msgstr "Borrar"
@@ -528,7 +549,7 @@ msgstr "Factura"
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form_inherit
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Facturas"
 
 #. module: legal
 #: field:legal.prosecution,message_is_follower:0
@@ -806,7 +827,7 @@ msgstr "Fecha de apertura de Carpeta"
 #. module: legal
 #: model:ir.model,name:legal.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr "Empresa"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
@@ -928,6 +949,11 @@ msgstr "Roles"
 #: field:prosecution.state_detail,sequence:0
 msgid "Sequence"
 msgstr "Secuencia"
+
+#. module: legal
+#: field:legal.prosecution,sinister_date:0
+msgid "Sinister Date"
+msgstr "Fecha de Siniestro"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
@@ -1091,7 +1117,7 @@ msgstr "Escritura"
 #. module: legal
 #: field:legal.prosecution,invoice_ids:0
 msgid "invoices"
-msgstr "invoices"
+msgstr "Facturas"
 
 #. module: legal
 #: view:legal.stock_cases:legal.view_stock_cases

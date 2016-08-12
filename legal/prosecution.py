@@ -116,6 +116,7 @@ class prosecution(models.Model):
     re_opening_date_folder = fields.Date(string="Re-Opening date Folder")
     close_date_folder = fields.Date(string="Close date folder")
     demand_start_date = fields.Date(string="Demand start date")
+    sinister_date = fields.Date(string="Sinister Date")
     radication_ids = fields.One2many(
         'legal.radication', 'prosecution_id', string='Radication')
     claim_ids = fields.One2many(

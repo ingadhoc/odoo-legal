@@ -89,6 +89,7 @@
                             </group>
                             <group>
                                 <field name="demand_start_date"/>
+                                <field name="sinister_date"/>
                                 <field name="opening_date_folder"/>
                                 <field name="close_date_folder"/>
                                 <field name="re_opening_date_folder"/>
