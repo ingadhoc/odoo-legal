@@ -15,20 +15,20 @@ class prosecution(models.Model):
 
     @api.one
     def action_compute(self):
-        self.folder_name = '-'.join([self.partner_id.name[0], str(self.department_id.code),
+        self.folder_name = '-'.join([str(self.department_id.code), self.partner_id.name[0],
                                      self.env['ir.sequence'].get('legal.prosecution')])
 
     def create(self, cr, uid, vals, context=None):
         name = ''
         partner_obj = self.pool['res.partner']
         department_obj = self.pool['legal.department']
-        if vals.get('partner_id', False):
-            name = partner_obj.browse(
-                cr, uid, vals.get('partner_id', False), context=context).name[0]
         if vals.get('department_id', False):
-            name += '-' + str(department_obj.browse(
+            name = str(department_obj.browse(
                 cr, uid,
                 vals.get('department_id', False), context=context).code)
+        if vals.get('partner_id', False):
+            name += '-' + partner_obj.browse(
+                cr, uid, vals.get('partner_id', False), context=context).name[0]
         name += '-' + \
             self.pool['ir.sequence'].get(cr, uid, 'legal.prosecution')
         vals['folder_name'] = name
