@@ -10,6 +10,7 @@ class legal_part(models.Model):
 
     age = fields.Integer(string='Age')
     contact = fields.Char(string='Contact')
+    dni = fields.Integer(string='DNI')
     role_id = fields.Many2one('legal.role', string='Role')
     lawyer_id = fields.Many2one(
         'res.partner',

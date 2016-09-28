@@ -69,14 +69,14 @@ class prosecution(models.Model):
         return self.message_subscribe_users(self.member_ids.ids)
 
     @api.one
-    @api.onchange('prosecution_type_id')
+    @api.onchange('department_id')
     def auto_complete_auxiliar_field(self):
         self.auxiliary_ids = self.env[
             'legal.auxiliary']
         auxiliary_field_obj = self.env['legal.auxiliary.field']
-        if self.prosecution_type_id:
+        if self.department_id:
             auxiliary_field_ids = auxiliary_field_obj.search(
-                [('prosecution_type_id', '=', self.prosecution_type_id.id)])
+                [('department_id', '=', self.department_id.id)])
             lines = []
             for line in auxiliary_field_ids:
                 values = {
@@ -179,6 +179,7 @@ class prosecution(models.Model):
         track_visibility='onchange',
         select=True
     )
+    scene_sinister = fields.Char(string="Scene of the sinister")
 
     @api.one
     def set_open(self):

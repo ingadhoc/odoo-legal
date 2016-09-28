@@ -25,6 +25,7 @@
                     <group expand="1" string="Group By...">
                         <filter string="Type prosecution" icon="terp-personal" domain="[]" context="{'group_by':'prosecution_type_id'}" />
                         <filter string="Folder" icon="terp-partner" context="{'group_by':'folder_name'}"/>
+                        <filter string="Department" icon="terp-partner" context="{'group_by':'department_id'}"/>
                         <filter string="Substate" icon="terp-partner" context="{'group_by':'substate_id'}"/>
                         <filter string="Client" icon="terp-partner" context="{'group_by':'partner_id'}"/>
                         <filter string="Current Judged" icon="terp-partner" context="{'group_by':'current_judged_id'}"/>
@@ -82,19 +83,25 @@
                             <group>
                                 <field name="responsible_id"/>
                                 <field name="responsibility_id"/>
+                                <field name="sinister_date"/>
                                 <field name="num_sinister"/>
+                                <field name="scene_sinister"/>
                                 <field name="status_id"/>
                                 <field name="substate_id"/>
                                 <field name="claim_amount"/>
                             </group>
                             <group>
                                 <field name="demand_start_date"/>
-                                <field name="sinister_date"/>
                                 <field name="opening_date_folder"/>
                                 <field name="close_date_folder"/>
                                 <field name="re_opening_date_folder"/>
                                 <field name="number_case_file"/>
                                 <field name="current_judged_id"/>
+                            </group>
+                            <group>
+                                <field name="sinister_date"/>
+                                <field name="num_sinister"/>
+                                <field name="scene_sinister"/>
                             </group>
                         </group>
                         <notebook colspan="4">
@@ -255,7 +262,7 @@
                                         <field name="status_id"/></a>
                                 </div>
                                 <div class="oe_kanban_bottom_right">
-                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33" class="oe_kanban_avatar pull-right"/>
+                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33"/>
                                 </div>
                                 <div class="oe_clear"/> 
                             </div>

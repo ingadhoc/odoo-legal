@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-12 16:12+0000\n"
-"PO-Revision-Date: 2016-08-12 13:13-0300\n"
+"POT-Creation-Date: 2016-09-23 12:31+0000\n"
+"PO-Revision-Date: 2016-09-23 09:44-0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -246,6 +246,11 @@ msgid "Customer"
 msgstr "Cliente"
 
 #. module: legal
+#: field:legal.part,dni:0
+msgid "DNI"
+msgstr "DNI"
+
+#. module: legal
 #: model:ir.ui.menu,name:legal.menu_data_cases
 msgid "Data cases"
 msgstr "Datos de casos"
@@ -329,6 +334,8 @@ msgstr "Fecha de inicio de demanda"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_department
+#: field:legal.auxiliary.field,department_id:0
+#: view:legal.prosecution:legal.view_legal_prosecution_filter
 #: field:legal.prosecution,department_id:0
 msgid "Department"
 msgstr "Departamento"
@@ -643,6 +650,11 @@ msgid "Legal"
 msgstr "Juridico"
 
 #. module: legal
+#: model:ir.actions.report.xml,name:legal.legal_agreement_report
+msgid "Legal Agreement Report"
+msgstr "Reporte Acuerdo Transaccional"
+
+#. module: legal
 #: model:ir.actions.report.xml,name:legal.legal_cases_report
 msgid "Legal Cases Report"
 msgstr "Reporte de Casos"
@@ -651,6 +663,11 @@ msgstr "Reporte de Casos"
 #: model:ir.actions.report.xml,name:legal.legal_prosecution_report
 msgid "Legal Prosecution Report"
 msgstr "Reporte de Procesos"
+
+#. module: legal
+#: model:ir.actions.report.xml,name:legal.legal_waybill_report
+msgid "Legal Waybill Report"
+msgstr "Reporte Hoja de Ruta"
 
 #. module: legal
 #: selection:legal.model,type:0
@@ -883,7 +900,7 @@ msgstr "Tipo de Carpeta"
 #. module: legal
 #: field:prosecution.state_detail,prosecution_ids:0
 msgid "Prosecutions"
-msgstr "Prosecutions"
+msgstr "Carpetas"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
@@ -943,6 +960,11 @@ msgstr "Rol"
 #: model:ir.ui.menu,name:legal.menu_role
 msgid "Roles"
 msgstr "Roles"
+
+#. module: legal
+#: field:legal.prosecution,scene_sinister:0
+msgid "Scene of the sinister"
+msgstr "Lugar del Siniestro"
 
 #. module: legal
 #: field:legal.prosecution,sequence:0
@@ -1063,7 +1085,6 @@ msgstr "Tipo de reclamos"
 #: view:calendar.event:legal.view_legal_audiences_form
 #: view:calendar.event:legal.view_legal_calendar_filter
 #: model:ir.ui.menu,name:legal.menu_type_prosecution
-#: field:legal.auxiliary.field,prosecution_type_id:0
 #: field:legal.prosecution,prosecution_type_id:0
 #: field:legal.stock_cases,prosecution_type_id:0
 msgid "Type of prosecution"
