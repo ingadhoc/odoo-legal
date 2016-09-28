@@ -12,6 +12,7 @@
                 <form>
                     <group>
                         <field name="contact"/>
+                        <field name="dni"/>
                         <field name="role_id"/>
                         <field name="age"/>
                         <field name="lawyer_id"/>
@@ -27,6 +28,7 @@
             <field name="arch" type="xml">
                 <tree editable="top">
                     <field name="contact"/>
+                    <field name="dni"/>
                     <field name="role_id"/>
                     <field name="age"/>
                     <field name="lawyer_id"/>

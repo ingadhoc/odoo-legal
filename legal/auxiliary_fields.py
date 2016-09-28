@@ -21,6 +21,6 @@ class legal_auxiliary_field(models.Model):
     _name = 'legal.auxiliary.field'
 
     name = fields.Char(string="Name")
-    prosecution_type_id = fields.Many2one(
-        'legal.prosecution_type',
-        string='Type of prosecution', required=True)
+    department_id = fields.Many2one(
+        'legal.department',
+        string='Department', requireD=True)

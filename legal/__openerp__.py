@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Legal',
-    'version': '8.0.0.10.0',
+    'version': '8.0.1.0.0',
     'description': 'Legal',
     'category': 'base.module_category_knowledge_management',
     'author': 'ADHOC',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'depends': ['calendar',
-                'portal', 'report_aeroo',
+                'portal', 'report_aeroo', 'l10n_ar_aeroo_base',
                 'partner_person', 'calendar_state', 'account'],
     'data': [
         'security/legal_group.xml',
