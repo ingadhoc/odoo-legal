@@ -15,8 +15,9 @@ class prosecution(models.Model):
 
     @api.one
     def action_compute(self):
-        self.folder_name = '-'.join([str(self.department_id.code), self.partner_id.name[0],
-                                     self.env['ir.sequence'].get('legal.prosecution')])
+        self.folder_name = '-'.join(
+            [str(self.department_id.code), self.partner_id.name[0],
+             self.env['ir.sequence'].get('legal.prosecution')])
 
     def create(self, cr, uid, vals, context=None):
         name = ''
@@ -73,10 +74,23 @@ class prosecution(models.Model):
     def auto_complete_auxiliar_field(self):
         self.auxiliary_ids = self.env[
             'legal.auxiliary']
-        auxiliary_field_obj = self.env['legal.auxiliary.field']
         if self.department_id:
-            auxiliary_field_ids = auxiliary_field_obj.search(
+            auxiliary_field_ids = self.env['legal.auxiliary.field'].search(
                 [('department_id', '=', self.department_id.id)])
+            lines = []
+            for line in auxiliary_field_ids:
+                values = {
+                    'field_id': line.id,
+                }
+                lines.append((0, _, values))
+            self.auxiliary_ids = lines
+
+    @api.one
+    def update_auxiliar_field(self):
+        if self.department_id:
+            auxiliary_field_ids = self.env['legal.auxiliary.field'].search(
+                [('department_id', '=', self.department_id.id),
+                 ('id', 'not in', [a.field_id.id for a in self.auxiliary_ids])])
             lines = []
             for line in auxiliary_field_ids:
                 values = {

@@ -140,6 +140,7 @@
                                 </field>
                             </page>
                             <page string="Auxiliary Fields" attrs="{'invisible':[('prosecution_type_id','=','False')]}">
+                                <button name="update_auxiliar_field" string="Update Auxiliary Field" type="object"  class="oe_right oe_highlight"/>
                                 <field name="auxiliary_ids">
                                     <tree editable="top" create="false">
                                         <field name="field_id" readonly="True"/>
