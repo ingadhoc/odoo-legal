@@ -18,7 +18,6 @@ access_legal_portal_news_type,legal.portal.news_type,legal.model_legal_news_type
 access_legal_portal_offerer,legal.portal.offerer,legal.model_legal_offerer,base.group_portal,1,0,0,0
 access_legal_portal_regulation_concept,legal.portal.regulation_concept,legal.model_legal_regulation_concept,base.group_portal,1,0,0,0
 access_legal_portal_responsibility,legal.portal.responsibility,legal.model_legal_responsibility,base.group_portal,1,0,0,0
-access_legal_portal_stock_cases,legal.portal.stock_cases,legal.model_legal_stock_cases,base.group_portal,1,0,0,0
 access_legal_portal_evidence,legal.portal.evidence,legal.model_legal_evidence,base.group_portal,1,0,0,0
 access_legal_portal_evidence_type,legal.portal.evidence_type,legal.model_legal_evidence_type,base.group_portal,1,0,0,0
 access_legal_portal_expertise,legal.portal.expertise,legal.model_legal_expertise,base.group_portal,1,0,0,0
