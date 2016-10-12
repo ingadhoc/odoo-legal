@@ -39,8 +39,6 @@ access_legal_manager_regulation_concept,legal.manager.regulation_concept,model_l
 access_legal_user_regulation_concept,legal.user.regulation_concept,model_legal_regulation_concept,group_user,1,1,1,1
 access_legal_manager_responsibility,legal.manager.responsibility,model_legal_responsibility,group_manager,1,1,1,1
 access_legal_user_responsibility,legal.user.responsibility,model_legal_responsibility,group_user,1,1,1,1
-access_legal_manager_stock_cases,legal.manager.stock_cases,model_legal_stock_cases,group_manager,1,1,1,1
-access_legal_user_stock_cases,legal.user.stock_cases,model_legal_stock_cases,group_user,1,1,1,1
 access_legal_manager_evidence,legal.manager.evidence,model_legal_evidence,group_manager,1,1,1,1
 access_legal_user_evidence,legal.user.evidence,model_legal_evidence,group_user,1,1,1,1
 access_legal_manager_evidence_type,legal.manager.evidence_type,model_legal_evidence_type,group_manager,1,1,1,1

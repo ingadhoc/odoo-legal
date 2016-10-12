@@ -232,7 +232,7 @@
         <record model="ir.ui.view" id="view_legal_prosecution_kanban">
             <field name="name">legal.prosecution.kanban</field>
             <field name="model">legal.prosecution</field>
-            <field name="secuence">10</field>
+            <field name="priority">10</field>
             <field name="arch" type="xml">
                 <kanban class="oe_background_grey">
                     <field name="color"/>
