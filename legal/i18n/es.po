@@ -1,23 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* legal
-#
+# * legal
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: odoo-legal (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-11 14:14+0000\n"
-"PO-Revision-Date: 2016-10-11 11:15-0300\n"
-"Last-Translator: <>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2017-04-08 14:38+0000\n"
+"PO-Revision-Date: 2017-04-08 14:38+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-legal-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 1.5.4\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: legal
-#: field:legal.office,address:0
+#: field:legal.office,address:0 field:legal.radication,address:0
 msgid "Address"
 msgstr "Dirección"
 
@@ -52,6 +53,11 @@ msgstr "Audiencia"
 #: field:legal.prosecution,event_audiences_ids:0
 msgid "Audiences"
 msgstr "Audiencias"
+
+#. module: legal
+#: field:legal.prosecution,audiences_event_count:0
+msgid "Audiences event count"
+msgstr ""
 
 #. module: legal
 #: field:legal.auxiliary,field_id:0
@@ -92,6 +98,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: legal
+#: field:calendar.event,caratula:0
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 #: field:legal.prosecution,caratula:0
 msgid "Caratula"
@@ -122,6 +129,11 @@ msgstr "Rubros del reclamo"
 #: model:ir.ui.menu,name:legal.menu_claim_type
 msgid "Claim Types"
 msgstr "Tipos de Reclamo"
+
+#. module: legal
+#: field:legal.prosecution,claim_amount:0
+msgid "Claim amount"
+msgstr ""
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
@@ -233,6 +245,7 @@ msgid "Created on"
 msgstr "Created on"
 
 #. module: legal
+#: field:calendar.event,current_judged_id:0
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
 #: field:legal.prosecution,current_judged_id:0
 msgid "Current Judged"
@@ -241,7 +254,7 @@ msgstr "Juzgado actual"
 #. module: legal
 #: view:calendar.event:legal.view_legal_audiences_form
 #: view:calendar.event:legal.view_legal_calendar_filter
-#: field:legal.prosecution,partner_id:0
+#: field:calendar.event,partner_id:0 field:legal.prosecution,partner_id:0
 msgid "Customer"
 msgstr "Cliente"
 
@@ -306,21 +319,13 @@ msgstr "Fecha del pedido"
 msgid ""
 "Dear Sir/Madam,\n"
 "\n"
-"Our records indicate that some payments on your account are still due. "
-"Please find details below.\n"
-"If the amount has already been paid, please disregard this notice. "
-"Otherwise, please forward us the total amount stated below.\n"
+"Our records indicate that some payments on your account are still due. Please find details below.\n"
+"If the amount has already been paid, please disregard this notice. Otherwise, please forward us the total amount stated below.\n"
 "If you have any queries regarding your account, Please contact us.\n"
 "\n"
 "Thank you in advance for your cooperation.\n"
 "Best Regards,"
-msgstr ""
-"Estimado Señor / Señora, Nuestros registros indican que tiene pagos "
-"pendientes de su cuenta. Encontrará los detalles a continuación. Si ya ha "
-"pagado la cantidad, por favor ignore este aviso. De lo contrario, por favor "
-"envíe la cantidad total que se indica a continuación. Si tiene cualquier "
-"pregunta relacionada con su cuenta, por favor póngase en contacto con "
-"nosotros. Gracias de antemano por su colaboración. Atentamente,"
+msgstr "Estimado Señor / Señora, Nuestros registros indican que tiene pagos pendientes de su cuenta. Encontrará los detalles a continuación. Si ya ha pagado la cantidad, por favor ignore este aviso. De lo contrario, por favor envíe la cantidad total que se indica a continuación. Si tiene cualquier pregunta relacionada con su cuenta, por favor póngase en contacto con nosotros. Gracias de antemano por su colaboración. Atentamente,"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_kanban
@@ -333,6 +338,7 @@ msgid "Demand start date"
 msgstr "Fecha de inicio de demanda"
 
 #. module: legal
+#: field:calendar.event,department_id:0
 #: model:ir.actions.act_window,name:legal.action_department
 #: field:legal.auxiliary.field,department_id:0
 #: view:legal.prosecution:legal.view_legal_prosecution_filter
@@ -371,6 +377,33 @@ msgstr "Detalle de los casos"
 #: model:ir.ui.menu,name:legal.menu_Diary
 msgid "Diary"
 msgstr "Agenda"
+
+#. module: legal
+#: field:legal.auxiliary,display_name:0
+#: field:legal.auxiliary.field,display_name:0 field:legal.claim,display_name:0
+#: field:legal.claim.category,display_name:0
+#: field:legal.claim.type,display_name:0 field:legal.department,display_name:0
+#: field:legal.evidence,display_name:0
+#: field:legal.evidence.type,display_name:0
+#: field:legal.expertise,display_name:0
+#: field:legal.expertise.detail,display_name:0
+#: field:legal.expertise.detail_type,display_name:0
+#: field:legal.expertise.type,display_name:0
+#: field:legal.meeting.type,display_name:0 field:legal.model,display_name:0
+#: field:legal.negotiation,display_name:0
+#: field:legal.negotiation.concept,display_name:0
+#: field:legal.news,display_name:0 field:legal.news.type,display_name:0
+#: field:legal.offerer,display_name:0 field:legal.part,display_name:0
+#: field:legal.prosecution,display_name:0
+#: field:legal.prosecution_type,display_name:0
+#: field:legal.radication,display_name:0 field:legal.regulation,display_name:0
+#: field:legal.regulation.concept,display_name:0
+#: field:legal.responsibility,display_name:0 field:legal.role,display_name:0
+#: field:legal.status,display_name:0 field:legal.stock_cases,display_name:0
+#: field:legal.substate,display_name:0
+#: field:prosecution.state_detail,display_name:0
+msgid "Display Name"
+msgstr ""
 
 #. module: legal
 #: field:legal.office,display_name:0
@@ -440,6 +473,7 @@ msgid "Expertise  Type"
 msgstr "Tipo de Pericia"
 
 #. module: legal
+#: field:legal.expertise,expertise_detail:0
 #: field:legal.expertise,expertise_detail_ids:0
 msgid "Expertise Detail"
 msgstr "Detalle de la Percia"
@@ -463,6 +497,11 @@ msgstr "Tipo de Pericia"
 #: field:legal.prosecution,event_expiry_ids:0
 msgid "Expiry"
 msgstr "Vencimiento"
+
+#. module: legal
+#: field:legal.prosecution,expiry_event_count:0
+msgid "Expiry event count"
+msgstr ""
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form
@@ -515,9 +554,7 @@ msgstr "Agrupar Por..."
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Sostiene el resumen Chatter (número de mensajes, ...). Este resumen es "
-"directamente en formato html para ser insertada en vistas kanban."
+msgstr "Sostiene el resumen Chatter (número de mensajes, ...). Este resumen es directamente en formato html para ser insertada en vistas kanban."
 
 #. module: legal
 #: field:legal.auxiliary,id:0 field:legal.auxiliary.field,id:0
@@ -555,6 +592,7 @@ msgstr "Factura"
 
 #. module: legal
 #: view:legal.prosecution:legal.view_legal_prosecution_form_inherit
+#: field:legal.prosecution,invoices:0
 msgid "Invoices"
 msgstr "Facturas"
 
@@ -583,6 +621,35 @@ msgstr "Juzgados"
 #: field:legal.prosecution,message_last_post:0
 msgid "Last Message Date"
 msgstr "Fecha del Ultimo Mensaje"
+
+#. module: legal
+#: field:legal.auxiliary,__last_update:0
+#: field:legal.auxiliary.field,__last_update:0
+#: field:legal.claim,__last_update:0
+#: field:legal.claim.category,__last_update:0
+#: field:legal.claim.type,__last_update:0
+#: field:legal.department,__last_update:0 field:legal.evidence,__last_update:0
+#: field:legal.evidence.type,__last_update:0
+#: field:legal.expertise,__last_update:0
+#: field:legal.expertise.detail,__last_update:0
+#: field:legal.expertise.detail_type,__last_update:0
+#: field:legal.expertise.type,__last_update:0
+#: field:legal.meeting.type,__last_update:0 field:legal.model,__last_update:0
+#: field:legal.negotiation,__last_update:0
+#: field:legal.negotiation.concept,__last_update:0
+#: field:legal.news,__last_update:0 field:legal.news.type,__last_update:0
+#: field:legal.offerer,__last_update:0 field:legal.office,__last_update:0
+#: field:legal.part,__last_update:0 field:legal.prosecution,__last_update:0
+#: field:legal.prosecution_type,__last_update:0
+#: field:legal.radication,__last_update:0
+#: field:legal.regulation,__last_update:0
+#: field:legal.regulation.concept,__last_update:0
+#: field:legal.responsibility,__last_update:0 field:legal.role,__last_update:0
+#: field:legal.status,__last_update:0 field:legal.stock_cases,__last_update:0
+#: field:legal.substate,__last_update:0
+#: field:prosecution.state_detail,__last_update:0
+msgid "Last Modified on"
+msgstr ""
 
 #. module: legal
 #: field:legal.auxiliary,write_uid:0 field:legal.auxiliary.field,write_uid:0
@@ -789,6 +856,7 @@ msgid "Num. case file"
 msgstr "Numero de Expediente"
 
 #. module: legal
+#: field:calendar.event,number_case_file:0
 #: field:legal.prosecution,number_case_file:0
 msgid "Number of case file"
 msgstr "Numero de Expediente"
@@ -945,6 +1013,7 @@ msgstr "Responsable"
 #. module: legal
 #: view:calendar.event:legal.view_legal_audiences_form
 #: view:calendar.event:legal.view_legal_calendar_filter
+#: field:calendar.event,responsible_id:0
 #: field:legal.prosecution,responsible_id:0
 #: field:legal.stock_cases,responsible_id:0
 msgid "Responsible Lawyer"
@@ -1084,6 +1153,7 @@ msgstr "Tipo de reclamos"
 #. module: legal
 #: view:calendar.event:legal.view_legal_audiences_form
 #: view:calendar.event:legal.view_legal_calendar_filter
+#: field:calendar.event,prosecution_type_id:0
 #: model:ir.ui.menu,name:legal.menu_type_prosecution
 #: field:legal.prosecution,prosecution_type_id:0
 #: field:legal.stock_cases,prosecution_type_id:0
