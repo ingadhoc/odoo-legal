@@ -38,7 +38,7 @@
         'wizard/stock_case_wizard.xml',
         'report/legal_report.xml'
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': True,
     'demo': [
