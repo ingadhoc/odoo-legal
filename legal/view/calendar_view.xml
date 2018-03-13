@@ -24,29 +24,35 @@
                         <field name="start_date" string="Start Date To" filter_domain="['|',('start_date','&lt;=',self), ('start_datetime','&lt;=',self)]"/>
                     </group>
                 </field>
-                    <filter string="Responsible" position="after">
-                        <filter string="Event Type" icon="terp-personal" domain="[]" context="{'group_by':'event_type'}" />
-                        <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
-                        <filter string="Prosecution Type" icon="terp-partner" context="{'group_by':'prosecution_type_id'}"/>
-                        <filter string="State" icon="terp-partner" context="{'group_by':'state'}"/>
-                        <filter string="Subtype" icon="terp-partner" context="{'group_by':'sub_type_id'}"/>
-                        <filter string="Customer" icon="terp-partner" context="{'group_by':'partner_id'}"/>
-                    </filter>
+                <group>
+                    <filter string="Event Type" icon="terp-personal" domain="[]" context="{'group_by':'event_type'}" />
+                    <filter string="Responsible" icon="terp-partner" context="{'group_by':'responsible_id'}"/>
+                    <filter string="Prosecution Type" icon="terp-partner" context="{'group_by':'prosecution_type_id'}"/>
+                    <filter string="State" icon="terp-partner" context="{'group_by':'state'}"/>
+                    <filter string="Subtype" icon="terp-partner" context="{'group_by':'sub_type_id'}"/>
+                    <filter string="Customer" icon="terp-partner" context="{'group_by':'partner_id'}"/>
+                </group>
             </field>
         </record>
 
         <!-- FORM -->
-        <record id="view_legal_audiences_form" model="ir.ui.view">
+        <record id="view_calendar_event_form" model="ir.ui.view">
             <field name="name">calendar.event.form</field>
             <field name="model">calendar.event</field>
             <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
             <field name="arch" type="xml">
+                <field name="state" position="replace"/>
+                <sheet position="before">
+                    <header>
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                </sheet>
                 <h1 position="after">
                     <group>
                         <field name="event_type" required="1"/>
                     </group>
                 </h1>
-                 <page string="Misc" position="after">
+                 <xpath expr="//page[3]" position="after">
                     <page string="Information Carpet" attrs="{'invisible':[('event_type','!=','audience'), ('event_type','!=','expiry')]}">
                         <group>
                             <field name="prosecution_id"/>
@@ -57,16 +63,16 @@
                             <field name="sub_type_id" domain="[('event_type', '=', event_type)]"/>
                         </group>
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
 
-        <record id="view_calendar_event_form" model="ir.ui.view">
+        <record id="view_calendar_event_calendar" model="ir.ui.view">
             <field name="name">calendar.event.form</field>
             <field name="model">calendar.event</field>
             <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
             <field name="arch" type="xml">
-                <calendar string="Meetings" position="replace">
+                <calendar position="replace">
                     <calendar string="Meetings" date_start="start" date_stop="stop" date_delay="duration" all_day="allday" color="event_type" display="[name] ; [user_id] ; [caratula] ; [number_case_file] ; [current_judged_id]" attendee="partner_ids">
                         <field name="name"/>
                         <field name="user_id"/>

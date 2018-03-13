@@ -2,11 +2,6 @@
 <openerp>
     <data noupdate="1">
 
-        <record id="sequence_type" model="ir.sequence.type">
-            <field name="name">Sequence</field>
-            <field name="code">legal.prosecution</field>
-        </record>
-
         <record id="sequence" model="ir.sequence">
             <field name="name">prosecution</field>
             <field name="code">legal.prosecution</field>

@@ -46,20 +46,14 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                    <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_right oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
-                    <button name="set_close" string="File Folder" type="object" general_state="open" class="oe_right oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to file folder the case?"/>
-                    <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
-                    <field name="state_detail_id" widget="statusbar" clickable="True" domain="[('state','=', general_state)]"/>
+                        <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_right oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
+                        <button name="set_close" string="File Folder" type="object" general_state="open" class="oe_right oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to file folder the case?"/>
+                        <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                        <field name="state_detail_id" widget="statusbar" clickable="True" domain="[('state','=', general_state)]"/>
                     </header>
                     <sheet>
-                    <div class="oe_title">
-                        <label for="folder_name" class="oe_edit_only"/>
-                        <h1>
-                            <field name="folder_name"/>
-                            <button name="action_compute" string="⇒ Compute" type="object" class="oe_link"/>
-                        </h1>
-                    </div>
-                    <div class="oe_right oe_button_box" name="buttons">
+                   
+                    <div class="oe_button_box" name="buttons">
                         <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
                                 name="%(calendar.action_calendar_event)d"
                                 context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
@@ -71,6 +65,13 @@
                                 'default_allday' : 'True'}">
                                  <field name="expiry_event_count" string="Expiry" widget="statinfo"/>
                         </button>
+                    </div>
+                     <div class="oe_title">
+                        <label for="folder_name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="folder_name"/>
+                            <button name="action_compute" string="⇒ Compute" type="object" class="oe_link"/>
+                        </h1>
                     </div>
                         <group>
                             <field name="department_id" required="True"/>
@@ -206,9 +207,9 @@
             <field name="inherit_id" ref="view_legal_prosecution_form"/>
             <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
             <field name="arch" type="xml">
-                    <div class="oe_right oe_button_box" name="buttons">
+                    <div name="buttons">
                         <button type="action" class="oe_stat_button" id="invoice_button" icon="fa-pencil-square-o" name="%(account.action_invoice_tree1)d" context="{'search_default_prosecution_id': active_id,'default_partner_id': partner_id}">
-                        <div><field name="invoices" string="Invoices" widget="statinfo"/></div>
+                        <field name="invoices" string="Invoices" widget="statinfo"/>
                         </button>
                     </div>
             </field>
@@ -245,10 +246,9 @@
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
                                  <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
-                                    <span class="oe_e">í</span>
                                     <ul class="oe_dropdown_menu">
-                                        <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
-                                        <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                        <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
                                         <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
                                         </ul>
                                     </div>
@@ -260,7 +260,7 @@
                                         <field name="status_id"/></a>
                                 </div>
                                 <div class="oe_kanban_bottom_right">
-                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="36" height="33"/>
+                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="40" height="35"/>
                                 </div>
                                 <div class="oe_clear"/> 
                             </div>

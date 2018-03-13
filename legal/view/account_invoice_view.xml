@@ -9,10 +9,10 @@
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.view_account_invoice_filter"/>
             <field name="arch" type="xml">
-                <field name="period_id" position="after">
+                <field name="number" position="after">
                     <field name="prosecution_id"/>
                 </field>
-                    <filter string="Status" position="after">
+                    <filter name="status" position="after">
                         <filter string="Prosecution" icon="terp-personal" domain="[]" context="{'group_by':'prosecution_id'}" />
                     </filter>
             </field>
@@ -20,12 +20,12 @@
 
         <!-- FORM -->
         <record id="invoice_form" model="ir.ui.view">
-            <field name="name">account.invoice.form</field>
+            <field name="name">account.invoice.form.inherit</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <field name="account_id" position="after">
-                    <field name="prosecution_id" readonly="True"/>
+                <field name="origin" position="before">
+                    <field name="prosecution_id"/>
                 </field>
             </field>
         </record>

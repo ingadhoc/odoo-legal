@@ -3,7 +3,11 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
+from openerp import models, fields
 
-from . import models
-from . import wizard
-from . import report
+
+class LegalRole(models.Model):
+
+    _name = 'legal.role'
+
+    name = fields.Char(string='Name')
