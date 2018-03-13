@@ -7,7 +7,6 @@
             <field name="street">Calle Falsa 123</field>
             <field name="city">Rosario</field>
             <field name="zip">2000</field>
-            <field name="image" type="base64" file="addons/legal/static/img/estudio.png"/>
         </record>
         <record id="legal_company" model="res.company">
             <field name="name">Estudios</field>
