@@ -1,46 +1,54 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * legal
-# 
-# Translators:
+# 	* legal
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: odoo-legal (8.0)\n"
+"Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-08 14:38+0000\n"
-"PO-Revision-Date: 2017-04-08 14:38+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-legal-8-0/language/es/)\n"
+"POT-Creation-Date: 2018-03-13 13:35+0000\n"
+"PO-Revision-Date: 2018-03-13 10:53-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: legal
-#: field:legal.office,address:0 field:legal.radication,address:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_needaction
+msgid "Action Needed"
+msgstr "Necesaria acción"
+
+#. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_office_address
+#: model:ir.model.fields,field_description:legal.field_legal_radication_address
 msgid "Address"
 msgstr "Dirección"
 
 #. module: legal
-#: field:legal.part,age:0
+#: model:ir.model.fields,field_description:legal.field_legal_part_age
 msgid "Age"
 msgstr "Edad"
 
 #. module: legal
-#: field:legal.negotiation,amount:0 field:legal.regulation,amount:0
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_amount
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_amount
 msgid "Amount"
 msgstr "Importe"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Attachment"
 msgstr "Adjuntos"
 
 #. module: legal
-#: field:legal.model,attachment_ids:0 field:legal.prosecution,attachment_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_model_attachment_ids
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_attachment_ids
 msgid "Attachments"
-msgstr "Adjunto"
+msgstr "Adjuntos"
 
 #. module: legal
 #: selection:calendar.event,event_type:0
@@ -49,41 +57,41 @@ msgid "Audience"
 msgstr "Audiencia"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,event_audiences_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_event_audiences_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Audiences"
 msgstr "Audiencias"
 
 #. module: legal
-#: field:legal.prosecution,audiences_event_count:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_audiences_event_count
 msgid "Audiences event count"
-msgstr ""
+msgstr "Audiences event count"
 
 #. module: legal
-#: field:legal.auxiliary,field_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_id
 msgid "Auxiliary"
 msgstr "Auxiliar"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_auxiliary_fields
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_auxiliary_ids
 #: model:ir.ui.menu,name:legal.menu_auxiliary_fields
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,auxiliary_ids:0
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Auxiliary Fields"
 msgstr "Campos Auxiliares"
 
 #. module: legal
-#: view:legal.regulation:legal.view_legal_regulation_filter
-#: field:legal.regulation,beneficiary:0
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_beneficiary
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "Beneficiary"
 msgstr "Beneficiario"
 
 #. module: legal
-#: view:legal.expertise:legal.view_legal_expertise_filter
-#: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: view:legal.news:legal.view_legal_news_filter
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: view:legal.regulation:legal.view_legal_regulation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_negotiation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "By Attribute"
 msgstr "By Attribute"
 
@@ -93,26 +101,26 @@ msgid "Calendar"
 msgstr "Calendario"
 
 #. module: legal
-#: view:legal.stock_cases:legal.view_stock_cases
+#: model:ir.ui.view,arch_db:legal.view_stock_cases
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: legal
-#: field:calendar.event,caratula:0
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,caratula:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_caratula
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_caratula
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Caratula"
 msgstr "Caratula"
 
 #. module: legal
-#: field:legal.claim,category_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_id
 msgid "Category"
-msgstr "Rubro"
+msgstr "Categoría"
 
 #. module: legal
-#: field:legal.regulation,check_num:0
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_check_num
 msgid "Check Number"
-msgstr "Numero de Cheque"
+msgstr "Número del Cheque"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_claim_category
@@ -131,28 +139,28 @@ msgid "Claim Types"
 msgstr "Tipos de Reclamo"
 
 #. module: legal
-#: field:legal.prosecution,claim_amount:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_claim_amount
 msgid "Claim amount"
-msgstr ""
+msgstr "Monto de reclamo"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,claim_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_claim_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Claims"
 msgstr "Reclamos"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Client"
 msgstr "Cliente"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Close Date Folder"
 msgstr "Fecha de cierre de Carpeta"
 
 #. module: legal
-#: field:legal.prosecution,close_date_folder:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_close_date_folder
 msgid "Close date folder"
 msgstr "Fecha de cierre de Carpeta"
 
@@ -163,18 +171,20 @@ msgid "Closed"
 msgstr "Cerrado"
 
 #. module: legal
-#: field:legal.department,code:0 field:legal.prosecution_type,code:0
+#: model:ir.model.fields,field_description:legal.field_legal_department_code
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_code
 msgid "Code"
-msgstr "Codigo"
+msgstr "Código"
 
 #. module: legal
-#: field:legal.prosecution,color:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_color
 msgid "Color Index"
-msgstr "Color Index"
+msgstr "Índice de colores"
 
 #. module: legal
-#: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: field:legal.negotiation,concept_id:0 field:legal.regulation,concept_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_id
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_id
+#: model:ir.ui.view,arch_db:legal.view_legal_negotiation_filter
 msgid "Concept"
 msgstr "Concepto"
 
@@ -184,82 +194,105 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Confirm"
-msgstr "Confirmada"
+msgstr "Confirmar"
 
 #. module: legal
-#: model:ir.ui.menu,name:legal.menu_contact field:legal.part,contact:0
+#: model:ir.model.fields,field_description:legal.field_legal_part_contact
+#: model:ir.ui.menu,name:legal.menu_contact
 msgid "Contact"
-msgstr "Contactos"
+msgstr "Contacto"
 
 #. module: legal
-#: field:legal.auxiliary,create_uid:0 field:legal.auxiliary.field,create_uid:0
-#: field:legal.claim,create_uid:0 field:legal.claim.category,create_uid:0
-#: field:legal.claim.type,create_uid:0 field:legal.department,create_uid:0
-#: field:legal.evidence,create_uid:0 field:legal.evidence.type,create_uid:0
-#: field:legal.expertise,create_uid:0
-#: field:legal.expertise.detail,create_uid:0
-#: field:legal.expertise.detail_type,create_uid:0
-#: field:legal.expertise.type,create_uid:0
-#: field:legal.meeting.type,create_uid:0 field:legal.model,create_uid:0
-#: field:legal.negotiation,create_uid:0
-#: field:legal.negotiation.concept,create_uid:0 field:legal.news,create_uid:0
-#: field:legal.news.type,create_uid:0 field:legal.offerer,create_uid:0
-#: field:legal.office,create_uid:0 field:legal.part,create_uid:0
-#: field:legal.prosecution,create_uid:0
-#: field:legal.prosecution_type,create_uid:0
-#: field:legal.radication,create_uid:0 field:legal.regulation,create_uid:0
-#: field:legal.regulation.concept,create_uid:0
-#: field:legal.responsibility,create_uid:0 field:legal.role,create_uid:0
-#: field:legal.status,create_uid:0 field:legal.stock_cases,create_uid:0
-#: field:legal.substate,create_uid:0
-#: field:prosecution.state_detail,create_uid:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_department_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_model_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_news_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_office_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_part_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_radication_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_role_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_status_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_create_uid
+#: model:ir.model.fields,field_description:legal.field_legal_substate_create_uid
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Creado por"
 
 #. module: legal
-#: field:legal.auxiliary,create_date:0
-#: field:legal.auxiliary.field,create_date:0 field:legal.claim,create_date:0
-#: field:legal.claim.category,create_date:0
-#: field:legal.claim.type,create_date:0 field:legal.department,create_date:0
-#: field:legal.evidence,create_date:0 field:legal.evidence.type,create_date:0
-#: field:legal.expertise,create_date:0
-#: field:legal.expertise.detail,create_date:0
-#: field:legal.expertise.detail_type,create_date:0
-#: field:legal.expertise.type,create_date:0
-#: field:legal.meeting.type,create_date:0 field:legal.model,create_date:0
-#: field:legal.negotiation,create_date:0
-#: field:legal.negotiation.concept,create_date:0
-#: field:legal.news,create_date:0 field:legal.news.type,create_date:0
-#: field:legal.offerer,create_date:0 field:legal.office,create_date:0
-#: field:legal.part,create_date:0 field:legal.prosecution,create_date:0
-#: field:legal.prosecution_type,create_date:0
-#: field:legal.radication,create_date:0 field:legal.regulation,create_date:0
-#: field:legal.regulation.concept,create_date:0
-#: field:legal.responsibility,create_date:0 field:legal.role,create_date:0
-#: field:legal.status,create_date:0 field:legal.stock_cases,create_date:0
-#: field:legal.substate,create_date:0
-#: field:prosecution.state_detail,create_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_department_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_model_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_news_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_office_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_part_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_radication_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_role_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_status_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_create_date
+#: model:ir.model.fields,field_description:legal.field_legal_substate_create_date
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Creado en"
 
 #. module: legal
-#: field:calendar.event,current_judged_id:0
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,current_judged_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_current_judged_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_current_judged_id
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Current Judged"
 msgstr "Juzgado actual"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_audiences_form
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: field:calendar.event,partner_id:0 field:legal.prosecution,partner_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_partner_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_partner_id
+#: model:ir.ui.view,arch_db:legal.view_calendar_event_form
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Customer"
 msgstr "Cliente"
 
 #. module: legal
-#: field:legal.part,dni:0
+#: model:ir.model.fields,field_description:legal.field_legal_part_dni
 msgid "DNI"
 msgstr "DNI"
 
@@ -269,50 +302,51 @@ msgid "Data cases"
 msgstr "Datos de casos"
 
 #. module: legal
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,date:0
+#: model:ir.model.fields,field_description:legal.field_legal_news_date
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
 msgid "Date"
 msgstr "Fecha"
 
 #. module: legal
-#: view:legal.regulation:legal.view_legal_regulation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "Date Fulfillment"
 msgstr "Fecha de cumplimiento"
 
 #. module: legal
-#: view:legal.regulation:legal.view_legal_regulation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "Date Order"
 msgstr "Fecha de pedido"
 
 #. module: legal
-#: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: field:legal.negotiation,date_proposal:0
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_date_proposal
+#: model:ir.ui.view,arch_db:legal.view_legal_negotiation_filter
 msgid "Date Proposal"
 msgstr "Fecha Propuesta"
 
 #. module: legal
-#: field:legal.radication,date_court:0
+#: model:ir.model.fields,field_description:legal.field_legal_radication_date_court
 msgid "Date of admission to court"
-msgstr "Fecha de ingreso a Juzgado"
+msgstr "Fecha de ingreso a la corte"
 
 #. module: legal
-#: field:legal.regulation,date_fulfillment:0
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_date_fulfillment
 msgid "Date of the fulfillment"
 msgstr "Fecha del cumplimiento"
 
 #. module: legal
-#: help:legal.prosecution,message_last_post:0
+#: model:ir.model.fields,help:legal.field_legal_prosecution_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr "Fecha del último mensaje publicado en el expediente."
+msgstr "Fecha del último mensaje publicado en el registro."
 
 #. module: legal
-#: field:legal.regulation,date_maturity:0
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_date_maturity
 msgid "Date of the maturity"
 msgstr "Fecha de vencimiento"
 
 #. module: legal
-#: field:legal.regulation,date_order:0
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_date_order
 msgid "Date of the order"
-msgstr "Fecha del pedido"
+msgstr "Fecha de la orden"
 
 #. module: legal
 #: model:res.company,overdue_msg:legal.legal_company
@@ -325,24 +359,32 @@ msgid ""
 "\n"
 "Thank you in advance for your cooperation.\n"
 "Best Regards,"
-msgstr "Estimado Señor / Señora, Nuestros registros indican que tiene pagos pendientes de su cuenta. Encontrará los detalles a continuación. Si ya ha pagado la cantidad, por favor ignore este aviso. De lo contrario, por favor envíe la cantidad total que se indica a continuación. Si tiene cualquier pregunta relacionada con su cuenta, por favor póngase en contacto con nosotros. Gracias de antemano por su colaboración. Atentamente,"
+msgstr ""
+"Estimado/a señor/señora,\n"
+"\n"
+"Nuestros registros indican que algunos pagos en nuestra cuenta están aún pendientes. Puede encontrar los detalles a continuación.\n"
+"Si la cantidad ha sido ya pagada, por favor, descarte esta notificación. En otro caso, por favor remítanos el importe total abajo indicado.\n"
+"Si tiene alguna pregunta con respecto a su cuenta, por favor contáctenos.\n"
+"\n"
+"Gracias de antemano por su colaboración.\n"
+"Saludos cordiales,"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_kanban
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_kanban
 msgid "Delete"
 msgstr "Borrar"
 
 #. module: legal
-#: field:legal.prosecution,demand_start_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_demand_start_date
 msgid "Demand start date"
 msgstr "Fecha de inicio de demanda"
 
 #. module: legal
-#: field:calendar.event,department_id:0
 #: model:ir.actions.act_window,name:legal.action_department
-#: field:legal.auxiliary.field,department_id:0
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,department_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_department_id
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_department_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_department_id
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Department"
 msgstr "Departamento"
 
@@ -352,26 +394,27 @@ msgid "Departments"
 msgstr "Departamentos"
 
 #. module: legal
-#: field:legal.model,description:0
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,description:0
+#: model:ir.model.fields,field_description:legal.field_legal_model_description
+#: model:ir.model.fields,field_description:legal.field_legal_news_description
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
 msgid "Description"
 msgstr "Descripción"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,description_of_claim:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_description_of_claim
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Description of claim"
 msgstr "Descripción del reclamo"
 
 #. module: legal
-#: field:legal.expertise.detail,detail_type_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_detail_type_id
 msgid "Detail Type"
 msgstr "Tipo de Detalle"
 
 #. module: legal
-#: field:legal.stock_cases,detail:0
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_detail
 msgid "Detail of Cases"
-msgstr "Detalle de los casos"
+msgstr "Detalle de Casos"
 
 #. module: legal
 #: model:ir.ui.menu,name:legal.menu_Diary
@@ -379,69 +422,78 @@ msgid "Diary"
 msgstr "Agenda"
 
 #. module: legal
-#: field:legal.auxiliary,display_name:0
-#: field:legal.auxiliary.field,display_name:0 field:legal.claim,display_name:0
-#: field:legal.claim.category,display_name:0
-#: field:legal.claim.type,display_name:0 field:legal.department,display_name:0
-#: field:legal.evidence,display_name:0
-#: field:legal.evidence.type,display_name:0
-#: field:legal.expertise,display_name:0
-#: field:legal.expertise.detail,display_name:0
-#: field:legal.expertise.detail_type,display_name:0
-#: field:legal.expertise.type,display_name:0
-#: field:legal.meeting.type,display_name:0 field:legal.model,display_name:0
-#: field:legal.negotiation,display_name:0
-#: field:legal.negotiation.concept,display_name:0
-#: field:legal.news,display_name:0 field:legal.news.type,display_name:0
-#: field:legal.offerer,display_name:0 field:legal.part,display_name:0
-#: field:legal.prosecution,display_name:0
-#: field:legal.prosecution_type,display_name:0
-#: field:legal.radication,display_name:0 field:legal.regulation,display_name:0
-#: field:legal.regulation.concept,display_name:0
-#: field:legal.responsibility,display_name:0 field:legal.role,display_name:0
-#: field:legal.status,display_name:0 field:legal.stock_cases,display_name:0
-#: field:legal.substate,display_name:0
-#: field:prosecution.state_detail,display_name:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_claim_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_department_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_model_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_news_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_part_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_radication_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_role_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_status_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_display_name
+#: model:ir.model.fields,field_description:legal.field_legal_substate_display_name
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Mostrar Nombre"
 
 #. module: legal
-#: field:legal.office,display_name:0
+#: model:ir.model.fields,field_description:legal.field_legal_office_display_name
 msgid "Display name"
-msgstr "Display name"
+msgstr "Nombre a Mostrar"
 
 #. module: legal
-#: view:legal.expertise:legal.view_legal_expertise_tree
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_tree
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Done"
 msgstr "Hecho"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_kanban
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_kanban
 msgid "Edit..."
 msgstr "Editar..."
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "End Date"
 msgstr "Fecha final"
 
 #. module: legal
 #: model:ir.model,name:legal.model_calendar_event
-#: view:legal.expertise:legal.view_legal_expertise_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
 msgid "Event"
 msgstr "Evento"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: field:calendar.event,event_type:0 field:legal.meeting.type,event_type:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_event_type
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_event_type
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Event Type"
 msgstr "Tipo de Reunion"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_evidence
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,evidence_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_evidence_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Evidence"
 msgstr "Pruebas"
 
@@ -461,9 +513,9 @@ msgid "Evidences"
 msgstr "Pruebas"
 
 #. module: legal
-#: field:legal.expertise.detail,expertise_id:0
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,expertise_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_expertise_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_expertise_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Expertise"
 msgstr "Pericia"
 
@@ -473,10 +525,10 @@ msgid "Expertise  Type"
 msgstr "Tipo de Pericia"
 
 #. module: legal
-#: field:legal.expertise,expertise_detail:0
-#: field:legal.expertise,expertise_detail_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_expertise_detail
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_expertise_detail_ids
 msgid "Expertise Detail"
-msgstr "Detalle de la Percia"
+msgstr "Detalle de la Pericia"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_expertise_detail_type
@@ -485,53 +537,63 @@ msgid "Expertise Detail Type"
 msgstr "Tipo de Detalle de la Pericia"
 
 #. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_expertise_type_id
 #: model:ir.ui.menu,name:legal.menu_expertise_type
-#: field:legal.expertise.detail_type,expertise_type_id:0
 msgid "Expertise Type"
 msgstr "Tipo de Pericia"
 
 #. module: legal
 #: selection:calendar.event,event_type:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_event_expiry_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 #: selection:legal.meeting.type,event_type:0
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,event_expiry_ids:0
 msgid "Expiry"
 msgstr "Vencimiento"
 
 #. module: legal
-#: field:legal.prosecution,expiry_event_count:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_expiry_event_count
 msgid "Expiry event count"
-msgstr ""
+msgstr "Expiry event count"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "File Folder"
 msgstr "Archivar Carpeta"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Folder"
 msgstr "Carpeta"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,folder_name:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_folder_name
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Folder Name"
 msgstr "Nombre de Carpeta"
 
 #. module: legal
-#: field:legal.prosecution,message_follower_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
 #. module: legal
-#: field:legal.stock_cases,from_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_from_date
 msgid "From Date"
 msgstr "Fecha Desde"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,general_state:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_general_state
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "General State"
 msgstr "Estado General"
 
@@ -541,47 +603,62 @@ msgid "Glossaries"
 msgstr "Glosario"
 
 #. module: legal
-#: view:legal.expertise:legal.view_legal_expertise_filter
-#: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: view:legal.news:legal.view_legal_news_filter
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: view:legal.regulation:legal.view_legal_regulation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_negotiation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "Group By..."
-msgstr "Agrupar Por..."
+msgstr "Agrupar por..."
 
 #. module: legal
-#: help:legal.prosecution,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr "Sostiene el resumen Chatter (número de mensajes, ...). Este resumen es directamente en formato html para ser insertada en vistas kanban."
-
-#. module: legal
-#: field:legal.auxiliary,id:0 field:legal.auxiliary.field,id:0
-#: field:legal.claim,id:0 field:legal.claim.category,id:0
-#: field:legal.claim.type,id:0 field:legal.department,id:0
-#: field:legal.evidence,id:0 field:legal.evidence.type,id:0
-#: field:legal.expertise,id:0 field:legal.expertise.detail,id:0
-#: field:legal.expertise.detail_type,id:0 field:legal.expertise.type,id:0
-#: field:legal.meeting.type,id:0 field:legal.model,id:0
-#: field:legal.negotiation,id:0 field:legal.negotiation.concept,id:0
-#: field:legal.news,id:0 field:legal.news.type,id:0 field:legal.offerer,id:0
-#: field:legal.office,id:0 field:legal.part,id:0 field:legal.prosecution,id:0
-#: field:legal.prosecution_type,id:0 field:legal.radication,id:0
-#: field:legal.regulation,id:0 field:legal.regulation.concept,id:0
-#: field:legal.responsibility,id:0 field:legal.role,id:0
-#: field:legal.status,id:0 field:legal.stock_cases,id:0
-#: field:legal.substate,id:0 field:prosecution.state_detail,id:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_id_4018
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_id
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_id_4055
+#: model:ir.model.fields,field_description:legal.field_legal_claim_id
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_department_id
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_id
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_id_4289
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_id_4329
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_model_id
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_id_4269
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_id
+#: model:ir.model.fields,field_description:legal.field_legal_news_id
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_id_4228
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_id
+#: model:ir.model.fields,field_description:legal.field_legal_office_id
+#: model:ir.model.fields,field_description:legal.field_legal_part_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_radication_id
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_id_4209
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_id
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_id
+#: model:ir.model.fields,field_description:legal.field_legal_role_id
+#: model:ir.model.fields,field_description:legal.field_legal_status_id
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_id
+#: model:ir.model.fields,field_description:legal.field_legal_substate_id
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_id
 msgid "ID"
 msgstr "ID"
 
 #. module: legal
-#: help:legal.prosecution,message_unread:0
+#: model:ir.model.fields,help:legal.field_legal_prosecution_message_unread
 msgid "If checked new messages require your attention."
-msgstr "Si se marca nuevos mensajes requieren su atención."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_audiences_form
+#: model:ir.model.fields,help:legal.field_legal_prosecution_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: legal
+#: model:ir.ui.view,arch_db:legal.view_calendar_event_form
 msgid "Information Carpet"
 msgstr "Información de Carpeta"
 
@@ -591,23 +668,23 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form_inherit
-#: field:legal.prosecution,invoices:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_invoices
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form_inherit
 msgid "Invoices"
 msgstr "Facturas"
 
 #. module: legal
-#: field:legal.prosecution,message_is_follower:0
-msgid "Is a Follower"
-msgstr "¿Es un Seguidor?"
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
 
 #. module: legal
-#: field:res.partner,is_lawyer:0
+#: model:ir.model.fields,field_description:legal.field_res_partner_is_lawyer
 msgid "Is lawyer?"
 msgstr "¿Es abogado?"
 
 #. module: legal
-#: field:legal.radication,judged_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_radication_judged_id
 msgid "Judged"
 msgstr "Juzgado"
 
@@ -618,88 +695,121 @@ msgid "Judgeds"
 msgstr "Juzgados"
 
 #. module: legal
-#: field:legal.prosecution,message_last_post:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_last_post
 msgid "Last Message Date"
-msgstr "Fecha del Ultimo Mensaje"
+msgstr "Fecha del último mensaje"
 
 #. module: legal
-#: field:legal.auxiliary,__last_update:0
-#: field:legal.auxiliary.field,__last_update:0
-#: field:legal.claim,__last_update:0
-#: field:legal.claim.category,__last_update:0
-#: field:legal.claim.type,__last_update:0
-#: field:legal.department,__last_update:0 field:legal.evidence,__last_update:0
-#: field:legal.evidence.type,__last_update:0
-#: field:legal.expertise,__last_update:0
-#: field:legal.expertise.detail,__last_update:0
-#: field:legal.expertise.detail_type,__last_update:0
-#: field:legal.expertise.type,__last_update:0
-#: field:legal.meeting.type,__last_update:0 field:legal.model,__last_update:0
-#: field:legal.negotiation,__last_update:0
-#: field:legal.negotiation.concept,__last_update:0
-#: field:legal.news,__last_update:0 field:legal.news.type,__last_update:0
-#: field:legal.offerer,__last_update:0 field:legal.office,__last_update:0
-#: field:legal.part,__last_update:0 field:legal.prosecution,__last_update:0
-#: field:legal.prosecution_type,__last_update:0
-#: field:legal.radication,__last_update:0
-#: field:legal.regulation,__last_update:0
-#: field:legal.regulation.concept,__last_update:0
-#: field:legal.responsibility,__last_update:0 field:legal.role,__last_update:0
-#: field:legal.status,__last_update:0 field:legal.stock_cases,__last_update:0
-#: field:legal.substate,__last_update:0
-#: field:prosecution.state_detail,__last_update:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_claim___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_department___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_evidence___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_expertise___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_model___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_news___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_news_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_offerer___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_office___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_part___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_radication___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_regulation___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_role___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_status___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases___last_update
+#: model:ir.model.fields,field_description:legal.field_legal_substate___last_update
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: legal
-#: field:legal.auxiliary,write_uid:0 field:legal.auxiliary.field,write_uid:0
-#: field:legal.claim,write_uid:0 field:legal.claim.category,write_uid:0
-#: field:legal.claim.type,write_uid:0 field:legal.department,write_uid:0
-#: field:legal.evidence,write_uid:0 field:legal.evidence.type,write_uid:0
-#: field:legal.expertise,write_uid:0 field:legal.expertise.detail,write_uid:0
-#: field:legal.expertise.detail_type,write_uid:0
-#: field:legal.expertise.type,write_uid:0 field:legal.meeting.type,write_uid:0
-#: field:legal.model,write_uid:0 field:legal.negotiation,write_uid:0
-#: field:legal.negotiation.concept,write_uid:0 field:legal.news,write_uid:0
-#: field:legal.news.type,write_uid:0 field:legal.offerer,write_uid:0
-#: field:legal.office,write_uid:0 field:legal.part,write_uid:0
-#: field:legal.prosecution,write_uid:0
-#: field:legal.prosecution_type,write_uid:0 field:legal.radication,write_uid:0
-#: field:legal.regulation,write_uid:0
-#: field:legal.regulation.concept,write_uid:0
-#: field:legal.responsibility,write_uid:0 field:legal.role,write_uid:0
-#: field:legal.status,write_uid:0 field:legal.stock_cases,write_uid:0
-#: field:legal.substate,write_uid:0 field:prosecution.state_detail,write_uid:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_claim_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_department_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_model_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_news_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_office_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_part_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_radication_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_role_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_status_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_write_uid
+#: model:ir.model.fields,field_description:legal.field_legal_substate_write_uid
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Última actualización realizada por"
 
 #. module: legal
-#: field:legal.auxiliary,write_date:0 field:legal.auxiliary.field,write_date:0
-#: field:legal.claim,write_date:0 field:legal.claim.category,write_date:0
-#: field:legal.claim.type,write_date:0 field:legal.department,write_date:0
-#: field:legal.evidence,write_date:0 field:legal.evidence.type,write_date:0
-#: field:legal.expertise,write_date:0
-#: field:legal.expertise.detail,write_date:0
-#: field:legal.expertise.detail_type,write_date:0
-#: field:legal.expertise.type,write_date:0
-#: field:legal.meeting.type,write_date:0 field:legal.model,write_date:0
-#: field:legal.negotiation,write_date:0
-#: field:legal.negotiation.concept,write_date:0 field:legal.news,write_date:0
-#: field:legal.news.type,write_date:0 field:legal.offerer,write_date:0
-#: field:legal.office,write_date:0 field:legal.part,write_date:0
-#: field:legal.prosecution,write_date:0
-#: field:legal.prosecution_type,write_date:0
-#: field:legal.radication,write_date:0 field:legal.regulation,write_date:0
-#: field:legal.regulation.concept,write_date:0
-#: field:legal.responsibility,write_date:0 field:legal.role,write_date:0
-#: field:legal.status,write_date:0 field:legal.stock_cases,write_date:0
-#: field:legal.substate,write_date:0
-#: field:prosecution.state_detail,write_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_claim_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_department_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_model_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_news_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_office_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_part_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_radication_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_role_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_status_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_write_date
+#: model:ir.model.fields,field_description:legal.field_legal_substate_write_date
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Última actualización el"
 
 #. module: legal
-#: model:ir.ui.menu,name:legal.menu_lawyer field:legal.part,lawyer_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_part_lawyer_id
+#: model:ir.ui.menu,name:legal.menu_lawyer
 msgid "Lawyer"
 msgstr "Abogado"
 
@@ -742,14 +852,14 @@ msgid "Listing"
 msgstr "Listado"
 
 #. module: legal
-#: field:legal.office,location:0
+#: model:ir.model.fields,field_description:legal.field_legal_office_location
 msgid "Location"
 msgstr "Ubicación"
 
 #. module: legal
-#: field:legal.office,mail:0
+#: model:ir.model.fields,field_description:legal.field_legal_office_mail
 msgid "Mail"
-msgstr "Correo electrónico"
+msgstr "Mail"
 
 #. module: legal
 #: model:res.groups,name:legal.group_manager
@@ -763,29 +873,19 @@ msgid "Meeting Type"
 msgstr "Subtipo de Reunión"
 
 #. module: legal
-#: view:calendar.event:legal.view_calendar_event_form
+#: model:ir.ui.view,arch_db:legal.view_calendar_event_calendar
 msgid "Meetings"
 msgstr "Reuniones"
 
 #. module: legal
-#: field:legal.prosecution,message_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_ids
 msgid "Messages"
 msgstr "Mensajes"
 
 #. module: legal
-#: help:legal.prosecution,message_ids:0
-msgid "Messages and communication history"
-msgstr "Los mensajes y el historial de comunicación"
-
-#. module: legal
-#: field:calendar.event,sub_type_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_sub_type_id
 msgid "Metting Subtype"
 msgstr "Subtipos de Reunión"
-
-#. module: legal
-#: view:calendar.event:legal.view_legal_audiences_form
-msgid "Misc"
-msgstr "Misc."
 
 #. module: legal
 #: model:ir.ui.menu,name:legal.menu_doc_model
@@ -800,26 +900,36 @@ msgid "Models"
 msgstr "Modelos"
 
 #. module: legal
-#: field:legal.auxiliary.field,name:0 field:legal.claim.category,name:0
-#: field:legal.claim.type,name:0 field:legal.department,name:0
-#: field:legal.evidence.type,name:0 field:legal.expertise,name:0
-#: field:legal.expertise.detail_type,name:0 field:legal.expertise.type,name:0
-#: field:legal.meeting.type,name:0 field:legal.model,name:0
-#: field:legal.negotiation.concept,name:0 field:legal.news.type,name:0
-#: field:legal.offerer,name:0 field:legal.office,name:0
-#: field:legal.prosecution_type,name:0 field:legal.regulation.concept,name:0
-#: field:legal.responsibility,name:0 field:legal.role,name:0
-#: field:legal.status,name:0 field:legal.substate,name:0
-#: field:prosecution.state_detail,name:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_field_name
+#: model:ir.model.fields,field_description:legal.field_legal_claim_category_name
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_department_name
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_name
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_meeting_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_model_name
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_concept_name
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_offerer_name
+#: model:ir.model.fields,field_description:legal.field_legal_office_name
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_type_name
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_concept_name
+#: model:ir.model.fields,field_description:legal.field_legal_responsibility_name
+#: model:ir.model.fields,field_description:legal.field_legal_role_name
+#: model:ir.model.fields,field_description:legal.field_legal_status_name
+#: model:ir.model.fields,field_description:legal.field_legal_substate_name
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_name
 msgid "Name"
 msgstr "Nombre"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_negotiation
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_negotiation_ids
 #: model:ir.ui.menu,name:legal.menu_negotiation
-#: view:legal.negotiation:legal.view_legal_negotiation_filter
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,negotiation_ids:0
+#: model:ir.ui.view,arch_db:legal.view_legal_negotiation_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Negotiation"
 msgstr "Negociación"
 
@@ -831,10 +941,10 @@ msgstr "Conceptos de Negociacion"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_news
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_news_ids
 #: model:ir.ui.menu,name:legal.menu_news
-#: view:legal.news:legal.view_legal_news_filter
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,news_ids:0
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "News"
 msgstr "Novedades"
 
@@ -845,46 +955,63 @@ msgid "News Types"
 msgstr "Tipos de Novedades"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,note:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_note
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Notes"
 msgstr "Notas"
 
 #. module: legal
-#: field:legal.radication,num_case_file:0
+#: model:ir.model.fields,field_description:legal.field_legal_radication_num_case_file
 msgid "Num. case file"
 msgstr "Numero de Expediente"
 
 #. module: legal
-#: field:calendar.event,number_case_file:0
-#: field:legal.prosecution,number_case_file:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: legal
+#: model:ir.model.fields,field_description:legal.field_calendar_event_number_case_file
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_number_case_file
 msgid "Number of case file"
 msgstr "Numero de Expediente"
 
 #. module: legal
-#: field:legal.prosecution,num_sinister:0
+#: model:ir.model.fields,help:legal.field_legal_prosecution_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_num_sinister
 msgid "Number of sinister"
 msgstr "Número de siniestro"
 
 #. module: legal
+#: model:ir.model.fields,help:legal.field_legal_prosecution_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: legal
 #: model:ir.actions.act_window,name:legal.action_obligations
 #: model:ir.ui.menu,name:legal.menu_obligations
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Obligations"
 msgstr "Obligaciones"
 
 #. module: legal
-#: field:legal.evidence,observations:0 field:legal.expertise,observations:0
-#: field:legal.negotiation,observations:0
-#: field:legal.regulation,observations:0
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_observations
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_observations
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_observations
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_observations
 msgid "Observations"
 msgstr "Observación"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_offerer
-#: model:ir.ui.menu,name:legal.menu_offerer field:legal.evidence,offerer_id:0
-#: view:legal.expertise:legal.view_legal_expertise_filter
-#: field:legal.expertise,offerer_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_offerer_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_offerer_id
+#: model:ir.ui.menu,name:legal.menu_offerer
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
 msgid "Offerer"
 msgstr "Oferente"
 
@@ -895,17 +1022,17 @@ msgid "Open"
 msgstr "Abierto"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Open Up"
 msgstr "Abrir"
 
 #. module: legal
-#: field:legal.prosecution,opening_date_folder:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_opening_date_folder
 msgid "Opening date Folder"
 msgstr "Fecha de apertura de Carpeta"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Openinig Date Folder"
 msgstr "Fecha de apertura de Carpeta"
 
@@ -915,8 +1042,8 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,part_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_part_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Parts"
 msgstr "Partes"
 
@@ -932,13 +1059,13 @@ msgid "Personal"
 msgstr "Personal"
 
 #. module: legal
-#: view:legal.stock_cases:legal.view_stock_cases
+#: model:ir.ui.view,arch_db:legal.view_stock_cases
 msgid "Print"
 msgstr "Imprimir"
 
 #. module: legal
-#: view:legal.expertise:legal.view_legal_expertise_tree
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_tree
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Process"
 msgstr "Procesar"
 
@@ -948,42 +1075,42 @@ msgid "Produced"
 msgstr "Producida"
 
 #. module: legal
-#: view:account.invoice:legal.view_account_invoice_filter
-#: field:account.invoice,prosecution_id:0
-#: field:calendar.event,prosecution_id:0
-#: field:legal.regulation,prosecution_id:0
+#: model:ir.model.fields,field_description:legal.field_account_invoice_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_calendar_event_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_regulation_prosecution_id
+#: model:ir.ui.view,arch_db:legal.view_account_invoice_filter
 msgid "Prosecution"
 msgstr "Carpeta"
 
 #. module: legal
-#: field:legal.prosecution,member_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_member_ids
 msgid "Prosecution Members"
 msgstr "Miembros de Carpeta"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Prosecution Type"
 msgstr "Tipo de Carpeta"
 
 #. module: legal
-#: field:prosecution.state_detail,prosecution_ids:0
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_prosecution_ids
 msgid "Prosecutions"
 msgstr "Prosecutions"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
-#: field:legal.prosecution,radication_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_radication_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Radication"
 msgstr "Radicación"
 
 #. module: legal
-#: field:legal.prosecution,re_opening_date_folder:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_re_opening_date_folder
 msgid "Re-Opening date Folder"
 msgstr "Fecha de Re-apertura de Carpeta"
 
 #. module: legal
-#: field:legal.prosecution,regulation_ids:0
-#: view:legal.regulation:legal.view_legal_regulation_filter
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_regulation_ids
+#: model:ir.ui.view,arch_db:legal.view_legal_regulation_filter
 msgid "Regulation"
 msgstr "Regulación"
 
@@ -1000,27 +1127,27 @@ msgid "Responsibilities"
 msgstr "Responsabilidades"
 
 #. module: legal
-#: field:legal.prosecution,responsibility_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_responsibility_id
 msgid "Responsibility"
 msgstr "Responsabilidad"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Responsible"
 msgstr "Responsable"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_audiences_form
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: field:calendar.event,responsible_id:0
-#: field:legal.prosecution,responsible_id:0
-#: field:legal.stock_cases,responsible_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_responsible_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_responsible_id
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_responsible_id
+#: model:ir.ui.view,arch_db:legal.view_calendar_event_form
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Responsible Lawyer"
 msgstr "Abogado responsable"
 
 #. module: legal
-#: field:legal.part,role_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_part_role_id
 msgid "Role"
 msgstr "Rol"
 
@@ -1031,56 +1158,56 @@ msgid "Roles"
 msgstr "Roles"
 
 #. module: legal
-#: field:legal.prosecution,scene_sinister:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_scene_sinister
 msgid "Scene of the sinister"
 msgstr "Lugar del Siniestro"
 
 #. module: legal
-#: field:legal.prosecution,sequence:0
-#: field:prosecution.state_detail,sequence:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_sequence
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_sequence
 msgid "Sequence"
 msgstr "Secuencia"
 
 #. module: legal
-#: field:legal.prosecution,sinister_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_sinister_date
 msgid "Sinister Date"
 msgstr "Fecha de Siniestro"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Start Date"
-msgstr "Fecha de Inicio"
+msgstr "Fecha inicial"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Start Date From"
 msgstr "Fecha de Inicio Desde"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Start Date To"
 msgstr "Fecha de Inicio Hasta"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: field:legal.evidence,state:0
-#: view:legal.expertise:legal.view_legal_expertise_filter
-#: field:legal.expertise,state:0
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_state
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_state
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
 msgid "State"
 msgstr "Estado"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_prosecution_state_detail
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_state_detail_id
 #: model:ir.ui.menu,name:legal.menu_detail
-#: field:legal.prosecution,state_detail_id:0
 msgid "State Detail"
 msgstr "Detalles de Estados"
 
 #. module: legal
-#: view:account.invoice:legal.view_account_invoice_filter
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_status_id
+#: model:ir.model.fields,field_description:legal.field_prosecution_state_detail_state
 #: model:ir.ui.menu,name:legal.menu_status
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,status_id:0 field:prosecution.state_detail,state:0
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Status"
 msgstr "Estado"
 
@@ -1091,14 +1218,14 @@ msgstr "Stock de Casos"
 
 #. module: legal
 #: model:ir.ui.menu,name:legal.menu_stock_cases_report
-#: view:legal.stock_cases:legal.view_stock_cases
+#: model:ir.ui.view,arch_db:legal.view_stock_cases
 msgid "Stock Cases Report"
 msgstr "Reporte Stock de Casos"
 
 #. module: legal
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_substate_id
 #: model:ir.ui.menu,name:legal.menu_substate
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.prosecution,substate_id:0
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Substate"
 msgstr "Subestado"
 
@@ -1108,60 +1235,57 @@ msgid "Substates"
 msgstr "Subestados"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Subtype"
 msgstr "Subtipo"
 
 #. module: legal
-#: field:legal.prosecution,message_summary:0
-msgid "Summary"
-msgstr "Resumen"
-
-#. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Team"
 msgstr "Equipo"
 
 #. module: legal
-#: field:legal.stock_cases,to_date:0
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_to_date
 msgid "To Date"
 msgstr "Fecha Hasta"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Total"
 msgstr "Total"
 
 #. module: legal
-#: field:legal.claim,total:0
+#: model:ir.model.fields,field_description:legal.field_legal_claim_total
 msgid "Total Claim"
 msgstr "Total reclamado"
 
 #. module: legal
-#: field:legal.evidence,type_id:0
-#: view:legal.expertise:legal.view_legal_expertise_filter
-#: field:legal.expertise,type_id:0 field:legal.model,type:0
-#: view:legal.news:legal.view_legal_news_filter field:legal.news,type_id:0
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_model_type
+#: model:ir.model.fields,field_description:legal.field_legal_news_type_id
+#: model:ir.ui.view,arch_db:legal.view_legal_expertise_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_news_filter
 msgid "Type"
 msgstr "Tipo"
 
 #. module: legal
-#: field:legal.prosecution,claim_type_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_claim_type_ids
 msgid "Type of Claims"
 msgstr "Tipo de reclamos"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_audiences_form
-#: view:calendar.event:legal.view_legal_calendar_filter
-#: field:calendar.event,prosecution_type_id:0
+#: model:ir.model.fields,field_description:legal.field_calendar_event_prosecution_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_prosecution_type_id
+#: model:ir.model.fields,field_description:legal.field_legal_stock_cases_prosecution_type_id
 #: model:ir.ui.menu,name:legal.menu_type_prosecution
-#: field:legal.prosecution,prosecution_type_id:0
-#: field:legal.stock_cases,prosecution_type_id:0
+#: model:ir.ui.view,arch_db:legal.view_calendar_event_form
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Type of prosecution"
 msgstr "Tipo de carpeta"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "Type prosecution"
 msgstr "Tipo de carpeta"
 
@@ -1171,17 +1295,22 @@ msgid "Types of prosecution"
 msgstr "Tipos de carpeta"
 
 #. module: legal
-#: view:calendar.event:legal.view_legal_calendar_filter
+#: model:ir.ui.view,arch_db:legal.view_legal_calendar_filter
 msgid "Unconfirm"
 msgstr "Sin Confirmar"
 
 #. module: legal
-#: field:legal.prosecution,message_unread:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_unread
 msgid "Unread Messages"
-msgstr "Mensajes no leídos"
+msgstr "Mensajes No Leídos"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: legal
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Update Auxiliary Field"
 msgstr "Actualizar Campos Auxiliares"
 
@@ -1191,17 +1320,18 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: legal
-#: field:legal.auxiliary,value:0 field:legal.expertise.detail,value:0
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_value
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_detail_value
 msgid "Value"
 msgstr "Valor"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Want to Re-Open the case?"
 msgstr "¿Desea volver a abrir el caso?"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "Want to file folder the case?"
 msgstr "¿Desea archivar el caso?"
 
@@ -1211,29 +1341,181 @@ msgid "Writing"
 msgstr "Escritura"
 
 #. module: legal
-#: field:legal.prosecution,invoice_ids:0
+#: model:ir.model.fields,field_description:legal.field_legal_prosecution_invoice_ids
 msgid "invoices"
 msgstr "Facturas"
 
 #. module: legal
-#: view:legal.stock_cases:legal.view_stock_cases
+#: model:ir.model,name:legal.model_legal_auxiliary
+msgid "legal.auxiliary"
+msgstr "legal.auxiliary"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_auxiliary_field
+msgid "legal.auxiliary.field"
+msgstr "legal.auxiliary.field"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_claim
+msgid "legal.claim"
+msgstr "legal.claim"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_claim_category
+msgid "legal.claim.category"
+msgstr "legal.claim.category"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_claim_type
+msgid "legal.claim.type"
+msgstr "legal.claim.type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_department
+msgid "legal.department"
+msgstr "legal.department"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_evidence
+msgid "legal.evidence"
+msgstr "legal.evidence"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_evidence_type
+msgid "legal.evidence.type"
+msgstr "legal.evidence.type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_expertise
+msgid "legal.expertise"
+msgstr "legal.expertise"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_expertise_detail
+msgid "legal.expertise.detail"
+msgstr "legal.expertise.detail"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_expertise_detail_type
+msgid "legal.expertise.detail_type"
+msgstr "legal.expertise.detail_type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_expertise_type
+msgid "legal.expertise.type"
+msgstr "legal.expertise.type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_meeting_type
+msgid "legal.meeting.type"
+msgstr "legal.meeting.type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_model
+msgid "legal.model"
+msgstr "legal.model"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_negotiation
+msgid "legal.negotiation"
+msgstr "legal.negotiation"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_negotiation_concept
+msgid "legal.negotiation.concept"
+msgstr "legal.negotiation.concept"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_news
+msgid "legal.news"
+msgstr "legal.news"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_news_type
+msgid "legal.news.type"
+msgstr "legal.news.type"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_offerer
+msgid "legal.offerer"
+msgstr "legal.offerer"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_office
+msgid "legal.office"
+msgstr "legal.office"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_part
+msgid "legal.part"
+msgstr "legal.part"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_radication
+msgid "legal.radication"
+msgstr "legal.radication"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_regulation
+msgid "legal.regulation"
+msgstr "legal.regulation"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_regulation_concept
+msgid "legal.regulation.concept"
+msgstr "legal.regulation.concept"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_responsibility
+msgid "legal.responsibility"
+msgstr "legal.responsibility"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_role
+msgid "legal.role"
+msgstr "legal.role"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_status
+msgid "legal.status"
+msgstr "legal.status"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_stock_cases
+msgid "legal.stock_cases"
+msgstr "legal.stock_cases"
+
+#. module: legal
+#: model:ir.model,name:legal.model_legal_substate
+msgid "legal.substate"
+msgstr "legal.substate"
+
+#. module: legal
+#: model:ir.ui.view,arch_db:legal.view_stock_cases
 msgid "or"
-msgstr "or"
+msgstr "o"
 
 #. module: legal
 #: model:ir.actions.act_window,name:legal.action_legal_prosecution
 #: model:ir.model,name:legal.model_legal_prosecution
+#: model:ir.model.fields,field_description:legal.field_legal_auxiliary_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_claim_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_claim_type_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_evidence_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_expertise_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_negotiation_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_news_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_part_prosecution_id
+#: model:ir.model.fields,field_description:legal.field_legal_radication_prosecution_id
 #: model:ir.ui.menu,name:legal.menu_prosecution
-#: field:legal.auxiliary,prosecution_id:0 field:legal.claim,prosecution_id:0
-#: field:legal.claim.type,prosecution_id:0
-#: field:legal.evidence,prosecution_id:0
-#: field:legal.expertise,prosecution_id:0
-#: field:legal.negotiation,prosecution_id:0 field:legal.news,prosecution_id:0
-#: field:legal.part,prosecution_id:0
-#: view:legal.prosecution:legal.view_legal_prosecution_filter
-#: field:legal.radication,prosecution_id:0
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_filter
 msgid "prosecution"
 msgstr "Carpeta"
+
+#. module: legal
+#: model:ir.model,name:legal.model_prosecution_state_detail
+msgid "prosecution.state_detail"
+msgstr "prosecution.state_detail"
 
 #. module: legal
 #: model:ir.model,name:legal.model_legal_prosecution_type
@@ -1241,6 +1523,6 @@ msgid "type prosecution"
 msgstr "type prosecution"
 
 #. module: legal
-#: view:legal.prosecution:legal.view_legal_prosecution_form
+#: model:ir.ui.view,arch_db:legal.view_legal_prosecution_form
 msgid "⇒ Compute"
 msgstr "⇒ Computar"

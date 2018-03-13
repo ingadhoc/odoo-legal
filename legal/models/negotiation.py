@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+# For copyright and license notices, see __openerp__.py file in module root
+# directory
+##############################################################################
+from openerp import models, fields
+from datetime import date
+
+
+class LegalNegotiation(models.Model):
+
+    _name = 'legal.negotiation'
+
+    concept_id = fields.Many2one(
+        'legal.negotiation.concept',
+        string='Concept')
+    date_proposal = fields.Date(
+        string='Date Proposal',
+        default=date.today())
+    amount = fields.Float(string='Amount')
+    observations = fields.Char(string='Observations')
+    prosecution_id = fields.Many2one(
+        'legal.prosecution',
+        string='prosecution')
+
+
+class LegalNegotiationConcept(models.Model):
+
+    _name = 'legal.negotiation.concept'
+
+    name = fields.Char(string='Name')
