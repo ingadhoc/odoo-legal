@@ -55,7 +55,6 @@
                     </header>
                     <sheet>
                     <div class="oe_button_box" name="buttons">
-
                         <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
                                 name="%(calendar.action_calendar_event)d"
                                 context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
