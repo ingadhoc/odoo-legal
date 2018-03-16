@@ -49,11 +49,13 @@
                         <button name="set_open" string="Open Up" type="object" general_state="closed" class="oe_right oe_highlight" groups="base.group_user" attrs="{'invisible': [('general_state','!=','closed')]}" confirm="Want to Re-Open the case?"/>
                         <button name="set_close" string="File Folder" type="object" general_state="open" class="oe_right oe_highlight" groups="legal.group_manager" attrs="{'invisible': [('general_state','=','closed')]}" confirm="Want to file folder the case?"/>
                         <field name="general_state" widget="statusbar" statusbar_colors="{}" readonly="1"/>
+                    </header>
+                    <header>
                         <field name="state_detail_id" widget="statusbar" clickable="True" domain="[('state','=', general_state)]"/>
                     </header>
                     <sheet>
-                   
                     <div class="oe_button_box" name="buttons">
+
                         <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
                                 name="%(calendar.action_calendar_event)d"
                                 context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
