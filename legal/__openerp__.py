@@ -30,7 +30,6 @@
         'portal',
         'report_aeroo',
         'l10n_ar_aeroo_base',
-        'partner_person',
         'account'
     ],
     'data': [
