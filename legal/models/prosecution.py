@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-# For copyright and license notices, see __openerp__.py file in module root
+# For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
 
-from openerp import models, fields, api, _
+from odoo import models, fields, api, _
 from datetime import date
 
 
@@ -248,7 +247,7 @@ class Prosecution(models.Model):
         'prosecution.state_detail',
         string='State Detail',
         track_visibility='onchange',
-        select=True
+        index=True
     )
     scene_sinister = fields.Char(string="Scene of the sinister")
 
