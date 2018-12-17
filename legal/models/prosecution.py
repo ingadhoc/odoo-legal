@@ -247,7 +247,7 @@ class Prosecution(models.Model):
         'prosecution.state_detail',
         string='State Detail',
         track_visibility='onchange',
-        select=True
+        index=True
     )
     scene_sinister = fields.Char(string="Scene of the sinister")
 
