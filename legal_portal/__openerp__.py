@@ -36,6 +36,6 @@
         'security/portal_security.xml',
         'portal_legal_view.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': True,
 }
