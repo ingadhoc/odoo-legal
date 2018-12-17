@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/ingadhoc/odoo-legal.svg?branch=9.0)](https://travis-ci.org/ingadhoc/odoo-legal)
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/odoo-legal/badge.png?branch=9.0)](https://coveralls.io/r/ingadhoc/odoo-legal?branch=9.0)
+[![Build Status](https://travis-ci.org/ingadhoc/odoo-legal.svg?branch=11.0)](https://travis-ci.org/ingadhoc/odoo-legal)
+[![Coverage Status](https://coveralls.io/repos/ingadhoc/odoo-legal/badge.png?branch=11.0)](https://coveralls.io/r/ingadhoc/odoo-legal?branch=11.0)
 
 
 # odoo-legal
