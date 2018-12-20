@@ -12,15 +12,22 @@ class LegalRadication(models.Model):
 
     address = fields.Char(
         string='Address',
-        compute='_compute_address')
+        compute='_compute_address',
+    )
+
     judged_id = fields.Many2one(
         'legal.office',
-        string='Judged')
+        string='Judged',
+    )
+
     num_case_file = fields.Char(string='Num. case file')
+
     date_court = fields.Date(string='Date of admission to court')
+
     prosecution_id = fields.Many2one(
         'legal.prosecution',
-        string='prosecution')
+        string='prosecution',
+    )
 
     @api.multi
     @api.depends(

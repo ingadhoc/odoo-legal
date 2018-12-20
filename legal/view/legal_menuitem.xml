@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
 
         <menuitem
             name="Legal"
@@ -18,7 +17,7 @@
             />
 
         <record id="action_legal_prosecution" model="ir.actions.act_window">
-            <field name="name">prosecution</field>
+            <field name="name">Prosecution</field>
             <field name="res_model">legal.prosecution</field>
             <field name="src_model">legal.prosecution</field>
             <field name="view_type">form</field>
@@ -41,7 +40,6 @@
             <field name="domain">[('is_lawyer','=',True)]</field>
         </record>
 
-        
         <record id="action_model" model="ir.actions.act_window">
             <field name="name">Models</field>
             <field name="res_model">legal.model</field>
@@ -308,7 +306,7 @@
         </record>
 
         <menuitem
-            name="prosecution"
+            name="Prosecution"
             id="menu_prosecution"
             sequence="10"
             action="action_legal_prosecution"
@@ -355,7 +353,7 @@
             sequence="35"
             parent="menu_legal"
             />
-            
+
         <menuitem
             name="Data cases"
             id="menu_data_cases"
@@ -484,7 +482,6 @@
             parent="menu_conf"
             />
 
-            
         <menuitem
             name="Claim Types"
             id="menu_claim_type"
@@ -557,5 +554,4 @@
             parent="menu_conf"
             />
 
-    </data>
 </odoo>

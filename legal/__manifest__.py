@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Legal',
-    'version': '9.0.1.2.0',
+    'version': '11.0.1.0.0',
     'category': 'base.module_category_knowledge_management',
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
@@ -76,7 +76,7 @@
         'data/demo/legal.department.csv',
         'data/demo/legal.prosecution.csv',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }

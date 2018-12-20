@@ -3,4 +3,4 @@
 # directory
 ##############################################################################
 
-from . import legal_cases_parser
+from . import portal

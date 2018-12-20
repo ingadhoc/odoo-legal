@@ -10,20 +10,25 @@ class LegalOffice(models.Model):
     _name = 'legal.office'
     _rec_name = 'display_name'
 
-    name = fields.Char(
-        string='Name')
+    name = fields.Char()
+
     display_name = fields.Char(
         compute='_compute_display_name',
-        store=True)
-    mail = fields.Char(string='Mail')
+        store=True,
+    )
+
+    mail = fields.Char()
+
     location = fields.Char(
-        string='Location',
-        required=True)
-    address = fields.Char(string='Address')
+        required=True,
+    )
+
+    address = fields.Char()
 
     @api.multi
     @api.depends('name', 'location')
     def _compute_display_name(self):
         for rec in self:
-            rec.display_name = ' - '.join([rec.name or ' ',
-                                           rec.location or ' '])
+            rec.display_name = ' - '.join(
+                [rec.name or ' ', rec.location or ' ']
+            )

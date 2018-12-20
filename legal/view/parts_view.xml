@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
-        
         <!-- FORM -->
         <record id="view_legal_part_form" model="ir.ui.view">
             <field name="name">legal.part.form</field>
@@ -36,6 +34,4 @@
             </field>
         </record>
 
-
-    </data>
 </odoo>

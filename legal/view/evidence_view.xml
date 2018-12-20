@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
         <record id="view_legal_evidence_tree" model="ir.ui.view">
             <field name="name">legal.evidence.tree</field>
@@ -16,7 +15,6 @@
             </field>
         </record>
 
-        
         <!-- FORM -->
         <record id="view_legal_evidence_form" model="ir.ui.view">
             <field name="name">legal.evidence.form</field>
@@ -32,5 +30,5 @@
                 </form>
             </field>
         </record>
-    </data>
+
 </odoo>

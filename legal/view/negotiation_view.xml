@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
-
 
         <!-- SEARCH VIEW -->
         <record id="view_legal_negotiation_filter" model="ir.ui.view">
             <field name="name">legal.negotiation.select</field>
             <field name="model">legal.negotiation</field>
             <field name="arch" type="xml">
-                <search string="Negotiation" version="7.0">
+                <search string="Negotiation">
                     <group string="By Attribute">
                         <field name="date_proposal" string="Date Proposal"/>
                     </group>
@@ -19,7 +17,7 @@
                 </search>
             </field>
         </record>
-        
+
         <!-- FORM -->
         <record id="view_legal_negotiation_form" model="ir.ui.view">
             <field name="name">legal.negotiation.form</field>
@@ -51,6 +49,4 @@
             </field>
         </record>
 
-
-    </data>
 </odoo>

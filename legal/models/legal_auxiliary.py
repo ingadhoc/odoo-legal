@@ -5,8 +5,15 @@
 from odoo import models, fields
 
 
-class LegalSubstate(models.Model):
+class LegalAuxiliary(models.Model):
 
-    _name = 'legal.substate'
+    _name = 'legal.auxiliary'
 
-    name = fields.Char(string='Name')
+    field_id = fields.Many2one(
+        'legal.auxiliary.field',
+        string="Auxiliary",
+    )
+    value = fields.Char()
+    prosecution_id = fields.Many2one(
+        'legal.prosecution',
+    )

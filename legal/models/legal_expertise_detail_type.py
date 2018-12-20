@@ -4,9 +4,12 @@
 ##############################################################################
 from odoo import models, fields
 
+class LegalExpertiseDetailType(models.Model):
 
-class LegalOfferer(models.Model):
+    _name = 'legal.expertise.detail_type'
 
-    _name = 'legal.offerer'
+    name = fields.Char()
 
-    name = fields.Char(string='Name')
+    expertise_type_id = fields.Many2one(
+        'legal.expertise.type',
+    )

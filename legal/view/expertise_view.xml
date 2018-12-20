@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
-        
         <!-- SEARCH VIEW -->
         <record id="view_legal_expertise_filter" model="ir.ui.view">
             <field name="name">legal.expertise.select</field>
             <field name="model">legal.expertise</field>
             <field name="arch" type="xml">
-                <search string="Event" version="7.0">
+                <search string="Event">
                     <group string="By Attribute">
                         <field name="offerer_id" string="Offerer"/>
                         <field name="type_id" string="Type"/>
@@ -63,6 +61,4 @@
             </field>
         </record>
 
-
-    </data>
 </odoo>

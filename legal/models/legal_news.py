@@ -11,20 +11,17 @@ class LegalNews(models.Model):
     _name = 'legal.news'
     _rec_name = 'description'
 
-    description = fields.Char(string='Description')
+    description = fields.Char()
+
     date = fields.Date(
-        string='Date',
-        default=date.today())
+        default=date.today(),
+    )
+
     type_id = fields.Many2one(
         'legal.news.type',
-        string='Type')
+    )
+
     prosecution_id = fields.Many2one(
         'legal.prosecution',
-        string='prosecution')
+    )
 
-
-class LegalNewsType(models.Model):
-
-    _name = 'legal.news.type'
-
-    name = fields.Char(String="Name")

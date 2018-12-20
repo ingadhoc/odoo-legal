@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
        <!-- SEARCH VIEW -->
         <record id="view_legal_prosecution_filter" model="ir.ui.view">
             <field name="name">legal.prosecution.select</field>
             <field name="model">legal.prosecution</field>
             <field name="arch" type="xml">
-                <search string="prosecution" version="7.0">
+                <search string="prosecution">
                     <group string="By Attribute">
                         <field name="caratula" string="Caratula"/>
                         <field name="prosecution_type_id" string="Type prosecution"/>
@@ -38,7 +37,7 @@
                 </search>
             </field>
         </record>
- 
+
         <!-- FORM -->
         <record id="view_legal_prosecution_form" model="ir.ui.view">
             <field name="name">legal.prosecution.form</field>
@@ -55,12 +54,12 @@
                     </header>
                     <sheet>
                     <div class="oe_button_box" name="buttons">
-                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action"
                                 name="%(calendar.action_calendar_event)d"
                                 context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'audience', 'default_event_type' : 'audience'}">
                                 <field name="audiences_event_count" string="Audiences" widget="statinfo"/>
                         </button>
-                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action" 
+                        <button class="oe_stat_button"  icon="fa-pencil-square-o" type="action"
                                 name="%(calendar.action_calendar_event)d"
                                 context="{'search_default_prosecution_id': active_id , 'search_default_event_type' : 'expiry', 'default_event_type' : 'expiry',
                                 'default_allday' : 'True'}">
@@ -259,14 +258,14 @@
                                 <div class="oe_kanban_content" style="width: 120px; height: 80px; margin: 0 auto;">
                                     <h4 class="text-center"><a type="open"><field name="caratula"/></a></h4>
                                     <a type="open" style="margin-right: 10px">
-                                    <field name="folder_name"/></a> 
+                                    <field name="folder_name"/></a>
                                     <a type="open" style="margin-right: 10px">
                                         <field name="status_id"/></a>
                                 </div>
                                 <div class="oe_kanban_bottom_right">
                                     <img t-att-src="kanban_image('res.partner', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="40" height="35"/>
                                 </div>
-                                <div class="oe_clear"/> 
+                                <div class="oe_clear"/>
                             </div>
                         </t>
                     </templates>
@@ -290,5 +289,4 @@
             </field>
         </record>
 
-    </data>
 </odoo>
