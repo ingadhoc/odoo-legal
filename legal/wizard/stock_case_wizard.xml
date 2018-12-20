@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
+
 <odoo>
-    <data>
+
         <record id="view_stock_cases" model="ir.ui.view">
             <field name="name">Stock Cases</field>
             <field name="model">legal.stock_cases</field>
@@ -24,7 +25,7 @@
                 </form>
             </field>
         </record>
-        
+
         <record id="action_stock_cases" model="ir.actions.act_window">
             <field name="name">Stock Cases</field>
             <field name="type">ir.actions.act_window</field>
@@ -33,12 +34,13 @@
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
-        
+
         <menuitem
-                name="Stock Cases Report"
-                id="menu_stock_cases_report"
-                action="action_stock_cases"
-                parent="menu_legals"
-                sequence="35"/>
-    </data>
+            name="Stock Cases Report"
+            id="menu_stock_cases_report"
+            action="action_stock_cases"
+            parent="menu_legals"
+            sequence="35"
+        />
+
 </odoo>

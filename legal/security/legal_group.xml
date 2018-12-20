@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
 	<record model="ir.module.category" id="module_category_legal">
 	    <field name="name">Legal</field>
 	    <field name="description">Legal</field>
@@ -17,5 +16,4 @@
         <field name="category_id" ref="module_category_legal"/>
         <field name="implied_ids" eval="[(4,ref('group_user'))]"/>
 	</record>
-    </data>
 </odoo>

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-
-        <record id="legal_partner" model="res.partner">
-            <field name="name">Estudios</field>
-            <field name="street">Calle Falsa 123</field>
-            <field name="city">Rosario</field>
-            <field name="zip">2000</field>
-        </record>
-        <record id="legal_company" model="res.company">
-            <field name="name">Estudios</field>
-            <field name="partner_id" ref="legal_partner"/>
-        </record>
-
-    </data>
+<odoo noupdate="1">
+    <record id="legal_partner" model="res.partner">
+        <field name="name">Estudios</field>
+        <field name="street">Calle Falsa 123</field>
+        <field name="city">Rosario</field>
+        <field name="zip">2000</field>
+    </record>
+    <record id="legal_company" model="res.company">
+        <field name="name">Estudios</field>
+        <field name="partner_id" ref="legal_partner"/>
+    </record>
 </odoo>

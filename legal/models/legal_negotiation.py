@@ -12,19 +12,16 @@ class LegalNegotiation(models.Model):
 
     concept_id = fields.Many2one(
         'legal.negotiation.concept',
-        string='Concept')
+    )
+
     date_proposal = fields.Date(
-        string='Date Proposal',
-        default=date.today())
-    amount = fields.Float(string='Amount')
-    observations = fields.Char(string='Observations')
+        default=date.today(),
+    )
+
+    amount = fields.Float()
+
+    observations = fields.Char()
+
     prosecution_id = fields.Many2one(
         'legal.prosecution',
-        string='prosecution')
-
-
-class LegalNegotiationConcept(models.Model):
-
-    _name = 'legal.negotiation.concept'
-
-    name = fields.Char(string='Name')
+    )

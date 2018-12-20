@@ -5,26 +5,13 @@
 from odoo import models, fields
 
 
-class LegalAuxiliary(models.Model):
-
-    _name = 'legal.auxiliary'
-
-    field_id = fields.Many2one(
-        'legal.auxiliary.field',
-        string="Auxiliary")
-    value = fields.Char(string="Value")
-    prosecution_id = fields.Many2one(
-        'legal.prosecution',
-        string="prosecution")
-
-
 class LegalAuxiliaryField(models.Model):
 
     _name = 'legal.auxiliary.field'
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
+
     department_id = fields.Many2one(
         'legal.department',
-        string='Department',
         required=True
     )

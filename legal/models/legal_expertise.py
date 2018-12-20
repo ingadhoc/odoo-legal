@@ -11,29 +11,34 @@ class LegalExpertise(models.Model):
 
     type_id = fields.Many2one(
         'legal.expertise.type',
-        string='Type')
+    )
+
     offerer_id = fields.Many2one(
         'legal.offerer',
-        string='Offerer')
-    name = fields.Char(
-        string='Name')
+    )
+
+    name = fields.Char()
+
     state = fields.Selection(
         [('pending', 'Pending'),
          ('produced', 'Produced')],
-        string='State',
-        default='pending')
-    observations = fields.Char(
-        string='Observations')
+        default='pending',
+    )
+
+    observations = fields.Char()
+
     prosecution_id = fields.Many2one(
         'legal.prosecution',
-        string='prosecution')
+    )
+
     expertise_detail_ids = fields.One2many(
         'legal.expertise.detail',
         'expertise_id',
-        string='Expertise Detail')
+    )
+
     expertise_detail = fields.Text(
-        string='Expertise Detail',
-        compute='_compute_expertise_detail')
+        compute='_compute_expertise_detail',
+    )
 
     @api.multi
     def _compute_expertise_detail(self):
@@ -70,34 +75,3 @@ class LegalExpertise(models.Model):
                 }
                 lines.append((0, _, values))
             self.expertise_detail_ids = lines
-
-
-class LegalExpertiseType(models.Model):
-
-    _name = 'legal.expertise.type'
-
-    name = fields.Char(string='Name')
-
-
-class LegalExpertiseDetail(models.Model):
-
-    _name = 'legal.expertise.detail'
-
-    detail_type_id = fields.Many2one(
-        'legal.expertise.detail_type',
-        string='Detail Type')
-    value = fields.Char(
-        string='Value')
-    expertise_id = fields.Many2one(
-        'legal.expertise',
-        string='Expertise')
-
-
-class LegalExpertiseDetailType(models.Model):
-
-    _name = 'legal.expertise.detail_type'
-
-    name = fields.Char(string='Name')
-    expertise_type_id = fields.Many2one(
-        'legal.expertise.type',
-        string='Expertise Type')

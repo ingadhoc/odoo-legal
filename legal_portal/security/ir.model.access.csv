@@ -26,3 +26,8 @@ access_legal_portal_expertise_detail_type,legal.portal.expertise_detail_type,leg
 access_legal_portal_expertise_type,legal.portal.expertise_type,legal.model_legal_expertise_type,base.group_portal,1,0,0,0
 access_legal_portal_negotiation_concept,legal.portal.negotiation_concept,legal.model_legal_negotiation_concept,base.group_portal,1,0,0,0
 access_legal_portal_negotiation,legal.portal.negotiation,legal.model_legal_negotiation,base.group_portal,1,0,0,0
+access_ir_ui_menu_portal,ir.ui.menu.portal,base.model_ir_ui_menu,base.group_portal,1,0,0,0
+access_ir_model_portal,ir.model.portal,base.model_ir_model,base.group_portal,1,0,0,0
+access_ir_fields_portal,ir.model.fields.portal,base.model_ir_model_fields,base.group_portal,1,0,0,0
+access_ir_model_data_portal,ir.model.model.data.portal,base.model_ir_model_data,base.group_portal,1,0,1,0
+access_legal_portal_state_detail,legal.portal.state.detail,legal.model_prosecution_state_detail,base.group_portal,1,0,0,0

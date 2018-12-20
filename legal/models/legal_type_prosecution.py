@@ -3,4 +3,12 @@
 # directory
 ##############################################################################
 
-from . import legal_cases_parser
+from odoo import models, fields
+
+class LegalTypeProsecution(models.Model):
+
+    _name = 'legal.prosecution_type'
+    _description = 'type prosecution'
+
+    name = fields.Char()
+    code = fields.Integer()

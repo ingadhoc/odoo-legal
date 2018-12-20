@@ -2,18 +2,17 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from odoo.report.report_sxw import rml_parse
-import logging
-logger = logging.getLogger('report_aeroo')
+from odoo import models, api
 
 
-class Parser(rml_parse):
+class Parser(models.AbstractModel):
+    _inherit = 'report.report_aeroo.abstract'
+    _name = 'report.legal_cases_report_parser'
 
-    def __init__(self, cr, uid, name, context):
-        super(self.__class__, self).__init__(cr, uid, name, context)
-
-        if not context:
-            return None
+    @api.model
+    def aeroo_report(self, docids, data):
+        if not data:
+            data = {}
 
         self.from_date = context.get('from_date', False)
         self.to_date = context.get('to_date', False)
@@ -21,13 +20,15 @@ class Parser(rml_parse):
         self.responsible_id = context.get('responsible_id', False)
         self.prosecution_type_id = context.get('prosecution_type_id', False)
 
-        self.localcontext.update({
-            'context': context,
+        data.update({
+            'config': self.config,
             'show_cases_initial': self.show_cases_initial,
             'show_cases_new': self.show_cases_new,
             'show_cases_close': self.show_cases_close,
             'show_cases_re_open': self.show_cases_re_open,
-        })
+            })
+
+        return super(Parser, self).aeroo_report(docids, data)
 
     def show_cases_initial(self):
 

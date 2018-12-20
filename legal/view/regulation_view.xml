@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
          <!-- SEARCH VIEW -->
         <record id="view_legal_regulation_filter" model="ir.ui.view">
             <field name="name">legal.regulation.select</field>
             <field name="model">legal.regulation</field>
             <field name="arch" type="xml">
-                <search string="Regulation" version="7.0">
+                <search string="Regulation">
                     <group string="By Attribute">
                         <field name="beneficiary" string="Beneficiary"/>
                         <field name="date_order" string="Date Order"/>
@@ -21,6 +20,7 @@
                 </search>
             </field>
         </record>
+
         <!-- FORM -->
         <record id="view_legal_regulation_form" model="ir.ui.view">
             <field name="name">legal.regulation.form</field>
@@ -57,6 +57,4 @@
             </field>
         </record>
 
-
-    </data>
 </odoo>

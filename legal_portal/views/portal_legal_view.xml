@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem name="Legal" id="portal_legal" sequence="10" groups="base.group_portal"/>
+
+    <menuitem name="Prosecution" id="portal_prosecution" parent="portal_legal" action="legal.action_legal_prosecution" sequence="10"/>
+
+</odoo>

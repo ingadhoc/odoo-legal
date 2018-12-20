@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
-        
         <!-- FORM -->
         <record id="view_legal_office_form" model="ir.ui.view">
             <field name="name">legal.office.form</field>
@@ -33,5 +31,5 @@
                 </tree>
             </field>
         </record>
-    </data>
+
 </odoo>

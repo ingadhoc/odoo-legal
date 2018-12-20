@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
 
-        
         <!-- FORM -->
         <record id="view_legal_responsibility_form" model="ir.ui.view">
             <field name="name">legal.responsibility.form</field>
@@ -17,7 +15,4 @@
             </field>
         </record>
 
-
-
-    </data>
 </odoo>

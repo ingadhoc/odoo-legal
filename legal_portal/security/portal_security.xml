@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+
         <record id="portal_legal_rule" model="ir.rule">
             <field name="name">Portal Legal</field>
             <field ref="legal.model_legal_prosecution" name="model_id"/>
@@ -22,6 +22,5 @@
             <field eval="1" name="perm_read"/>
             <field eval="0" name="perm_create"/>
         </record>
-    
-    </data>
+
 </odoo>
