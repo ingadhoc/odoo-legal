@@ -39,10 +39,10 @@ env:
   - TRANSIFEX_ORGANIZATION='adhoc'
   # to get secure, run 'travis encrypt TRANSIFEX_PASSWORD=[transifex_password] -r [github_repo]'
   # example of github repo 'ingadhoc/odoo-infrastructure'
-  - secure: MsuVhrdOSs2oqPP+odFpKVehX6RlS8nJRXKm9mzE+HCxpR8su1HCrVMpsgBMFUkHAvTQIt5UPvOaBl1Pi2A6hPDTlervdTRhDRRRzXeNfe2+rb6+DevOB0fqbGLo39dg/VO0QwXtrVUzLIPkrrop/QiBBhuDB4TI84qEkRKbVLz4oS/Jj4eI7mRf0jmQ98scE0M1nXqE4KhEP8bPAJ7OWMkXbXonqZ1NGrwZI+bMKFDZHNidUiyGAcvsLqk6r/PcfySLHbYyR06QImvZXWGyx9XDYhP6c19yFhTi8OdFYWw9eglWSKkdvkxrqKh5gIToIiPOa49vq5Vr7Gzn0cJkx0Z9TlhjVdD2Yn5JBO8ymiuWSI70gYL8dPMa7tFp169u33Fd3GHi29q+T1CJF37A/5PPEAHgfMcbP5LxvJXdS7ZOFXBKwgmO8hDg6BX+uowN/2EGyaTIdiaEA+N2He0VHFYACtdh2f8m9zCVozH60kXmbfSeUzT6CMPFL6ridOTQ4QmUbCNSypgS3MSHA4qrO90G+I2ye3y92xlCLbOie34Pny4lbHuwfUzaCf2ZP4iysPIcf4NyCPqKOvWj2t4RJtKi8DvkcWtWYfjsJm7h8vkUiITtwnmQ1hPmBx1Ys8rt4L7loHOQ4QUV8MPYIPi/nxXixYc0V4wNfv6AAcz+lo8=
+  - secure: No4s2Y5nGwLLibe1xtZLIUc7bXUILUXYkmEKebreoDyIZmFf8xjkPDR5ZlYMMM77IiZX6xomnpTCCg1VhN7VWsIFF8qgqvkX75fVawEpawUiYpVfn19PGKy8w/I13hWwA5xv+Gqq8+Am9nTD+47CYsfcsBmHKnSkePwj/6eINOZUMBda9tE4Hfqcw4c+NoANHWu6os4lxDARSotkSO3/8bTZ58VYqWDElgRnSEIfYO8HLR8eLkOFTdnbmnWawdOimrSuRhBS8aL5XKLcc/HiXso6dRcvyIgmd40nvZh8q97cXIEjKP/BwxyvloacZQE7XXcEGGn4bJwumHOvwHaUYY0xur8zLZpr4FETeLHgUSB8+R+syMuGGU6REmPharJsaViKD/9uWxRmD6rYv0l1KpJQ9f5eBOhZqCYrjtgW1QvaStAwVFU4v59qEjQmjkjzfZ/lij33xIKKm+mk3NfHX4ZycPyWNsaz4GFf/5DXjI6uslou1ZYNiba8ULwchACiVyNSnPKhXq14+8OdkCt6lmjEf1M3fpEa7vwwVIHKXEOyBxod9bNoBHV3bRcawpZIK6MLF9alaFlWKruHkz6gxpRCLnxc1GKEjZou9F6SvXSAbcf5RMvWdmLi7NYSvFwWnZti/QBcAqKGWo9YUSqoqXrVIweDaD1wY8DTWnBYogk=
 
   matrix:
-  #- LINT_CHECK="1"
+  - LINT_CHECK="1"
   - TRANSIFEX="1"
   - TESTS="1" ODOO_REPO="odoo/odoo"
 # either use the two lines above or the two below. Don't change the default if
